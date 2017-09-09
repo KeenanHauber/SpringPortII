@@ -62,6 +62,7 @@ class MainWindowController: NSWindowController {
     @IBAction func openSinglePlayerMenu(_ sender: Any) {
         openSinglePlayerMenu()
     }
+
     
     func hideSinglePlayerWarning() {
         blurView.isHidden = true
