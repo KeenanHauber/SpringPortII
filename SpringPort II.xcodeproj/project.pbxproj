@@ -9,11 +9,6 @@
 /* Begin PBXBuildFile section */
 		6B015E901EC3B8B500B587F2 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B015E8E1EC3B8B500B587F2 /* Console.swift */; };
 		6B015E911EC3B8B500B587F2 /* Console.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B015E8F1EC3B8B500B587F2 /* Console.xib */; };
-		6B18F25A1EF3B4DA00BDDDE5 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B18F2591EF3B4DA00BDDDE5 /* Zip.framework */; };
-		6B18F25B1EF3B4DA00BDDDE5 /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6B18F2591EF3B4DA00BDDDE5 /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6B18F25F1EF3B4FE00BDDDE5 /* Zip.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B18F25E1EF3B4FE00BDDDE5 /* Zip.framework.dSYM */; };
-		6B18F2601EF3B60A00BDDDE5 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B18F2591EF3B4DA00BDDDE5 /* Zip.framework */; };
-		6B18F2611EF3BA1500BDDDE5 /* Zip.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 6B18F25E1EF3B4FE00BDDDE5 /* Zip.framework.dSYM */; };
 		6B2494361E89A7AC00718001 /* ReplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2494351E89A7AC00718001 /* ReplayController.swift */; };
 		6B2494381E89A7DE00718001 /* Replay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2494371E89A7DE00718001 /* Replay.swift */; };
 		6B24943A1E8A124A00718001 /* Replay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2494371E89A7DE00718001 /* Replay.swift */; };
@@ -88,6 +83,7 @@
 		6BBE4B011F63FED200E95AA2 /* LaunchScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE4B001F63FED200E95AA2 /* LaunchScriptManager.swift */; };
 		6BBE4B021F63FED200E95AA2 /* LaunchScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE4B001F63FED200E95AA2 /* LaunchScriptManager.swift */; };
 		6BBE4B3B1F64180C00E95AA2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE4B3A1F64180C00E95AA2 /* LICENSE */; };
+		6BC8CC491F64322400AB7110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55B69A31E1AF1EE0098BB09 /* Assets.xcassets */; };
 		6BCB26891EC29D200099DCAB /* ConsoleBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB26881EC29D200099DCAB /* ConsoleBot.swift */; };
 		6BD617F71EC8F1FF009D8EEF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD617F61EC8F1FF009D8EEF /* Coordinator.swift */; };
 		6BD617FA1EC8FE98009D8EEF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD617F81EC8FE98009D8EEF /* MainViewController.swift */; };
@@ -102,7 +98,6 @@
 		D52FEDF21E21F68F00CBF40A /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FEDF01E21F68F00CBF40A /* LoginWindowController.swift */; };
 		D52FEDF31E21F68F00CBF40A /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D52FEDF11E21F68F00CBF40A /* LoginWindowController.xib */; };
 		D55B69A21E1AF1EE0098BB09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69A11E1AF1EE0098BB09 /* AppDelegate.swift */; };
-		D55B69A41E1AF1EE0098BB09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55B69A31E1AF1EE0098BB09 /* Assets.xcassets */; };
 		D55B69A71E1AF1EE0098BB09 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55B69A51E1AF1EE0098BB09 /* MainMenu.xib */; };
 		D55B69B21E1AF1EE0098BB09 /* SpringPort_IITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69B11E1AF1EE0098BB09 /* SpringPort_IITests.swift */; };
 		D55B69BD1E1AF1EE0098BB09 /* SpringPort_IIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69BC1E1AF1EE0098BB09 /* SpringPort_IIUITests.swift */; };
@@ -199,7 +194,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6B18F25B1EF3B4DA00BDDDE5 /* Zip.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,24 +204,21 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				6B18F25F1EF3B4FE00BDDDE5 /* Zip.framework.dSYM in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6B015E8E1EC3B8B500B587F2 /* Console.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
-		6B015E8F1EC3B8B500B587F2 /* Console.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Console.xib; sourceTree = "<group>"; };
-		6B18F2591EF3B4DA00BDDDE5 /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = Carthage/Build/Mac/Zip.framework; sourceTree = "<group>"; };
-		6B18F25E1EF3B4FE00BDDDE5 /* Zip.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Zip.framework.dSYM; path = Carthage/Build/Mac/Zip.framework.dSYM; sourceTree = "<group>"; };
+		6B015E8E1EC3B8B500B587F2 /* Console.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Console.swift; path = SpringRTSHub/Console.swift; sourceTree = "<group>"; };
+		6B015E8F1EC3B8B500B587F2 /* Console.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Console.xib; path = SpringRTSHub/Console.xib; sourceTree = "<group>"; };
 		6B2494351E89A7AC00718001 /* ReplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplayController.swift; sourceTree = "<group>"; };
 		6B2494371E89A7DE00718001 /* Replay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Replay.swift; sourceTree = "<group>"; };
 		6B2494511E8A3E7800718001 /* SinglePlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerController.swift; sourceTree = "<group>"; };
-		6B33E9481EE3FBE000534A8B /* GamesCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesCollectionViewItem.swift; sourceTree = "<group>"; };
-		6B33E9491EE3FBE000534A8B /* GamesCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GamesCollectionViewItem.xib; sourceTree = "<group>"; };
+		6B33E9481EE3FBE000534A8B /* GamesCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamesCollectionViewItem.swift; path = SpringRTSHub/GamesCollectionViewItem.swift; sourceTree = "<group>"; };
+		6B33E9491EE3FBE000534A8B /* GamesCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GamesCollectionViewItem.xib; path = SpringRTSHub/GamesCollectionViewItem.xib; sourceTree = "<group>"; };
 		6B33E94C1EE3FD5300534A8B /* CollectionViewItemSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewItemSelectionDelegate.swift; sourceTree = "<group>"; };
-		6B33E94F1EE3FF1300534A8B /* GamesCollectionViewDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesCollectionViewDataController.swift; sourceTree = "<group>"; };
+		6B33E94F1EE3FF1300534A8B /* GamesCollectionViewDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamesCollectionViewDataController.swift; path = SpringRTSHub/GamesCollectionViewDataController.swift; sourceTree = "<group>"; };
 		6B6ACA0C1EC827B800A7E5E5 /* ToSortCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToSortCommands.swift; sourceTree = "<group>"; };
 		6B7C47CB1EC513A60043A403 /* AllowedCharsTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllowedCharsTextField.swift; sourceTree = "<group>"; };
 		6B8D9E041E85AF6600544CE2 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -257,8 +248,8 @@
 		6BBE4B3A1F64180C00E95AA2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6BCB26881EC29D200099DCAB /* ConsoleBot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleBot.swift; sourceTree = "<group>"; };
 		6BD617F61EC8F1FF009D8EEF /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		6BD617F81EC8FE98009D8EEF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		6BD617F91EC8FE98009D8EEF /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		6BD617F81EC8FE98009D8EEF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = SpringRTSHub/MainViewController.swift; sourceTree = "<group>"; };
+		6BD617F91EC8FE98009D8EEF /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = SpringRTSHub/MainViewController.xib; sourceTree = "<group>"; };
 		6BE957611EBBBB9B009EE315 /* HostedBattleroomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostedBattleroomController.swift; sourceTree = "<group>"; };
 		6BF14E4B1E8C9BE500A6F766 /* SinglePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerViewController.swift; sourceTree = "<group>"; };
 		6BF14E4C1E8C9BE500A6F766 /* SinglePlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SinglePlayerViewController.xib; sourceTree = "<group>"; };
@@ -340,7 +331,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B18F2601EF3B60A00BDDDE5 /* Zip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +352,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B18F25A1EF3B4DA00BDDDE5 /* Zip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,12 +476,10 @@
 		D55B69951E1AF1EE0098BB09 = {
 			isa = PBXGroup;
 			children = (
-				6B18F25E1EF3B4FE00BDDDE5 /* Zip.framework.dSYM */,
-				6B18F2591EF3B4DA00BDDDE5 /* Zip.framework */,
 				6BF14E531E8CA9D500A6F766 /* TodoList */,
 				6BF666D51E8DD798003E0ADE /* Functionality */,
-				6B8D9E111E85B0A000544CE2 /* Universal */,
 				D55B69A01E1AF1EE0098BB09 /* SpringPort II */,
+				6B8D9E111E85B0A000544CE2 /* Universal */,
 				D55B69B01E1AF1EE0098BB09 /* SpringPort IITests */,
 				D55B69BB1E1AF1EE0098BB09 /* SpringPort IIUITests */,
 				6B8D9E1B1E85BC5300544CE2 /* SpringRTSHub */,
@@ -850,7 +837,6 @@
 				6B015E911EC3B8B500B587F2 /* Console.xib in Resources */,
 				6B8D9E1F1E85BC5300544CE2 /* Assets.xcassets in Resources */,
 				6B8D9E221E85BC5300544CE2 /* MainMenu.xib in Resources */,
-				6B18F2611EF3BA1500BDDDE5 /* Zip.framework.dSYM in Resources */,
 				6BD617FB1EC8FE98009D8EEF /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -879,8 +865,8 @@
 				D52FEDF31E21F68F00CBF40A /* LoginWindowController.xib in Resources */,
 				6BF666D61E8DD798003E0ADE /* Functionality in Resources */,
 				6BBE4B3B1F64180C00E95AA2 /* LICENSE in Resources */,
+				6BC8CC491F64322400AB7110 /* Assets.xcassets in Resources */,
 				D55B6A1C1E1BB97C0098BB09 /* MainWindowController.xib in Resources */,
-				D55B69A41E1AF1EE0098BB09 /* Assets.xcassets in Resources */,
 				D55B69A71E1AF1EE0098BB09 /* MainMenu.xib in Resources */,
 				D55D386C1E1C445600618EB1 /* ChatUsersCollectionViewItem.xib in Resources */,
 				D55B6A141E1B1C330098BB09 /* SideBarViewController.xib in Resources */,
@@ -1109,7 +1095,8 @@
 				6B8D9E211E85BC5300544CE2 /* Base */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
+			path = /Users/Shared/Development/Spring/MacTASClient/SpringRTSHub;
+			sourceTree = "<absolute>";
 		};
 		D55B69A51E1AF1EE0098BB09 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;

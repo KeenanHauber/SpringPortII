@@ -27,6 +27,9 @@ class MainWindowController: NSWindowController {
     override var windowNibName: String {
         return "MainWindowController"
     }
+    override func windowDidLoad() {
+        window?.title = "MacTASClient"
+    }
     
     @IBOutlet weak var battlesReadyToGoCollectionView: NSCollectionView!
     @IBOutlet var chatTextView: NSTextView!
