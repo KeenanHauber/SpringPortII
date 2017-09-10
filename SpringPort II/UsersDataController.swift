@@ -31,6 +31,7 @@ class UsersDataController: ServerUsersDelegate {
     var users: [User] = []
     func server(_ server: TASServer, didAdd user: User) {
         users.append(user)
+        users.sort { $0.username < $1.username }
         output?.userListUpdated()
     }
     func server(_ server: TASServer, didRemoveUserNamed name: String) {

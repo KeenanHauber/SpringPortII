@@ -78,6 +78,8 @@ class ChannelDataController: ServerChannelDelegate, ChannelDataSource {
             .filter { $0.name == chanName }
             .forEach { channel in
                 channel.users.append(username)
+                channel.users.sort { $0 < $1 }
+                
                 channel.messages.append(Message(timeStamp: Date(), sender: "Server", message: "\(username) joined the channel.", style: "Server"))
                 if channel.name == selectedChannel {
                     setChatLog(for: channel.name)

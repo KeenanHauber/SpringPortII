@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2548a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -41,7 +41,7 @@
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSComputer" id="yIu-h5-d5w"/>
                 </imageView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UWg-dI-1UW">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UWg-dI-1UW">
                     <rect key="frame" x="18" y="7" width="53" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="128/128" id="yCB-GP-CG1">
                         <font key="font" metaFont="system"/>
@@ -49,15 +49,15 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gbA-lq-ig8">
-                    <rect key="frame" x="80" y="7" width="91" height="17"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbA-lq-ig8">
+                    <rect key="frame" x="357" y="7" width="91" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="DeltaSiegeDry" id="pTe-vL-Q2H">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fqx-ja-ipM">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fqx-ja-ipM">
                     <rect key="frame" x="452" y="7" width="39" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="203.0" id="pvy-co-knd">
                         <font key="font" metaFont="system"/>
@@ -65,15 +65,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="17F-9x-Qx2">
-                    <rect key="frame" x="282" y="7" width="166" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Balanced Annihilation 9.54" id="zKr-cH-WEE">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f3V-CO-cYP">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3V-CO-cYP">
                     <rect key="frame" x="70" y="24" width="33" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="rxY-9c-ubZ"/>
@@ -84,7 +76,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IDh-YZ-40N">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDh-YZ-40N">
                     <rect key="frame" x="418" y="24" width="74" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="Bci-T1-UO5"/>
@@ -95,30 +87,38 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="17F-9x-Qx2">
+                    <rect key="frame" x="75" y="7" width="166" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Balanced Annihilation 9.54" id="zKr-cH-WEE">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="IDh-YZ-40N" firstAttribute="top" secondItem="eNI-9L-aMT" secondAttribute="top" constant="8" id="6Nk-dR-s64"/>
                 <constraint firstAttribute="trailing" secondItem="IDh-YZ-40N" secondAttribute="trailing" constant="20" id="8mx-PW-oLf"/>
                 <constraint firstItem="dTb-2N-xTd" firstAttribute="leading" secondItem="eNI-9L-aMT" secondAttribute="leading" constant="20" id="Gui-zz-lSd"/>
-                <constraint firstItem="fqx-ja-ipM" firstAttribute="leading" secondItem="17F-9x-Qx2" secondAttribute="trailing" constant="8" id="IPe-Fq-a9G"/>
                 <constraint firstItem="17F-9x-Qx2" firstAttribute="top" secondItem="IDh-YZ-40N" secondAttribute="bottom" id="J1R-v4-w2o"/>
                 <constraint firstItem="UWg-dI-1UW" firstAttribute="top" secondItem="bb3-2j-TPi" secondAttribute="bottom" id="JbI-k6-eZi"/>
                 <constraint firstAttribute="bottom" secondItem="gbA-lq-ig8" secondAttribute="bottom" constant="7" id="Kh1-en-3GR"/>
                 <constraint firstItem="bb3-2j-TPi" firstAttribute="leading" secondItem="dTb-2N-xTd" secondAttribute="trailing" constant="8" id="LyV-lP-g3u"/>
                 <constraint firstItem="f3V-CO-cYP" firstAttribute="top" secondItem="eNI-9L-aMT" secondAttribute="top" constant="8" id="Mwb-2s-mdR"/>
                 <constraint firstAttribute="bottom" secondItem="UWg-dI-1UW" secondAttribute="bottom" constant="7" id="R0L-Ii-52U"/>
-                <constraint firstItem="gbA-lq-ig8" firstAttribute="leading" secondItem="UWg-dI-1UW" secondAttribute="trailing" constant="13" id="VZU-E4-Wwo"/>
                 <constraint firstItem="UWg-dI-1UW" firstAttribute="leading" secondItem="eNI-9L-aMT" secondAttribute="leading" constant="20" id="W0Q-i9-AQo"/>
                 <constraint firstItem="dTb-2N-xTd" firstAttribute="top" secondItem="eNI-9L-aMT" secondAttribute="top" constant="8" id="WKl-6l-5OJ"/>
+                <constraint firstItem="17F-9x-Qx2" firstAttribute="leading" secondItem="UWg-dI-1UW" secondAttribute="trailing" constant="8" id="bhU-8l-K1j"/>
                 <constraint firstAttribute="trailing" secondItem="fqx-ja-ipM" secondAttribute="trailing" constant="21" id="gq9-T6-tkQ"/>
                 <constraint firstItem="gbA-lq-ig8" firstAttribute="top" secondItem="f3V-CO-cYP" secondAttribute="bottom" id="hFv-jT-szD"/>
+                <constraint firstItem="fqx-ja-ipM" firstAttribute="leading" secondItem="gbA-lq-ig8" secondAttribute="trailing" constant="8" id="jnW-b7-PWY"/>
                 <constraint firstAttribute="bottom" secondItem="fqx-ja-ipM" secondAttribute="bottom" constant="7" id="k7y-Yp-csy"/>
                 <constraint firstItem="bb3-2j-TPi" firstAttribute="top" secondItem="eNI-9L-aMT" secondAttribute="top" constant="8" id="l2c-rG-pdC"/>
                 <constraint firstItem="f3V-CO-cYP" firstAttribute="leading" secondItem="bb3-2j-TPi" secondAttribute="trailing" constant="10" id="tdf-mg-0p0"/>
                 <constraint firstAttribute="bottom" secondItem="17F-9x-Qx2" secondAttribute="bottom" constant="7" id="vOp-jB-xcJ"/>
             </constraints>
             <gestureRecognizers>
-                <clickGestureRecognizer numberOfClicksRequired="2" id="6C5-nu-dVY">
+                <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="2" id="6C5-nu-dVY">
                     <connections>
                         <action selector="doubleClicked:" target="-2" id="WgB-yQ-mE8"/>
                     </connections>

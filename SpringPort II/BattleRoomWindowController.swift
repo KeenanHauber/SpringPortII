@@ -149,9 +149,9 @@ class PlayerTableCellView: NSTableCellView {
     @IBOutlet weak var rankImageView: NSImageView!
     @IBOutlet weak var statusImageView: NSImageView!
     @IBOutlet weak var factionImageView: NSImageView!
-    @IBOutlet weak var flagImageView: NSImageView!
     @IBOutlet weak var usernameTextField: NSTextField!
     @IBOutlet weak var trueSkillTextField: NSTextField!
+    @IBOutlet weak var countryTextField: NSTextField!
     @IBOutlet weak var teamTextField: NSTextField!
     @IBOutlet weak var allyTextField: NSTextField!
     @IBOutlet weak var colorWell: NSColorWell!

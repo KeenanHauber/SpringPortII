@@ -35,7 +35,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAr-82-hpP">
-                        <rect key="frame" x="0.0" y="0.0" width="1280" height="800"/>
+                        <rect key="frame" x="0.0" y="-400" width="1920" height="1200"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="speedexplosion" id="oeD-sG-eR1"/>
                     </imageView>
@@ -411,14 +411,14 @@
                                                                             </constraints>
                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="OpenBattleIcon" id="3ig-kv-UIv"/>
                                                                         </imageView>
-                                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2EW-5H-bxz">
-                                                                            <rect key="frame" x="362" y="0.0" width="33" height="17"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="33" id="PAp-hl-q03"/>
-                                                                                <constraint firstAttribute="height" constant="17" id="ciI-Zz-UJg"/>
-                                                                            </constraints>
-                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Aussie Flag" id="81c-FB-OKo"/>
-                                                                        </imageView>
+                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzy-FZ-UsN">
+                                                                            <rect key="frame" x="360" y="0.0" width="37" height="17"/>
+                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Gk3-Ll-6KM">
+                                                                                <font key="font" metaFont="system"/>
+                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                            </textFieldCell>
+                                                                        </textField>
                                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="36W-A7-2xl">
                                                                             <rect key="frame" x="247" y="0.0" width="17" height="17"/>
                                                                             <constraints>
@@ -475,10 +475,10 @@
                                                                     <constraints>
                                                                         <constraint firstItem="36W-A7-2xl" firstAttribute="leading" secondItem="QHL-qM-UH1" secondAttribute="trailing" constant="8" id="21X-h7-ZKd"/>
                                                                         <constraint firstAttribute="bottom" secondItem="8bD-L6-1Wf" secondAttribute="bottom" id="5ZQ-1m-eej"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="2EW-5H-bxz" secondAttribute="trailing" constant="3" id="7cd-XR-jqU"/>
                                                                         <constraint firstAttribute="bottom" secondItem="jc7-YT-5y1" secondAttribute="bottom" id="Cv1-eU-Np1"/>
                                                                         <constraint firstItem="7Gs-Gn-aCN" firstAttribute="leading" secondItem="6za-4r-yff" secondAttribute="trailing" constant="8" id="DEW-I9-Afq"/>
                                                                         <constraint firstItem="8bD-L6-1Wf" firstAttribute="leading" secondItem="BuO-Bd-0QO" secondAttribute="trailing" constant="8" id="DUW-da-si3"/>
+                                                                        <constraint firstItem="Yzy-FZ-UsN" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="ERi-3h-SWd"/>
                                                                         <constraint firstAttribute="bottom" secondItem="9B0-ES-60u" secondAttribute="bottom" id="Frd-Lk-E5F"/>
                                                                         <constraint firstItem="BuO-Bd-0QO" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="G5d-m7-j9a"/>
                                                                         <constraint firstItem="36W-A7-2xl" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="JUo-Yt-sqA"/>
@@ -489,27 +489,27 @@
                                                                         <constraint firstItem="8bD-L6-1Wf" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="Vjw-fL-v9j"/>
                                                                         <constraint firstItem="7Gs-Gn-aCN" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="WfA-ua-cis"/>
                                                                         <constraint firstAttribute="bottom" secondItem="BuO-Bd-0QO" secondAttribute="bottom" id="Xif-eZ-Qkk"/>
+                                                                        <constraint firstItem="Yzy-FZ-UsN" firstAttribute="leading" secondItem="8bD-L6-1Wf" secondAttribute="trailing" constant="8" id="YwL-EG-jGz"/>
                                                                         <constraint firstItem="9B0-ES-60u" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="bd7-1L-78s"/>
                                                                         <constraint firstItem="BuO-Bd-0QO" firstAttribute="leading" secondItem="jc7-YT-5y1" secondAttribute="trailing" constant="1" id="bup-ta-bTn"/>
                                                                         <constraint firstItem="6za-4r-yff" firstAttribute="leading" secondItem="9B0-ES-60u" secondAttribute="trailing" constant="8" id="ddz-ps-3bu"/>
-                                                                        <constraint firstItem="2EW-5H-bxz" firstAttribute="leading" secondItem="8bD-L6-1Wf" secondAttribute="trailing" constant="8" id="ejz-1Z-Y9t"/>
                                                                         <constraint firstAttribute="bottom" secondItem="7Gs-Gn-aCN" secondAttribute="bottom" id="fcn-GO-pTE"/>
                                                                         <constraint firstItem="jc7-YT-5y1" firstAttribute="leading" secondItem="36W-A7-2xl" secondAttribute="trailing" constant="8" id="gAP-wX-zhC"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="Yzy-FZ-UsN" secondAttribute="trailing" constant="3" id="mEY-Ck-7mf"/>
                                                                         <constraint firstItem="6za-4r-yff" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="pFL-Ny-hu4"/>
                                                                         <constraint firstItem="9B0-ES-60u" firstAttribute="leading" secondItem="tfF-xC-a9D" secondAttribute="leading" constant="5" id="qBf-oY-j5L"/>
-                                                                        <constraint firstItem="2EW-5H-bxz" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="vCX-dc-dIC"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="Yzy-FZ-UsN" secondAttribute="bottom" id="v9x-hJ-jur"/>
                                                                         <constraint firstAttribute="bottom" secondItem="QHL-qM-UH1" secondAttribute="bottom" id="wT3-0x-zbE"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="2EW-5H-bxz" secondAttribute="bottom" id="zKa-8I-Wx0"/>
                                                                     </constraints>
                                                                     <connections>
                                                                         <outlet property="allyTextField" destination="BuO-Bd-0QO" id="IYH-0j-lIu"/>
                                                                         <outlet property="colorWell" destination="8bD-L6-1Wf" id="Rdu-th-d36"/>
+                                                                        <outlet property="countryTextField" destination="Yzy-FZ-UsN" id="PR4-sb-AJt"/>
                                                                         <outlet property="factionImageView" destination="36W-A7-2xl" id="HIz-C0-J9o"/>
-                                                                        <outlet property="flagImageView" destination="2EW-5H-bxz" id="U0u-ZP-zAG"/>
                                                                         <outlet property="rankImageView" destination="9B0-ES-60u" id="2IL-a7-8Xn"/>
                                                                         <outlet property="statusImageView" destination="6za-4r-yff" id="Oz7-oh-J0j"/>
                                                                         <outlet property="teamTextField" destination="jc7-YT-5y1" id="geR-lb-yqV"/>
-                                                                        <outlet property="trueSkillTextField" destination="QHL-qM-UH1" id="SH3-kv-YEL"/>
+                                                                        <outlet property="trueSkillTextField" destination="QHL-qM-UH1" id="OeV-hZ-j9t"/>
                                                                         <outlet property="usernameTextField" destination="7Gs-Gn-aCN" id="QHR-1X-QVt"/>
                                                                     </connections>
                                                                 </tableCellView>
@@ -662,7 +662,6 @@
         </window>
     </objects>
     <resources>
-        <image name="Aussie Flag" width="973" height="512"/>
         <image name="Chat! Button" width="153" height="51"/>
         <image name="Header image" width="804" height="90"/>
         <image name="LeaveBattleButton" width="261" height="72"/>

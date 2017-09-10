@@ -26,6 +26,7 @@ class ChannelUserListDataController: NSObject, NSTableViewDelegate, NSTableViewD
         guard let tableCellView = cellView as? ChannelUserTableCellView else { fatalError("Invalid Cell Configuration")}
         
         guard let users = dataSource?.channelUsers() else { return cellView }
+        // Change this so that you're not bringing in the whole list of channel users every time please?
         
         guard users.count > row else { return cellView }
         let user = users[row]

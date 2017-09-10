@@ -91,7 +91,6 @@ class BattleroomController: ServerBattleDelegate {
     //MARK: - ServerBattleDelegate
     func server(_ server: TASServer, didReceiveScriptTagsAs message: String) {
         battle?.process(scriptTags: message)
-        
         output?.updateSpectators()
         output?.updatePlayers()
     }
@@ -112,6 +111,7 @@ class BattleroomController: ServerBattleDelegate {
             battleMessages.append(Message(timeStamp: Date(), sender: "Server", message: "\(name) joined the battle", style: "Server"))
         }
         setBattleChatLog()
+        output?.updatePlayers()
     }
     
     func server(_ server: TASServer, userNamed name: String, didLeaveBattleWithId battleId: String) {
@@ -119,6 +119,7 @@ class BattleroomController: ServerBattleDelegate {
             battleMessages.append(Message(timeStamp: Date(), sender: "Server", message: "\(name) left the battle", style: "Server"))
         }
         setBattleChatLog()
+        output?.updatePlayers()
     }
     
     func serverDidRequestBattleStatus() {
