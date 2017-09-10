@@ -27,8 +27,9 @@ class PlayerTableViewDataController: NSObject, NSTableViewDelegate, NSTableViewD
         
         // TODO: fix ui to work with the below
         
-        tableCellView.countryTextField.stringValue = user.country.flag
-        tableCellView.countryTextField.toolTip = user.country.name
+        let country = user.country
+        tableCellView.countryTextField.stringValue = country.flag
+        tableCellView.countryTextField.toolTip = country.name
         
         if user.status.isBot == true {
             tableCellView.rankImageView.image = #imageLiteral(resourceName: "ServerStack")

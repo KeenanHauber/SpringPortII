@@ -48,8 +48,7 @@ class ChannelDataController: ServerChannelDelegate, ChannelDataSource {
 //        }
     }
     func server(_ server: TASServer, receivedMessageFromChannel chanName: String, fromUser username: String, withMessage message: String) { // SHould change username to sender // Also should work it so that all of these chat messages come through the same feed
-        let now = Date()
-        let msg = Message(timeStamp: now, sender: username, message: message, style: "Standard")
+        let msg = Message(timeStamp: timeStamp(), sender: username, message: message, style: "Standard")
         channels
             .filter { $0.name == chanName }
             .forEach { channel in
@@ -60,8 +59,7 @@ class ChannelDataController: ServerChannelDelegate, ChannelDataSource {
         }
     }
     func server(_ server: TASServer, receivedIRCStyleMessageFromChannel chanName: String, fromUser username: String, withMessage message: String) {
-        let now = Date()
-        let msg = Message(timeStamp: now, sender: username, message: message, style: "IRCStyle")
+        let msg = Message(timeStamp: timeStamp(), sender: username, message: message, style: "IRCStyle")
         channels
             .filter { $0.name == chanName }
             .forEach { channel in
@@ -80,7 +78,7 @@ class ChannelDataController: ServerChannelDelegate, ChannelDataSource {
                 channel.users.append(username)
                 channel.users.sort { $0 < $1 }
                 
-                channel.messages.append(Message(timeStamp: Date(), sender: "Server", message: "\(username) joined the channel.", style: "Server"))
+                channel.messages.append(Message(timeStamp: timeStamp(), sender: "Server", message: "\(username) joined the channel.", style: "Server"))
                 if channel.name == selectedChannel {
                     setChatLog(for: channel.name)
                     output?.playerListUpdated()
@@ -92,7 +90,7 @@ class ChannelDataController: ServerChannelDelegate, ChannelDataSource {
             .filter { $0.name == chanName }
             .forEach { channel in
                 channel.users = channel.users.filter { $0 != username }
-                channel.messages.append(Message(timeStamp: Date(), sender: "Server", message: "\(username) left the channel.", style: "Server"))
+                channel.messages.append(Message(timeStamp: timeStamp(), sender: "Server", message: "\(username) left the channel.", style: "Server"))
                 if channel.name == selectedChannel {
                     setChatLog(for: channel.name)
                     output?.playerListUpdated()
@@ -112,22 +110,22 @@ class ChannelDataController: ServerChannelDelegate, ChannelDataSource {
         
     }
     
-    func chatLog(for channel: Channel) -> NSAttributedString {
+    func chatLog(for channel: Channel) -> NSAttributedString {// Essentially the same over in BattleroomController.swift
         let log = NSMutableAttributedString()
         for message in channel.messages {
             switch message.style {
             case "Standard":
-                let messageAsString = "(\(message.timeStamp))(\(message.sender))(-> \(message.message) \n"
+                let messageAsString = "[\(message.timeStamp)] <\(message.sender)> \(message.message)\n"
                 let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSForegroundColorAttributeName : NSColor.orange] )
                 log.append(messageAsNSAttributedString)
                 
             case "IRCStyle":
-                let messageAsString = "(\(message.timeStamp))(-> \(message.sender) \(message.message)\n"
+                let messageAsString = "[\(message.timeStamp)] \(message.sender) \(message.message)\n"
                 let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSForegroundColorAttributeName : NSColor.magenta] )
                 log.append(messageAsNSAttributedString)
                 
             case "Server":
-                let messageAsString = "(\(message.timeStamp))( ### \(message.sender) ### )(-> \(message.message) ###)\n"
+                let messageAsString = "[\(message.timeStamp)] ### \(message.sender) ### \(message.message)\n"
                 let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSForegroundColorAttributeName : NSColor.blue] )
                 log.append(messageAsNSAttributedString)
                 

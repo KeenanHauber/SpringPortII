@@ -34,6 +34,7 @@ class BattleRoomWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         window?.contentView?.backgroundColor = NSColor.darkGray
+        belowImageView.isHidden = true
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
     @IBOutlet weak var overImageView: NSImageView!

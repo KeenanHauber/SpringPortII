@@ -9,12 +9,12 @@
 import Cocoa
 
 class Message {
-    let timeStamp: Date
+    let timeStamp: String
     let sender: String
     let message: String
     let style: String
     
-    init(timeStamp: Date, sender: String, message: String, style: String) {
+    init(timeStamp: String, sender: String, message: String, style: String) {
         self.timeStamp = timeStamp
         self.sender = sender
         self.message = message

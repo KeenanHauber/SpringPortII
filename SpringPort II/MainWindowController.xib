@@ -34,7 +34,7 @@
             <windowCollectionBehavior key="collectionBehavior" fullScreenNone="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="1619" height="903"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="1619" height="903"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -68,7 +68,7 @@
                                             <rect key="frame" x="1" y="498" width="688" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="KIf-FJ-UJ8">
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="KIf-FJ-UJ8">
                                             <rect key="frame" x="673" y="1" width="16" height="365"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
@@ -82,11 +82,11 @@
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Playername title box" id="ozk-J7-Fcl"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jyh-DX-xzP">
-                                        <rect key="frame" x="251" y="371" width="229" height="30"/>
+                                        <rect key="frame" x="273" y="371" width="185" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="pgh-dP-uUE"/>
                                         </constraints>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Battles ready to go:" id="s1H-sw-xSl">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Waiting Battles:" id="s1H-sw-xSl">
                                             <font key="font" size="24" name="Helvetica-Bold"/>
                                             <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -487,9 +487,9 @@
                                         </connections>
                                     </button>
                                     <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fPY-Hd-may">
-                                        <rect key="frame" x="18" y="384" width="44" height="24"/>
-                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="y4x-4k-W3V">
-                                            <font key="font" metaFont="system"/>
+                                        <rect key="frame" x="19" y="388" width="44" height="20"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="roundRect" trackingMode="selectOne" id="y4x-4k-W3V">
+                                            <font key="font" metaFont="cellTitle"/>
                                             <segments>
                                                 <segment>
                                                     <nil key="label"/>
@@ -542,7 +542,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1619" height="903"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y4H-pX-3mM">
-                                <rect key="frame" x="598" y="474" width="424" height="25"/>
+                                <rect key="frame" x="608" y="474" width="404" height="25"/>
                                 <gestureRecognizers>
                                     <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="gFv-zc-tWm">
                                         <connections>
@@ -551,7 +551,7 @@
                                     </clickGestureRecognizer>
                                 </gestureRecognizers>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Press Here To Open The Single Player Menu" id="NWf-va-efs">
-                                    <font key="font" size="20" name="Helvetica-BoldOblique"/>
+                                    <font key="font" size="20" name="Helvetica"/>
                                     <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>

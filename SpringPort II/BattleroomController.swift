@@ -49,21 +49,22 @@ class BattleroomController: ServerBattleDelegate {
         }
     }
     
-    func setBattleChatLog() {
+    func setBattleChatLog() { // Essentially the same over in ChannelDataController.swift
         let log = NSMutableAttributedString()
         for message in battleMessages {
             switch message.style {
             case "Standard":
-                let messageAsString = "(\(message.timeStamp))(\(message.sender))(-> \(message.message) \n"
+                let messageAsString = "[\(message.timeStamp)] <\(message.sender)> \(message.message)\n"
                 let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSForegroundColorAttributeName : NSColor.orange] )
                 log.append(messageAsNSAttributedString)
                 
             case "IRCStyle":
-                let messageAsString = "(\(message.timeStamp))(-> \(message.sender) \(message.message)\n"
+                let messageAsString = "[\(message.timeStamp)] \(message.sender) \(message.message)\n"
                 let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSForegroundColorAttributeName : NSColor.magenta] )
                 log.append(messageAsNSAttributedString)
+                
             case "Server":
-                let messageAsString = "(\(message.timeStamp))( ### \(message.sender) ### )(-> \(message.message) ###)\n"
+                let messageAsString = "[\(message.timeStamp)] ### \(message.sender) ### \(message.message)\n"
                 let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSForegroundColorAttributeName : NSColor.blue] )
                 log.append(messageAsNSAttributedString)
             default:
@@ -96,7 +97,7 @@ class BattleroomController: ServerBattleDelegate {
     }
     
     func server(_ server: TASServer, recievedFromBattle message: String, from sender: String, ofStyle style: String) {
-        battleMessages.append(Message(timeStamp: Date(), sender: sender, message: message, style: style))
+        battleMessages.append(Message(timeStamp: timeStamp(), sender: sender, message: message, style: style))
         setBattleChatLog()
     }
     
@@ -108,7 +109,7 @@ class BattleroomController: ServerBattleDelegate {
     
     func server(_ server: TASServer, userNamed name: String, didJoinBattleWithId battleId: String) {
         if battleId == battle?.battleId {
-            battleMessages.append(Message(timeStamp: Date(), sender: "Server", message: "\(name) joined the battle", style: "Server"))
+            battleMessages.append(Message(timeStamp: timeStamp(), sender: "Server", message: "\(name) joined the battle", style: "Server"))
         }
         setBattleChatLog()
         output?.updatePlayers()
@@ -116,7 +117,7 @@ class BattleroomController: ServerBattleDelegate {
     
     func server(_ server: TASServer, userNamed name: String, didLeaveBattleWithId battleId: String) {
         if battleId == battle?.battleId {
-            battleMessages.append(Message(timeStamp: Date(), sender: "Server", message: "\(name) left the battle", style: "Server"))
+            battleMessages.append(Message(timeStamp: timeStamp(), sender: "Server", message: "\(name) left the battle", style: "Server"))
         }
         setBattleChatLog()
         output?.updatePlayers()

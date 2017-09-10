@@ -8,6 +8,17 @@
 
 import Cocoa
 
+func timeStamp() -> String {
+    let dateFormatter = DateFormatter()
+    
+    dateFormatter.dateFormat = "HH:mm:ss"
+    dateFormatter.timeZone = TimeZone.current
+    
+    let timestamp = dateFormatter.string(from: Date())
+    
+    return timestamp
+}
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate { // Each specific step - make an object for it? Completes its purpose, then can be taken down
     var windows: [NSWindow] = []

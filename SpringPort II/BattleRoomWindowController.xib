@@ -411,14 +411,6 @@
                                                                             </constraints>
                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="OpenBattleIcon" id="3ig-kv-UIv"/>
                                                                         </imageView>
-                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzy-FZ-UsN">
-                                                                            <rect key="frame" x="360" y="0.0" width="37" height="17"/>
-                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Gk3-Ll-6KM">
-                                                                                <font key="font" metaFont="system"/>
-                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                            </textFieldCell>
-                                                                        </textField>
                                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="36W-A7-2xl">
                                                                             <rect key="frame" x="247" y="0.0" width="17" height="17"/>
                                                                             <constraints>
@@ -452,7 +444,7 @@
                                                                             </textFieldCell>
                                                                         </textField>
                                                                         <colorWell bordered="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bD-L6-1Wf">
-                                                                            <rect key="frame" x="337" y="0.0" width="17" height="17"/>
+                                                                            <rect key="frame" x="378" y="0.0" width="17" height="17"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="17" id="Pvq-gb-Xy5"/>
                                                                                 <constraint firstAttribute="width" constant="17" id="vlj-MH-gYj"/>
@@ -471,13 +463,21 @@
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
+                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzy-FZ-UsN">
+                                                                            <rect key="frame" x="335" y="0.0" width="37" height="17"/>
+                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Gk3-Ll-6KM">
+                                                                                <font key="font" metaFont="system"/>
+                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                            </textFieldCell>
+                                                                        </textField>
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstItem="36W-A7-2xl" firstAttribute="leading" secondItem="QHL-qM-UH1" secondAttribute="trailing" constant="8" id="21X-h7-ZKd"/>
+                                                                        <constraint firstItem="Yzy-FZ-UsN" firstAttribute="leading" secondItem="BuO-Bd-0QO" secondAttribute="trailing" constant="8" id="4jg-QS-6At"/>
                                                                         <constraint firstAttribute="bottom" secondItem="8bD-L6-1Wf" secondAttribute="bottom" id="5ZQ-1m-eej"/>
                                                                         <constraint firstAttribute="bottom" secondItem="jc7-YT-5y1" secondAttribute="bottom" id="Cv1-eU-Np1"/>
                                                                         <constraint firstItem="7Gs-Gn-aCN" firstAttribute="leading" secondItem="6za-4r-yff" secondAttribute="trailing" constant="8" id="DEW-I9-Afq"/>
-                                                                        <constraint firstItem="8bD-L6-1Wf" firstAttribute="leading" secondItem="BuO-Bd-0QO" secondAttribute="trailing" constant="8" id="DUW-da-si3"/>
                                                                         <constraint firstItem="Yzy-FZ-UsN" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="ERi-3h-SWd"/>
                                                                         <constraint firstAttribute="bottom" secondItem="9B0-ES-60u" secondAttribute="bottom" id="Frd-Lk-E5F"/>
                                                                         <constraint firstItem="BuO-Bd-0QO" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="G5d-m7-j9a"/>
@@ -485,17 +485,17 @@
                                                                         <constraint firstAttribute="bottom" secondItem="6za-4r-yff" secondAttribute="bottom" id="K4p-Ib-eXj"/>
                                                                         <constraint firstItem="QHL-qM-UH1" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="K7x-wN-7R5"/>
                                                                         <constraint firstAttribute="bottom" secondItem="36W-A7-2xl" secondAttribute="bottom" id="LhT-8s-UaB"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="8bD-L6-1Wf" secondAttribute="trailing" constant="3" id="Lro-t9-r9U"/>
                                                                         <constraint firstItem="jc7-YT-5y1" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="ORc-1j-3r9"/>
                                                                         <constraint firstItem="8bD-L6-1Wf" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="Vjw-fL-v9j"/>
                                                                         <constraint firstItem="7Gs-Gn-aCN" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="WfA-ua-cis"/>
                                                                         <constraint firstAttribute="bottom" secondItem="BuO-Bd-0QO" secondAttribute="bottom" id="Xif-eZ-Qkk"/>
-                                                                        <constraint firstItem="Yzy-FZ-UsN" firstAttribute="leading" secondItem="8bD-L6-1Wf" secondAttribute="trailing" constant="8" id="YwL-EG-jGz"/>
                                                                         <constraint firstItem="9B0-ES-60u" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="bd7-1L-78s"/>
                                                                         <constraint firstItem="BuO-Bd-0QO" firstAttribute="leading" secondItem="jc7-YT-5y1" secondAttribute="trailing" constant="1" id="bup-ta-bTn"/>
                                                                         <constraint firstItem="6za-4r-yff" firstAttribute="leading" secondItem="9B0-ES-60u" secondAttribute="trailing" constant="8" id="ddz-ps-3bu"/>
                                                                         <constraint firstAttribute="bottom" secondItem="7Gs-Gn-aCN" secondAttribute="bottom" id="fcn-GO-pTE"/>
                                                                         <constraint firstItem="jc7-YT-5y1" firstAttribute="leading" secondItem="36W-A7-2xl" secondAttribute="trailing" constant="8" id="gAP-wX-zhC"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="Yzy-FZ-UsN" secondAttribute="trailing" constant="3" id="mEY-Ck-7mf"/>
+                                                                        <constraint firstItem="8bD-L6-1Wf" firstAttribute="leading" secondItem="Yzy-FZ-UsN" secondAttribute="trailing" constant="8" id="hRW-ag-kPd"/>
                                                                         <constraint firstItem="6za-4r-yff" firstAttribute="top" secondItem="tfF-xC-a9D" secondAttribute="top" id="pFL-Ny-hu4"/>
                                                                         <constraint firstItem="9B0-ES-60u" firstAttribute="leading" secondItem="tfF-xC-a9D" secondAttribute="leading" constant="5" id="qBf-oY-j5L"/>
                                                                         <constraint firstAttribute="bottom" secondItem="Yzy-FZ-UsN" secondAttribute="bottom" id="v9x-hJ-jur"/>
@@ -504,12 +504,12 @@
                                                                     <connections>
                                                                         <outlet property="allyTextField" destination="BuO-Bd-0QO" id="IYH-0j-lIu"/>
                                                                         <outlet property="colorWell" destination="8bD-L6-1Wf" id="Rdu-th-d36"/>
-                                                                        <outlet property="countryTextField" destination="Yzy-FZ-UsN" id="PR4-sb-AJt"/>
+                                                                        <outlet property="countryTextField" destination="Yzy-FZ-UsN" id="X3h-GI-YXV"/>
                                                                         <outlet property="factionImageView" destination="36W-A7-2xl" id="HIz-C0-J9o"/>
                                                                         <outlet property="rankImageView" destination="9B0-ES-60u" id="2IL-a7-8Xn"/>
                                                                         <outlet property="statusImageView" destination="6za-4r-yff" id="Oz7-oh-J0j"/>
                                                                         <outlet property="teamTextField" destination="jc7-YT-5y1" id="geR-lb-yqV"/>
-                                                                        <outlet property="trueSkillTextField" destination="QHL-qM-UH1" id="OeV-hZ-j9t"/>
+                                                                        <outlet property="trueSkillTextField" destination="QHL-qM-UH1" id="SH3-kv-YEL"/>
                                                                         <outlet property="usernameTextField" destination="7Gs-Gn-aCN" id="QHR-1X-QVt"/>
                                                                     </connections>
                                                                 </tableCellView>

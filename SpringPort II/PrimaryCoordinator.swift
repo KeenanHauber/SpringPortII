@@ -125,7 +125,15 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
     func sendChannelMessage(message: String) {
         guard let chanName = channelDataController?.getSelectedChannel() else {return}
         print(chanName) // TODO: -- IRCStyle messages
-        server?.send(SayCommand(chanName: chanName, message: message))
+        var components = message.components(separatedBy: " ")
+        guard let first = components.first else { return }
+        switch first {
+        case "/me":
+            components.remove(at: 0)
+            let remainder = components.joined(separator: " ")
+        default:
+            server?.send(SayCommand(chanName: chanName, message: message))
+        }
     }
     
     func selectChannel(atIndex index: Int) {

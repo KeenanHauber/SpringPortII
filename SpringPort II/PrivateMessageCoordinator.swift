@@ -41,7 +41,7 @@ class PrivateMessageCoordinator: ServerPrivateMessageDelegate {
                 return "Standard"
             }
         }
-        let message = Message(timeStamp: Date(), sender: sender, message: privateMessage, style: style)
+        let message = Message(timeStamp: timeStamp(), sender: sender, message: privateMessage, style: style)
         guard let conversation = (conversations.filter { $0.conversee == sender }).first else {
             let conversation = Conversation(with: sender)
             conversation.new(message)
