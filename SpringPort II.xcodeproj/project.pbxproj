@@ -435,6 +435,7 @@
 		6B8D9E111E85B0A000544CE2 /* Universal */ = {
 			isa = PBXGroup;
 			children = (
+				6BE2CB7C1FB5105400D50C94 /* Unitsync */,
 				D55D38781E1CE53900618EB1 /* AutoResizingFlowLayout.swift */,
 				6B33E94C1EE3FD5300534A8B /* CollectionViewItemSelectionDelegate.swift */,
 				D5A280631E20416B00E46A0D /* CacheManager.swift */,
@@ -537,7 +538,6 @@
 				D55B69A51E1AF1EE0098BB09 /* MainMenu.xib */,
 				D55B69A81E1AF1EE0098BB09 /* Info.plist */,
 				D55B69A31E1AF1EE0098BB09 /* Assets.xcassets */,
-				6BE2CB7C1FB5105400D50C94 /* Unitsync */,
 				D55D387E1E1DAEA400618EB1 /* BattleRoomWindowController */,
 				D55D38681E1C443B00618EB1 /* MainWindowController */,
 				D55B69EF1E1AF4BE0098BB09 /* ViewControllers */,

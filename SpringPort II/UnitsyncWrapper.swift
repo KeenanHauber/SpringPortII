@@ -16,7 +16,7 @@ import Foundation
 class UnitsyncWrapper {
 
     private let handle: DynamicLibraryHandle
-    private let queue = DispatchQueue(label: "com.ghostdust.unitsyncwrapper")
+    private let queue = DispatchQueue(label: "com.springport.unitsyncwrapper")
 
     init?(config: UnitsyncConfig) {
         guard let handle = DynamicLibraryHandle(libraryPath: config.unitsyncPath) else {
