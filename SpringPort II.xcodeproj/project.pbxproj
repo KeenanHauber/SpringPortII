@@ -18,6 +18,7 @@
 		6B33E94D1EE3FD5300534A8B /* CollectionViewItemSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B33E94C1EE3FD5300534A8B /* CollectionViewItemSelectionDelegate.swift */; };
 		6B33E94E1EE3FE0800534A8B /* CollectionViewItemSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B33E94C1EE3FD5300534A8B /* CollectionViewItemSelectionDelegate.swift */; };
 		6B33E9501EE3FF1300534A8B /* GamesCollectionViewDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B33E94F1EE3FF1300534A8B /* GamesCollectionViewDataController.swift */; };
+		6B58FE421FCA864500EE03E0 /* Unitsync in Resources */ = {isa = PBXBuildFile; fileRef = 6B58FE411FCA864500EE03E0 /* Unitsync */; };
 		6B6ACA0D1EC827B800A7E5E5 /* ToSortCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6ACA0C1EC827B800A7E5E5 /* ToSortCommands.swift */; };
 		6B6ACA0E1EC8282700A7E5E5 /* ToSortCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6ACA0C1EC827B800A7E5E5 /* ToSortCommands.swift */; };
 		6B7C47CC1EC513A60043A403 /* AllowedCharsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C47CB1EC513A60043A403 /* AllowedCharsTextField.swift */; };
@@ -85,6 +86,13 @@
 		6BA5FB841FC8D0FB00FFB47C /* DynamicLibraryHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB811FC8D0FB00FFB47C /* DynamicLibraryHandle.swift */; };
 		6BA5FB861FC8DFA200FFB47C /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB851FC8DFA200FFB47C /* MapData.swift */; };
 		6BA5FB881FC8DFA900FFB47C /* ModData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB871FC8DFA900FFB47C /* ModData.swift */; };
+		6BA5FB8B1FC8EE9600FFB47C /* DynamicLibraryHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB811FC8D0FB00FFB47C /* DynamicLibraryHandle.swift */; };
+		6BA5FB8C1FC8EE9900FFB47C /* UnitsyncConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB7F1FC8D0FB00FFB47C /* UnitsyncConfig.swift */; };
+		6BA5FB8D1FC8EE9B00FFB47C /* UnitsyncWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB801FC8D0FB00FFB47C /* UnitsyncWrapper.swift */; };
+		6BA5FB8E1FC8EE9E00FFB47C /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB851FC8DFA200FFB47C /* MapData.swift */; };
+		6BA5FB8F1FC8EEA000FFB47C /* ModData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB871FC8DFA900FFB47C /* ModData.swift */; };
+		6BA5FB921FC91A7900FFB47C /* EngineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB911FC91A7900FFB47C /* EngineData.swift */; };
+		6BA5FB931FC91AA100FFB47C /* EngineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB911FC91A7900FFB47C /* EngineData.swift */; };
 		6BBE4B011F63FED200E95AA2 /* LaunchScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE4B001F63FED200E95AA2 /* LaunchScriptManager.swift */; };
 		6BBE4B021F63FED200E95AA2 /* LaunchScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE4B001F63FED200E95AA2 /* LaunchScriptManager.swift */; };
 		6BBE4B3B1F64180C00E95AA2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE4B3A1F64180C00E95AA2 /* LICENSE */; };
@@ -224,6 +232,7 @@
 		6B33E9491EE3FBE000534A8B /* GamesCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GamesCollectionViewItem.xib; path = SpringRTSHub/GamesCollectionViewItem.xib; sourceTree = "<group>"; };
 		6B33E94C1EE3FD5300534A8B /* CollectionViewItemSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewItemSelectionDelegate.swift; sourceTree = "<group>"; };
 		6B33E94F1EE3FF1300534A8B /* GamesCollectionViewDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamesCollectionViewDataController.swift; path = SpringRTSHub/GamesCollectionViewDataController.swift; sourceTree = "<group>"; };
+		6B58FE411FCA864500EE03E0 /* Unitsync */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unitsync; sourceTree = "<group>"; };
 		6B6ACA0C1EC827B800A7E5E5 /* ToSortCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToSortCommands.swift; sourceTree = "<group>"; };
 		6B7C47CB1EC513A60043A403 /* AllowedCharsTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllowedCharsTextField.swift; sourceTree = "<group>"; };
 		6B8D9E041E85AF6600544CE2 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -254,6 +263,7 @@
 		6BA5FB811FC8D0FB00FFB47C /* DynamicLibraryHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicLibraryHandle.swift; sourceTree = "<group>"; };
 		6BA5FB851FC8DFA200FFB47C /* MapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapData.swift; sourceTree = "<group>"; };
 		6BA5FB871FC8DFA900FFB47C /* ModData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModData.swift; sourceTree = "<group>"; };
+		6BA5FB911FC91A7900FFB47C /* EngineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineData.swift; sourceTree = "<group>"; };
 		6BBE4B001F63FED200E95AA2 /* LaunchScriptManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScriptManager.swift; sourceTree = "<group>"; };
 		6BBE4B3A1F64180C00E95AA2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6BCB26881EC29D200099DCAB /* ConsoleBot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleBot.swift; sourceTree = "<group>"; };
@@ -420,7 +430,6 @@
 				6B8D9E0B1E85B02800544CE2 /* BattleroomController.swift */,
 				6BE957611EBBBB9B009EE315 /* HostedBattleroomController.swift */,
 				6B8D9E041E85AF6600544CE2 /* LoginController.swift */,
-				6B8D9E6C1E85D2B800544CE2 /* MainCoordinator.swift */,
 				6B9E6B401E9731A400E1AD78 /* PrivateMessageCoordinator.swift */,
 				6B2494351E89A7AC00718001 /* ReplayController.swift */,
 				6B8D9E121E85B5E400544CE2 /* ServerCommandController.swift */,
@@ -435,14 +444,14 @@
 		6B8D9E111E85B0A000544CE2 /* Universal */ = {
 			isa = PBXGroup;
 			children = (
-				6BE2CB7C1FB5105400D50C94 /* Unitsync */,
 				D55D38781E1CE53900618EB1 /* AutoResizingFlowLayout.swift */,
-				6B33E94C1EE3FD5300534A8B /* CollectionViewItemSelectionDelegate.swift */,
-				D5A280631E20416B00E46A0D /* CacheManager.swift */,
 				D5A2801E1E1F965300E46A0D /* BattleUDPInterface.swift */,
-				D57FB1821E1EE65C007A0A59 /* NSColor + Hex init.swift */,
+				6B33E94C1EE3FD5300534A8B /* CollectionViewItemSelectionDelegate.swift */,
 				6BBE4B001F63FED200E95AA2 /* LaunchScriptManager.swift */,
+				6B8D9E6C1E85D2B800544CE2 /* MainCoordinator.swift */,
+				D57FB1821E1EE65C007A0A59 /* NSColor + Hex init.swift */,
 				D55B6A1F1E1C37C20098BB09 /* NSView+BackgroundColor.swift */,
+				6BA5FB901FC8EEC500FFB47C /* Cache */,
 				6B8D9E061E85AF6A00544CE2 /* Controllers */,
 				D55B6A0A1E1AF8A60098BB09 /* Server */,
 				D55B69EE1E1AF4B20098BB09 /* Objects */,
@@ -484,14 +493,24 @@
 			path = SpringRTSHubUITests;
 			sourceTree = "<group>";
 		};
+		6BA5FB901FC8EEC500FFB47C /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				6BA5FB911FC91A7900FFB47C /* EngineData.swift */,
+				D5A280631E20416B00E46A0D /* CacheManager.swift */,
+				6BA5FB851FC8DFA200FFB47C /* MapData.swift */,
+				6BA5FB871FC8DFA900FFB47C /* ModData.swift */,
+				6BE2CB7C1FB5105400D50C94 /* Unitsync */,
+			);
+			name = Cache;
+			sourceTree = "<group>";
+		};
 		6BE2CB7C1FB5105400D50C94 /* Unitsync */ = {
 			isa = PBXGroup;
 			children = (
 				6BA5FB811FC8D0FB00FFB47C /* DynamicLibraryHandle.swift */,
 				6BA5FB7F1FC8D0FB00FFB47C /* UnitsyncConfig.swift */,
 				6BA5FB801FC8D0FB00FFB47C /* UnitsyncWrapper.swift */,
-				6BA5FB851FC8DFA200FFB47C /* MapData.swift */,
-				6BA5FB871FC8DFA900FFB47C /* ModData.swift */,
 			);
 			name = Unitsync;
 			sourceTree = "<group>";
@@ -499,6 +518,7 @@
 		D55B69951E1AF1EE0098BB09 = {
 			isa = PBXGroup;
 			children = (
+				6B58FE411FCA864500EE03E0 /* Unitsync */,
 				6BF14E531E8CA9D500A6F766 /* TodoList */,
 				6BF666D51E8DD798003E0ADE /* Functionality */,
 				D55B69A01E1AF1EE0098BB09 /* SpringPort II */,
@@ -895,6 +915,7 @@
 				D55B6A141E1B1C330098BB09 /* SideBarViewController.xib in Resources */,
 				6BF14E4E1E8C9BE500A6F766 /* SinglePlayerViewController.xib in Resources */,
 				D55B69D11E1AF2B30098BB09 /* ChatViewController.xib in Resources */,
+				6B58FE421FCA864500EE03E0 /* Unitsync in Resources */,
 				D55D38671E1C443700618EB1 /* BattleListCollectionViewItem.xib in Resources */,
 				D55B69D51E1AF2EC0098BB09 /* BattleListViewController.xib in Resources */,
 				6BF14E541E8CA9D500A6F766 /* TodoList in Resources */,
@@ -929,6 +950,7 @@
 				6B8D9E5D1E85BCB700544CE2 /* LeaveChannelCommand.swift in Sources */,
 				6B6ACA0E1EC8282700A7E5E5 /* ToSortCommands.swift in Sources */,
 				6B8D9E5F1E85BCB700544CE2 /* JoinChannelCommand.swift in Sources */,
+				6BA5FB8E1FC8EE9E00FFB47C /* MapData.swift in Sources */,
 				6B8D9E631E85BCBE00544CE2 /* Map.swift in Sources */,
 				6B8D9E611E85BCB700544CE2 /* ExitCommand.swift in Sources */,
 				6B8D9E601E85BCB700544CE2 /* BattleCommands.swift in Sources */,
@@ -941,11 +963,13 @@
 				6B9042691EC005D800431848 /* SinglePlayerController.swift in Sources */,
 				6B24943A1E8A124A00718001 /* Replay.swift in Sources */,
 				6B8D9E441E85BC9700544CE2 /* AutoResizingFlowLayout.swift in Sources */,
+				6BA5FB8C1FC8EE9900FFB47C /* UnitsyncConfig.swift in Sources */,
 				6B90426D1EC005D800431848 /* LoginController.swift in Sources */,
 				6B8D9E451E85BC9700544CE2 /* BattleUDPInterface.swift in Sources */,
 				6B8D9E581E85BCB000544CE2 /* PersistentContainer.swift in Sources */,
 				6B8D9E571E85BCB000544CE2 /* NSData+Base64.swift in Sources */,
 				6BD617F71EC8F1FF009D8EEF /* Coordinator.swift in Sources */,
+				6BA5FB8F1FC8EEA000FFB47C /* ModData.swift in Sources */,
 				6B90426A1EC005D800431848 /* MainCoordinator.swift in Sources */,
 				6BD617FA1EC8FE98009D8EEF /* MainViewController.swift in Sources */,
 				6B9042741EC005D800431848 /* ServerCommandController.swift in Sources */,
@@ -961,9 +985,11 @@
 				6B33E94A1EE3FBE000534A8B /* GamesCollectionViewItem.swift in Sources */,
 				6B8D9E651E85BCBE00544CE2 /* Channel.swift in Sources */,
 				6B015E901EC3B8B500B587F2 /* Console.swift in Sources */,
+				6BA5FB8D1FC8EE9B00FFB47C /* UnitsyncWrapper.swift in Sources */,
 				6B8D9E561E85BCB000544CE2 /* ServerMessage.swift in Sources */,
 				6B8D9E691E85BCBE00544CE2 /* User.swift in Sources */,
 				6B8D9E5B1E85BCB000544CE2 /* TASServer.swift in Sources */,
+				6BA5FB8B1FC8EE9600FFB47C /* DynamicLibraryHandle.swift in Sources */,
 				6B8D9E661E85BCBE00544CE2 /* Message.swift in Sources */,
 				6B90426E1EC005D800431848 /* ServerMessageController.swift in Sources */,
 				6B8D9E1D1E85BC5300544CE2 /* AppDelegate.swift in Sources */,
@@ -977,6 +1003,7 @@
 				6B8D9E621E85BCB700544CE2 /* ServerInformationCommands.swift in Sources */,
 				6B33E94E1EE3FE0800534A8B /* CollectionViewItemSelectionDelegate.swift in Sources */,
 				6B9042701EC005D800431848 /* ChannelDataController.swift in Sources */,
+				6BA5FB931FC91AA100FFB47C /* EngineData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1058,6 +1085,7 @@
 				6BE957621EBBBB9B009EE315 /* HostedBattleroomController.swift in Sources */,
 				6B8D9E101E85B06E00544CE2 /* ChannelDataController.swift in Sources */,
 				6BA5FB831FC8D0FB00FFB47C /* UnitsyncWrapper.swift in Sources */,
+				6BA5FB921FC91A7900FFB47C /* EngineData.swift in Sources */,
 				6B8D9E0E1E85B05800544CE2 /* UsersDataController.swift in Sources */,
 				D55B69FF1E1AF8A10098BB09 /* LoginCommand.swift in Sources */,
 				D57FB1831E1EE65C007A0A59 /* NSColor + Hex init.swift in Sources */,

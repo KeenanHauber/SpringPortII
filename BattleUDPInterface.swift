@@ -34,7 +34,7 @@ class BattleUDPInterface: NSObject, SocketDelegate {
         
         switch commandName {
         default:
-            print("Unrecognised message from host: \(message)")
+            break
         }
     }
     // MARK: - SocketDelegate
