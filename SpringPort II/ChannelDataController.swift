@@ -40,8 +40,9 @@ class ChannelDataController: ServerChannelDelegate, ChannelDataSource {
     
     func server(_ server: TASServer, successfullyJoinedChannelNamed chanName: String) {
         channels.append(Channel(name: chanName))
-        selectedChannel = (channels.last?.name)!
+		selectedChannel = chanName // Was: (channels.last?.name)!
         output?.channelListUpdated(channels.count)
+		// TODO: -- Work out why the following code is commented out
 //        mainWindowController.channelSegmentedControl.segmentCount = channels.count
 //        for index in 0..<channels.count {
 //            mainWindowController.channelSegmentedControl.setLabel(channels[index].name, forSegment: index)

@@ -13,7 +13,7 @@ struct LoginCommand: ServerCommand {
     let username: String
     let password: String
     var description: String {
-        let encodedPassword = password.md5()!.base64Encoded()
+		let encodedPassword = password.md5()!.base64Encoded() // TODO: --Error checking
         return "LOGIN \(username) \(encodedPassword) 0 * SpringRTSHub 0.01\t0\ta b cl p sp"
     }
 }

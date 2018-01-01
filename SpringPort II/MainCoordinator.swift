@@ -103,9 +103,15 @@ class MainCoordinator: ServerCommandRouter, LoginControllerDelegate, ServerMessa
     func userWentIngame(_ username: String) {
         guard let battleroomController = battleroomController else { return }
         if username == battleroomController.battle?.founder {
-            let ip = battleroomController.battle?.ip
-            let port = battleroomController.battle?.port
-            springProcessController?.launchSpring(andConnectTo: ip!, at: port!, with: self.username!/*straight username is the hostname*/, and: self.password!)
+			guard let ip = battleroomController.battle?.ip, let port = battleroomController.battle?.port else {
+				debugPrint("Non-Fatal Error: No host address to connect engine to.")
+				return
+			}
+			guard let username = self.username, let password = self.password else {
+				debugPrint("Non-Fatal Error: No username or password with which to connect to host. This should never happen.")
+				return
+			}
+			springProcessController?.launchSpring(andConnectTo: ip, at: port, with: username, and: password) // username is a variable name used twice in this function; please fix?
         }
     }
     
@@ -120,6 +126,7 @@ class MainCoordinator: ServerCommandRouter, LoginControllerDelegate, ServerMessa
     
     // MARK: - BattleListControllerDelegate
     func request(toJoin battle: String, with password: String) {
+		
         let joinBattleCommand = JoinBattleCommand(battleID: battle, password: password, scriptPassword: self.password!)
         server?.send(joinBattleCommand)
     }
@@ -138,11 +145,17 @@ class MainCoordinator: ServerCommandRouter, LoginControllerDelegate, ServerMessa
     func relaunchSpring() {
         // TODO: -- Check if host is ingame
         guard let battleroomController = battleroomController else { return }
-        let ip = battleroomController.battle?.ip
-        let port = battleroomController.battle?.port
+		guard let ip = battleroomController.battle?.ip, let port = battleroomController.battle?.port else {
+			debugPrint("Non-Fatal Error: No host address to connect engine to.")
+			return
+		}
+		guard let username = self.username, let password = self.password else {
+			debugPrint("Non-Fatal Error: No username or password with which to connect to host. This should never happen.")
+			return
+		}
         
         let springProcessController = SpringProcessController()
-        springProcessController.launchSpring(andConnectTo: ip!, at: port!, with: username!, and: password!) // I don't like how this function is presented, but whateves. Plus with all the ! s it's ripe to fail
+        springProcessController.launchSpring(andConnectTo: ip, at: port, with: username, and: password) 
         self.springProcessController = springProcessController
     }
 

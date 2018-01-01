@@ -16,7 +16,7 @@ class User: NSObject {
     
     var status: ClientStatus
     
-    var battleStatus: BattleStatus?
+	var battleStatus: BattleStatus? // TODO: -- Non-optionalise this??
     
     init?(message: String) {
         let components = message.components(separatedBy: " ")

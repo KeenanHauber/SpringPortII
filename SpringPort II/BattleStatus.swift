@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class BattleStatus: NSObject {
+class BattleStatus: NSObject { // Why is this a class?
     enum SyncStatus: Int {
         case unknown = 0
         case synced = 1
@@ -52,8 +52,8 @@ class BattleStatus: NSObject {
         self.side = (statusValue & 0b1111000000000000000000000000) >> 24
         
         // Color
-        let selfColorAsInt = Int(color)
-        self.color = NSColor(netHex: selfColorAsInt!)
+		let selfColorAsInt: Int = Int(color) ?? 0
+        self.color = NSColor(netHex: selfColorAsInt)
         
     }
 }

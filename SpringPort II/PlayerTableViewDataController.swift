@@ -13,8 +13,11 @@ import Cocoa
 class PlayerTableViewDataController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
     weak var dataSource: BattleRoomDataSource?
     func numberOfRows(in tableView: NSTableView) -> Int {
-        guard let _ = dataSource else { return 0 }
-        return (dataSource!.numberOfPlayersInCurrentBattle())
+        guard let dataSource = dataSource else {
+			debugPrint("Non-Fatal Error: No DataSource set for PlayerTableViewDataController")
+			return 0
+		}
+        return (dataSource.numberOfPlayersInCurrentBattle())
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -35,28 +38,21 @@ class PlayerTableViewDataController: NSObject, NSTableViewDelegate, NSTableViewD
             tableCellView.rankImageView.image = #imageLiteral(resourceName: "ServerStack")
         } else {
             switch user.status.rank {
-            case .a:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 1: Newbie")
-            case .b:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 2")
-            case .c:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 3")
-            case .d:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 4")
-            case .e:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 5")
-            case .f:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 6")
-            case .g:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 7")
-            case .h:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 8")
+            case .a: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 1: Newbie")
+            case .b: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 2")
+            case .c: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 3")
+            case .d: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 4")
+            case .e: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 5")
+            case .f: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 6")
+            case .g: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 7")
+            case .h: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 8")
+			case .i: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Caution")
             }
         }
         
         
         if let battleStatus = user.battleStatus {
-            if battleStatus.synced == .unsynced || battleStatus.synced == .unknown {
+			if battleStatus.synced == .unsynced || battleStatus.synced == .unknown {// TODO: -- Make this a switch case thing
                 tableCellView.statusImageView.image = #imageLiteral(resourceName: "Caution")
             }else if user.status.isInGame == true {
                 tableCellView.statusImageView.image = #imageLiteral(resourceName: "In Battle Icon")

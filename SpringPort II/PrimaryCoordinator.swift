@@ -201,20 +201,28 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
     }
     
     func updateClientBattleStatus(to option: BattleStatusOption) {
-        guard let client = (usersDataController?.users.filter {$0.username == self.username })?[0] else {return}
-        switch option {
+        guard let client = (usersDataController?.users.filter {$0.username == self.username })?[0] else {
+			debugPrint("Non-Fatal Error: Cannot find ")
+			return
+		}
+		
+		guard let battleStatus = client.battleStatus else {
+			debugPrint("Non-Fatal Error: No battleStatus for client (self), cannot update battlestatus")
+			return
+		}
+		switch option { // NOTE: -- Battlestatus is a class; therefore it affects the users' stored battlestatus. Should I update appropriately? Or should I set it to a struct? [probably wise actually] 
         case .Spectator:
-            client.battleStatus!.isPlayer = false
-            server?.send(MyBattleStatusCommand(battleStatusObject: client.battleStatus!))
+            battleStatus.isPlayer = false
+            server?.send(MyBattleStatusCommand(battleStatusObject: battleStatus))
         case .Player:
-            client.battleStatus!.isPlayer = true
-            server?.send(MyBattleStatusCommand(battleStatusObject: client.battleStatus!))
+            battleStatus.isPlayer = true
+            server?.send(MyBattleStatusCommand(battleStatusObject: battleStatus))
         case .Ready:
-            client.battleStatus!.isReady = true
-            server?.send(MyBattleStatusCommand(battleStatusObject: client.battleStatus!))
+            battleStatus.isReady = true
+            server?.send(MyBattleStatusCommand(battleStatusObject: battleStatus))
         case .Unready:
-            client.battleStatus!.isReady = false
-            server?.send(MyBattleStatusCommand(battleStatusObject: client.battleStatus!))
+            battleStatus.isReady = false
+            server?.send(MyBattleStatusCommand(battleStatusObject: battleStatus))
         }
     }
 }

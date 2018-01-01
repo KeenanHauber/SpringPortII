@@ -19,6 +19,7 @@ struct ClientStatus {
         case f = 5 // 300+ hours
         case g = 6 // 1000+ hours
         case h = 7 // 3000+ hours
+		case i = 8 // Error
     }
 
     let isInGame: Bool
@@ -31,7 +32,7 @@ struct ClientStatus {
         let statusValue = Int(statusString) ?? 0
         isInGame = (statusValue & 0b1) == 0b1
         isAway = (statusValue & 0b10) == 0b10
-        rank = Rank(rawValue: (statusValue & 0b11100) >> 2)!
+        rank = Rank(rawValue: (statusValue & 0b11100) >> 2) ?? .i
         isServerMod = (statusValue & 0b100000) == 0b100000
         isBot = (statusValue & 0b1000000) == 0b1000000
     }
@@ -50,6 +51,7 @@ extension ClientStatus.Rank: CustomStringConvertible {
         case .f: return "⊡" // ⩷
         case .g: return "⧇"
         case .h: return "⧈" // ⧆
+		case .i: return ""
         }
     }
 
@@ -63,6 +65,7 @@ extension ClientStatus.Rank: CustomStringConvertible {
         case .f: return "300+ hours"
         case .g: return "1000+ hours"
         case .h: return "3000+ hours"
+		case .i: return ""
         }
     }
 }

@@ -34,10 +34,11 @@ class ServerMessageController: ServerMessageDelegate {
         let components = message.message.components(separatedBy: " ")
         if components[0] == "Your" && components[1] == "ingame" {
             ingameTimeAsString = components.joined(separator: " ")
-            ingameTime = Int(components[4])!
-            ingameHours = (ingameTime!)/(60)
-            output?.setIngameTime(as: ingameTime!)
-//            mainWindowController.ingameTimeTextField.stringValue = "Ingame Time: \(String(ingameTime)) minutes (\(ingameHours) hours)"
+            ingameTime = Int(components[4])! // How to not have to force unwrap this?
+			guard let ingameTime = Int(components[4]) else { debugPrint("Non-Fatal Error: Failed to parse ingame time message"); return}
+            ingameHours = ingameTime/60
+            output?.setIngameTime(as: ingameTime)
+			self.ingameTime = ingameTime
         }
     }
     

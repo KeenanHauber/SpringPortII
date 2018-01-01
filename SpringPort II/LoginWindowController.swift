@@ -42,7 +42,14 @@ class LoginWindowController: NSWindowController {
     }
     
     func dismissWithModalResponse(_ response: NSModalResponse) {
-        window!.sheetParent!.endSheet(window!, returnCode: response)
+		guard let window = window else {
+			debugPrint("Non-Fatal Error: No Window to dismiss modally.")
+			return
+		}
+		guard let sheetParent = window.sheetParent else {
+			fatalError("Fatal Error: window has no sheetParent; cannot dismiss")
+		}
+        sheetParent.endSheet(window, returnCode: response)
     }
 
 }

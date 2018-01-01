@@ -46,14 +46,16 @@ class ScriptTxtManager {
     }
     
     func createScriptDotTxtFile() {
+		guard let url = URL(string: scriptDotTxtPath) else {
+			debugPrint("Non-Fatal Error: cannot convert scriptDotTxtPath to URL. (Should never happen). Will not procede to attempt to write file.")
+			return
+		}
         do {
-            print("trying to create new file…")
-            delegate?.present(error: "trying to create new file…")
-            try fileManager.createDirectory(at: URL(string: scriptDotTxtPath)!, withIntermediateDirectories: true, attributes: nil)
-            
+			print("trying to create new file…")
+			try fileManager.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
         } catch {
             debugPrint("failed to create file, returning")
-            delegate?.present(error: "failed to create file, returning")
+			delegate?.present(error: "failed to create file, returning") // TODO: -- Remove
             return
         }
         print("successfully wrote to file")

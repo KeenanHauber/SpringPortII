@@ -34,7 +34,7 @@ class BattleroomController: ServerBattleDelegate {
     weak var delegate: BattleroomControllerDelegate?
     weak var output: BattleRoomDataOutput?
     
-    var battle: Battle?
+	var battle: Battle? // TODO: -- Make this a non-optional to save later error checking
     var battleMessages: [Message] = []
     
     func relaunchSpring() {
@@ -155,22 +155,26 @@ class BattleroomController: ServerBattleDelegate {
 
 extension BattleroomController: BattleRoomDataSource { // I am so trusting with the force unwraps. Yay. But whatever.
     func numberOfPlayersInCurrentBattle() -> Int {
-        return (battle?.playerCount)!
+		guard let battle = battle else { fatalError("Fatal Error: No battle set from which to retrieve playerCount") }
+        return battle.playerCount
     }
     
     func numberOfSpectatorsInCurrentBattle() -> Int {
-        return (battle?.spectatorCount)!
+		guard let battle = battle else { fatalError("Fatal Error: No battle set from which to retrieve spectatorCount") }
+		return battle.spectatorCount
     }
     
     func player(at row: Int) -> User {
         var players: [User] = []
-        for username in (battle?.players)! {
-            players.append((delegate?.find(user: username)!)!)
-        }
+		guard let battle = battle else { fatalError("Fatal Error: No battle set from which to retrieve players") }
+		for username in battle.players {
+			guard let user = delegate?.find(user: username) else { fatalError("Fatal Error: Cannot find ") }
+			players.append(user)
+		}
+		players = players.filter { $0.battleStatus?.isPlayer == true }
         players.sort {$0.username < $1.username}
         players.sort {($0.battleStatus?.allyNumber ?? 0) < ($1.battleStatus?.allyNumber ?? 1)}
-        battle?.updateNumberOfPlayers() // ?? Waht why is this here?
-        players = players.filter { $0.battleStatus?.isPlayer == true }
+		
         if row < players.count {
             return players[row]
         } else {
@@ -181,12 +185,17 @@ extension BattleroomController: BattleRoomDataSource { // I am so trusting with 
     
     func spectator(at row: Int) -> User {
         var spectators: [User] = []
-        for username in (battle?.players)! {
-            spectators.append((delegate?.find(user: username)!)!)
+		guard let battle = battle else { fatalError("Fatal Error: No battle set from which to retrieve players") }
+		
+        for username in battle.players {
+			guard let user = delegate?.find(user: username) else { fatalError("Fatal Error: Cannot find ") }
+            spectators.append(user)
         }
+		spectators = spectators.filter { $0.battleStatus?.isPlayer == false }
+		
         spectators.sort {$0.username < $1.username}
-        battle?.updateNumberOfPlayers()
-        spectators = spectators.filter { $0.battleStatus?.isPlayer == false }
+        battle.updateNumberOfPlayers()
+		
         if row < spectators.count {
             return spectators[row]
         } else {
@@ -195,6 +204,7 @@ extension BattleroomController: BattleRoomDataSource { // I am so trusting with 
     }
     
     func trueSkillDictionary() -> [String : String] {
-        return (battle?.trueSkillDictionary)!
+		guard let battle = battle else { fatalError("Fatal Error: No battle set from which to retrieve trueSkillDictionary") }
+        return battle.trueSkillDictionary
     }
 }

@@ -16,7 +16,7 @@ class SpringProcessController {
     func launchSpring(andConnectTo ip: String, at port: String, with username: String, and password: String) {
         self.username = username
         self.password = password
-        let scriptTxtManager = ScriptTxtManager(ip: ip, port: port, username: self.username!, scriptPassword: self.password!)
+        let scriptTxtManager = ScriptTxtManager(ip: ip, port: port, username: username, scriptPassword: password)
         scriptTxtManager.delegate = self
         scriptTxtManager.prepareForLaunchOfSpringAsClient()
         startSpringRTS()
@@ -24,20 +24,21 @@ class SpringProcessController {
     
     func forceLaunchSpring(andConnectTo ip: String, at port: String, with scriptPassword: String, and username: String) {
         self.username = username
-        let scriptTxtManager = ScriptTxtManager(ip: ip, port: port, username: self.username!, scriptPassword: scriptPassword)
+        let scriptTxtManager = ScriptTxtManager(ip: ip, port: port, username: username, scriptPassword: scriptPassword)
         scriptTxtManager.delegate = self
         scriptTxtManager.prepareForLaunchOfSpringAsClient()
         startSpringRTS()
     }
     
     func startSpringRTS() {
-        let path = NSWorkspace.shared().fullPath(forApplication: "Spring_103.0.app")
-        let bundle = Bundle(path: path!)!
+		// TODO: --Some sort of cache interface to allow multiple engines to be used
+        guard let path = NSWorkspace.shared().fullPath(forApplication: "Spring_103.0.app") else { debugPrint("Non-Fatal Error: could not find Spring_103.0.app"); return}
+		guard let bundle = Bundle(path: path) else { debugPrint("Non-Fatal Error: could not create bundle object for SpringRTS"); return}
         
-        //        let scriptFileName = "script.txt"
+        let scriptFileName = "script.txt"
         let process = Process()
         process.launchPath = bundle.executablePath
-        process.arguments = ["\(NSHomeDirectory())/.spring/script.txt"]
+        process.arguments = ["\(NSHomeDirectory())/.spring/\(scriptFileName)"]
         process.terminationHandler = { _ in
             print("Spring engine exited")
             self.springProcess = nil

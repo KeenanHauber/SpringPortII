@@ -11,8 +11,11 @@ import Cocoa
 class SpectatorTableViewDataController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
     weak var dataSource: BattleRoomDataSource?
     func numberOfRows(in tableView: NSTableView) -> Int {
-        guard let _ = dataSource else { return 0 }
-        return (dataSource!.numberOfSpectatorsInCurrentBattle())
+        guard let dataSource = dataSource else {
+			debugPrint("Non-Fatal Error: No DataSource set for SpectatorTableViewDataController")
+			return 0
+		}
+        return (dataSource.numberOfSpectatorsInCurrentBattle())
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -31,22 +34,15 @@ class SpectatorTableViewDataController: NSObject, NSTableViewDelegate, NSTableVi
             tableCellView.rankImageView.image = #imageLiteral(resourceName: "ServerStack")
         } else {
             switch user.status.rank {
-            case .a:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 1: Newbie")
-            case .b:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 2")
-            case .c:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 3")
-            case .d:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 4")
-            case .e:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 5")
-            case .f:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 6")
-            case .g:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 7")
-            case .h:
-                tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 8")
+            case .a: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 1: Newbie")
+            case .b: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 2")
+            case .c: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 3")
+            case .d: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 4")
+            case .e: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 5")
+            case .f: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 6")
+            case .g: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 7")
+            case .h: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Rank 8")
+			case .i: tableCellView.rankImageView.image = #imageLiteral(resourceName: "Caution")
             }
         }
         

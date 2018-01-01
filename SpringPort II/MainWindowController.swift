@@ -159,41 +159,47 @@ extension MainWindowController: UsersDataOutput {
             rankNameTextField.stringValue = "Rank 1:"
             rankImageView.image = #imageLiteral(resourceName: "Rank 1: Newbie")
             rankImageView.backgroundColor = NSColor.black
+			
         case .b:
-            debugPrint("case b")
             rankNameTextField.stringValue = "Rank 2:"
             rankImageView.image = #imageLiteral(resourceName: "Rank 2")
             rankImageView.backgroundColor = NSColor.black
+			
         case .c:
-            debugPrint("case c")
             rankNameTextField.stringValue = "Rank 3:"
             rankImageView.image = #imageLiteral(resourceName: "Rank 3")
             rankImageView.backgroundColor = NSColor.black
+			
+			
         case .d:
-            debugPrint("case d")
             rankNameTextField.stringValue = "Rank 4:"
             rankImageView.image = #imageLiteral(resourceName: "Rank 4")
             rankImageView.backgroundColor = NSColor.black
+			
         case .e:
-            debugPrint("case e")
             rankNameTextField.stringValue = "Rank 5:"
             rankImageView.image = #imageLiteral(resourceName: "Rank 5")
             rankImageView.backgroundColor = NSColor.black
+			
         case .f:
-            debugPrint("case f")
             rankNameTextField.stringValue = "Rank 6:"
             rankImageView.image = #imageLiteral(resourceName: "Rank 6")
             rankImageView.backgroundColor = NSColor.black
+			
         case .g:
-            debugPrint("case g")
             rankNameTextField.stringValue = "Rank 7:"
             rankImageView.image = #imageLiteral(resourceName: "Rank 7")
             rankImageView.backgroundColor = NSColor.black
+			
         case .h:
-            debugPrint("case h")
             rankNameTextField.stringValue = "Rank 8:"
             rankImageView.image = #imageLiteral(resourceName: "Rank 8")
             rankImageView.backgroundColor = NSColor.black
+			
+		case .i:
+			rankNameTextField.stringValue = "Error: Could not parse rank."
+			rankImageView.image = #imageLiteral(resourceName: "Caution")
+			rankImageView.backgroundColor = NSColor.black
         }
     }
 }

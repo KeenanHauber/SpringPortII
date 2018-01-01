@@ -64,7 +64,11 @@ class OpenBattleListDataController: NSObject, NSCollectionViewDelegate, NSCollec
     }
     
     func founder(for battle: Battle) -> User {
-        return (dataSource?.founder(for: battle))!
+		guard let dataSource = dataSource else {
+			debugPrint("Non-Fatal Error: Cannot find battle founder: No DataSource set. Returning a default user instead. (This should never happen)!!")
+			return User() 
+		}
+        return dataSource.founder(for: battle)
     }
 }
 

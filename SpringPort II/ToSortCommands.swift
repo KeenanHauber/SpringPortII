@@ -12,7 +12,7 @@ struct ChangePasswordCommand: ServerCommand {
     var oldPassword: String
     var newPassword: String
     var description: String {
-        let p1 = oldPassword.md5()!.base64Encoded()
+		let p1 = oldPassword.md5()!.base64Encoded() // TODO: -- Error checking
         let p2 = newPassword.md5()!.base64Encoded()
         return "CHANGEPASSWORD \(p1) \(p2)"
     }

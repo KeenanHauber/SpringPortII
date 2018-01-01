@@ -98,7 +98,10 @@ class BattleListController: ServerBattleListDelegate, BattleListDataSource {
     }
     func founder(for battle: Battle) -> User {
         let username = battle.founder
-        return (delegate?.find(user: username)!)! // Can I stop force unwrapping things?
+		guard let user = delegate?.find(user: username) else {
+			fatalError("Fatal Error: Cannot find host's user object.")
+		}
+		return user
     }
     
     func request(toJoin battle: String, with password: String) {
@@ -106,8 +109,6 @@ class BattleListController: ServerBattleListDelegate, BattleListDataSource {
     }
     
     // Mark: -- Open Battles Only
-    
-    // TODO: -- Make these work!
     
     func openBattleCount() -> Int {
         let filteredBattles = battles.filter {$0.playerCount > 0}
