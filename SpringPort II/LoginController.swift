@@ -14,22 +14,14 @@ protocol LoginControllerDelegate: ServerCommandRouter {
 }
 
 class LoginController: ServerLoginDelegate { // Do you need this when logged in?
-//    var loginSheet: LoginWindowController!
     weak var delegate: LoginControllerDelegate!
 
     
     func server(_ server: TASServer, didLoginUserNamed name: String) {
-//        delegate?.send(GetIngameTimeCommand())
         delegate?.didSuccessfullyLogIn()
-        //        debugPrint("Succesfully logged in \(name)")
-        //        loginViewController.dismiss(self)
-        //   mainWindowController.userNameTextField.stringValue = name // Do this somewhere else
-//        autoJoinChannels.forEach { channel in
-//            server.send(JoinChannelCommand(chanName: channel, password: ""))
-//        }
     }
     func server(_ server: TASServer, didConnectToServerWithInfo info: LobbyServerInfo) {
-        delegate?.sendLoginCommand() // TODO: - Use connect as soon as UI is up and running again.
+		delegate?.sendLoginCommand() // TODO: -- Use connect as soon as UI is up and running again. // umm can't interpret this now :D
     }
     func server(_ server: TASServer, didDenyLoginBecauseOf reason: String) {
         debugPrint(reason)
