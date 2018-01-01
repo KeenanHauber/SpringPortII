@@ -442,13 +442,13 @@
 		D55B69A01E1AF1EE0098BB09 /* SpringPort II */ = {
 			isa = PBXGroup;
 			children = (
-				6BA912CB1FF9C82600A8C60E /* MainMenu.xib */,
 				D55B69A11E1AF1EE0098BB09 /* AppDelegate.swift */,
+				D55B6A1D1E1BBD5A0098BB09 /* Background Views.swift */,
+				6BA912CB1FF9C82600A8C60E /* MainMenu.xib */,
 				6B8D9E781E860B1000544CE2 /* PrimaryCoordinator.swift */,
 				6BF14E4B1E8C9BE500A6F766 /* SinglePlayerViewController.swift */,
 				6BF14E4C1E8C9BE500A6F766 /* SinglePlayerViewController.xib */,
 				D55B6A0D1E1B047B0098BB09 /* SpringPort II-Bridging-Header.h */,
-				D55B6A1D1E1BBD5A0098BB09 /* Background Views.swift */,
 				D55B69A81E1AF1EE0098BB09 /* Info.plist */,
 				D55B69A31E1AF1EE0098BB09 /* Assets.xcassets */,
 				D55D387E1E1DAEA400618EB1 /* BattleRoomWindowController */,
