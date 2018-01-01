@@ -1,5 +1,5 @@
 # MacTASClient
-A native MacOS client for the TASpring lobbyserver
+A native MacOS client for the TASServer, a server designed for organising multiplayer games running on the [Spring Engine](https://springrts.com). The Official Server runs the [Uberserver](https://github.com/spring/uberserver). The lobbyserver protocol description may be found [here](https://springrts.com/dl/LobbyProtocol/ProtocolDescription.html). An alternative lobby client, (SpringLobby, Cross-platform) may be found [here](https://github.com/springlobby/springlobby).
 
 ## Current functionality
 Currently the application can: 
