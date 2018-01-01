@@ -37,7 +37,8 @@ class ServerCommandController {
 		
 		delegate?.setTASServer(server)
 		
-		//self.server = server // Really don't need to do this. So it's removed.
+		self.server = server // DON"T COMMENT THIS OUT IT"S USEFUL
+		// Why though? I don't know. But it is. Stops it from crashing.
 		
 		// - - TODO: GIVE THE SERVER ITS DELEGATES
 		// Or do you not want to do that?
