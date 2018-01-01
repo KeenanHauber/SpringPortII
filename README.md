@@ -8,7 +8,7 @@ Currently the application can:
 - Join and participate in a battle
 - Launch a singleplayer game
 
-![Main window](Images/Main Window.png?raw=true "Main window")
+![Main window](Images/Main%20Window.png?raw=true "Main window")
 ![Battleroom](Images/Battleroom.png?raw=true "Battleroom")
 
 
