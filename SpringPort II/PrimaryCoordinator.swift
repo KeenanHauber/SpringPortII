@@ -70,10 +70,17 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
     }
     
     override func loginSetUp() {
-        mainWindowController.userNameTextField.stringValue = username!
+		guard let username = username else {
+			fatalError("Fatal Error: Login requested without username")
+		}
+		guard let loginWindow = mainWindowController.loginWindow else {
+			fatalError("Fatal Error: Login Window cannot be dismissed; does not exist")
+		}
+		
+		mainWindowController.userNameTextField.stringValue = username
         mainWindowController.hideSinglePlayerWarning()
-        mainWindowController.window?.endSheet(mainWindowController.loginWindow!)
-        mainWindowController.loginViewController = nil
+        mainWindowController.window?.endSheet(loginWindow)
+		mainWindowController.loginViewController = nil
         mainWindowController.loginWindow = nil
     }
     
@@ -173,7 +180,7 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
     //////////////////////////////////////////////////
     
     func myBattleNATType() -> NATType {
-        return (battleroomController?.battle!.natType) ?? .none
+        return (battleroomController?.battle?.natType) ?? .none
     }
     
     func myBattleStatus() -> BattleStatus {

@@ -18,18 +18,30 @@ class ServerCommandController {
     var password: String?
     // Umm… is this object ever set as the delegate?
     func connect(to server: String, with username: String, and password: String) {
-        let serverName = server
+		let port = 8200 // TODO: -- Add proper handling of port
+		
+		var serverName = server // Variable so can fix format of "Official Server"
+		var serverAddress = serverName
+		self.username = username
+		self.password = password
+		
         if serverName == "Official Server" || serverName == "Official server" || serverName == "official Server" || serverName == "official server" {
-            self.server = TASServer(name: "Local Server", address: "lobby.springrts.com", port: 8200)
-//            self.server = TASServer(name: "Official Server", address: "lobby.springrts.com", port: 8200)
-            self.username = username
-            self.password = password
-            // - - TODO: GIVE THE SERVER ITS DELEGATES
-            // Or do you not want to do that?
-            self.server?.connect()
-        } else {
-            self.server = TASServer(name: "Unknown", address: serverName, port: 8200)
-        }
-        delegate?.setTASServer(self.server!)
+			serverAddress = "lobby.springrts.com"
+			serverName = "Official Server"
+		}
+		let server = TASServer(name: serverName, address: serverAddress, port: port)
+		
+		
+		debugPrint("Connecting to \(serverAddress):\(port)")
+		server.connect()
+		
+		delegate?.setTASServer(server)
+		
+		//self.server = server // Really don't need to do this. So it's removed.
+		
+		// - - TODO: GIVE THE SERVER ITS DELEGATES
+		// Or do you not want to do that?
+		// Wait where does this need to happen?
+		// Does it happen at delegate?
     }
 }

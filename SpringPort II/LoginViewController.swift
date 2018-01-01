@@ -26,13 +26,13 @@ class LoginViewController: NSViewController {
     @IBAction func attemptLogin(_ sender: Any) {
         let username = usernameTextField.stringValue
         let password = passwordTextField.stringValue
-        let server = "Official Server"
+        let server = serverTextField.stringValue
         delegate?.loginRequested(for: username, with: password, to: server)
     }
     @IBAction func attemptRegister(_ sender: Any) {
         let username = usernameTextField.stringValue
         let password = passwordTextField.stringValue
-        let server = "Official Server"
+        let server = serverTextField.stringValue
         delegate?.registerRequested(for: username, with: password, to: server)
     }
     
