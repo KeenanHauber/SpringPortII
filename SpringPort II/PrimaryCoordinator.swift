@@ -108,7 +108,6 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         alert.messageText = agreement
         alert.addButton(withTitle: "Cancel")
         alert.addButton(withTitle: "Agree")
-        guard let loginWindow = mainWindowController.loginWindow else { return }
         let response = alert.runModal()
         
         switch response {

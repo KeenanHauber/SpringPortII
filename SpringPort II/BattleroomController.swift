@@ -79,7 +79,7 @@ class BattleroomController: ServerBattleDelegate {
     func didJoin(_ battle: Battle) {
         self.battle = battle
         setBattleChatLog()
-		updateUsers(for: battle)
+		update()
     }
     func didLeaveBattle() {
         battle = nil
@@ -102,9 +102,10 @@ class BattleroomController: ServerBattleDelegate {
     }
     
     func server(_ server: TASServer, userNamed name: String, didJoinBattleWithId battleId: String) {
-        guard battleId == battle?.battleId else { return }
+        guard let battle = battle, battleId == battle.battleId else { return }
 		battleMessages.append(Message(timeStamp: timeStamp(), sender: "Server", message: "\(name) joined the battle", style: "Server"))
-        setBattleChatLog()
+		battle.players.sort {$0.localizedCaseInsensitiveCompare($1) == .orderedAscending}
+		setBattleChatLog()
         update()
     }
     
@@ -171,8 +172,7 @@ extension BattleroomController: BattleRoomDataSource { // I am so trusting with 
 			players.append(user)
 		}
 		players = players.filter { $0.battleStatus?.isPlayer == true }
-        players.sort {$0.username.localizedCaseInsensitiveCompare($1.username) == .orderedAscending}
-        players.sort {($0.battleStatus?.allyNumber ?? 0) < ($1.battleStatus?.allyNumber ?? 1)}
+		players.sort {($0.battleStatus?.allyNumber ?? 0) < ($1.battleStatus?.allyNumber ?? 1)}
 		
         if row < players.count {
             return players[row]
@@ -191,9 +191,6 @@ extension BattleroomController: BattleRoomDataSource { // I am so trusting with 
             spectators.append(user)
         }
 		spectators = spectators.filter { $0.battleStatus?.isPlayer == false }
-		
-        spectators.sort {$0.username < $1.username}
-		
         if row < spectators.count {
             return spectators[row]
         } else {
