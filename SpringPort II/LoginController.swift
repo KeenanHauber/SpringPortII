@@ -18,10 +18,10 @@ class LoginController: ServerLoginDelegate { // Do you need this when logged in?
 
     
     func server(_ server: TASServer, didLoginUserNamed name: String) {
-        delegate?.didSuccessfullyLogIn()
+		delegate?.didSuccessfullyLogIn()
     }
     func server(_ server: TASServer, didConnectToServerWithInfo info: LobbyServerInfo) {
-		delegate?.sendLoginCommand() // TODO: -- Use connect as soon as UI is up and running again. // umm can't interpret this now :D
+		delegate?.sendLoginCommand()// TODO: -- Use connect as soon as UI is up and running again. // umm can't interpret this now :D
     }
     func server(_ server: TASServer, didDenyLoginBecauseOf reason: String) {
         debugPrint(reason)

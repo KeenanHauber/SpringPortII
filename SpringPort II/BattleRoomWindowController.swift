@@ -24,6 +24,7 @@ protocol BattleRoomWindowControllerDelegate: class {
     func send(_ battleMessage: String)
     func leaveBattle()
     func updateClientBattleStatus(to option: BattleStatusOption)
+	func promoteBattle()
 }
 
 class BattleRoomWindowController: NSWindowController {
@@ -45,7 +46,10 @@ class BattleRoomWindowController: NSWindowController {
     @IBOutlet weak var chatButton: NSButton!
     @IBOutlet var battleChatTextView: NSTextView!
     @IBOutlet weak var spectateButton: NSButton!
-    @IBAction func leaveBattleButtonPressed(_ sender: Any) {
+	@IBAction func promoteButtonPressed(_ sender: Any) {
+		delegate?.promoteBattle()
+	}
+	@IBAction func leaveBattleButtonPressed(_ sender: Any) {
         delegate?.leaveBattle()
     }
     @IBOutlet weak var readyButton: NSButton!

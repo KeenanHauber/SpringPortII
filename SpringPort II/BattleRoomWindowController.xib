@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,8 +15,7 @@
                 <outlet property="chatTextField" destination="eNo-kF-3GI" id="jQI-j4-vEG"/>
                 <outlet property="overImageView" destination="NYB-tZ-fBk" id="e9Y-rl-pVU"/>
                 <outlet property="playersTableView" destination="Y9S-Ts-f92" id="pzx-yv-YFV"/>
-                <outlet property="readyButton" destination="c7S-cf-M8Y" id="Jl7-4O-slJ"/>
-                <outlet property="readyButtonPressed" destination="c7S-cf-M8Y" id="hT4-BL-8pF"/>
+                <outlet property="readyButton" destination="c7S-cf-M8Y" id="TwA-dQ-jUh"/>
                 <outlet property="spectateButton" destination="uLa-0N-hUg" id="yMV-Qt-icc"/>
                 <outlet property="spectatorsTableView" destination="i8y-hV-2aE" id="D7b-ws-9aN"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
@@ -154,7 +153,18 @@
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
-                                                        <action selector="readyButtonPressed:" target="-2" id="ceg-mW-xMS"/>
+                                                        <action selector="readyButtonPressed:" target="-2" id="Tdg-88-8zl"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k0J-Up-CcO">
+                                                    <rect key="frame" x="270" y="218" width="96" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="Promote!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lwa-wU-yTz">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="promoteButtonPressed:" target="-2" id="SYm-qo-k6b"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -254,7 +264,7 @@
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="246" minWidth="40" maxWidth="1000" id="Dlt-0u-Fwa">
+                                                        <tableColumn identifier="" width="246" minWidth="40" maxWidth="1000" id="Dlt-0u-Fwa">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -370,7 +380,7 @@
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="398" minWidth="40" maxWidth="1000" id="1aZ-cr-O9L">
+                                                        <tableColumn identifier="" width="398" minWidth="40" maxWidth="1000" id="1aZ-cr-O9L">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -463,7 +473,7 @@
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
-                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzy-FZ-UsN">
+                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yzy-FZ-UsN">
                                                                             <rect key="frame" x="335" y="0.0" width="37" height="17"/>
                                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Gk3-Ll-6KM">
                                                                                 <font key="font" metaFont="system"/>
@@ -584,7 +594,7 @@
                                             <rect key="frame" x="1" y="1" width="660" height="283"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="993-Ge-VLz">
+                                                <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="993-Ge-VLz">
                                                     <rect key="frame" x="0.0" y="0.0" width="660" height="283"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

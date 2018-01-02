@@ -120,7 +120,6 @@ class TASServer: NSObject {
     func send(_ command: ServerCommand) {
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(TASServer.sendPing), object: nil)
         socket.send(message: "\(command.description)\n")
-//        print("Sending message to server: \(command.description)")
         perform(#selector(TASServer.sendPing), with: nil, afterDelay: 30)
     }
 
@@ -181,7 +180,7 @@ extension TASServer: SocketDelegate {
             for delegate in messageDelegates {
                 delegate.server(self, didReceive: serverMessage)
             }
-            debugPrint(components.joined(separator: " "))
+//            debugPrint(components.joined(separator: " "))
         case "LOGININFOEND":
             break
 
@@ -214,6 +213,10 @@ extension TASServer: SocketDelegate {
             }
 
             // MARK: BATTLES #####################################################################
+			
+		case "PROMOTE":
+			guard components.count == 2 else { break }
+			debugPrint("Promote requested for battle of ID \(components[1])")
 
         case "BATTLEOPENED":
             guard let battle = Battle(message: message) else { break }
@@ -272,7 +275,6 @@ extension TASServer: SocketDelegate {
         case "SETSCRIPTTAGS":
             // SETSCRIPTTAGS {pair1} [{pair2}] etc…
             guard components.count == 2 else {
-//                print("parts:\(components.count)")
                 break
             }
             let message = components[1]
@@ -286,7 +288,6 @@ extension TASServer: SocketDelegate {
                 break
             }
             let battleStatus = BattleStatus(components[2], withColor: components[3])
-//            print(components.joined(separator: "###"))
             for delegate in battleDelegates {
             delegate.server(self, didSetBattleStatus: battleStatus, forUserNamed: components[1])
             }
@@ -317,7 +318,6 @@ extension TASServer: SocketDelegate {
             let chanName = components[1]
             let username = components[2]
             let message = components[3..<components.count].joined(separator: " ")
-            // print("Received message: \(message)")
             for delegate in channelDelegates {
                 delegate.server(self, receivedMessageFromChannel: chanName, fromUser: username, withMessage: message)
             }
@@ -410,7 +410,6 @@ extension TASServer: SocketDelegate {
             }
             
         case "REGISTRATIONDENIED":
-//            print(components.joined(separator: "@@"))
             let reason = components[1..<components.count].joined(separator: " ")
             for delegate in loginDelegates {
                 delegate.server(self, didDenyRegisterBecauseOf: reason)
@@ -437,7 +436,8 @@ extension TASServer: SocketDelegate {
                 delegate.server(self, didRecieve: privateMessage, from: sender, of: .IRCStyle)
             }
         default:
-            debugPrint("Unrecognised command: \(components.joined(separator: ""))")
+//            debugPrint("Unrecognised command: \(components.joined(separator: ""))")
+			break
         }
         
         

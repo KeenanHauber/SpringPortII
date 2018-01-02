@@ -10,10 +10,8 @@ import Cocoa
 //import Zip
 
 class CacheManager: NSObject {
-    // TODO: --
-}
-
-struct Game {
-
+	var maps: [ String : String ] = [ : ] // Name : Checksum
+	
+	
 }
     

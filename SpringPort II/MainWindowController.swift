@@ -10,7 +10,7 @@ import Cocoa
 
 protocol MainWindowControllerDelegate: class, SinglePlayerViewControllerDelegate {
     func sendChannelMessage(message: String)
-    func selectChannel(atIndex index: Int)
+	func selectChannel(atIndex index: Int) //selectChannel(at index: Int)
     func login(to server: String, with username: String, and password: String)
     func register(on server: String, with username: String, and password: String)
 }
@@ -86,8 +86,7 @@ class MainWindowController: NSWindowController {
         self.channelUserListDataController = channelUserListDataController
         self.openBattleListDataController = openBattleListDataController
         self.totalLoggedInUsersDataController = totalLoggedInUsersDataController
-        
-//        window?.contentView?.backgroundColor = NSColor.darkGray
+		
         window?.contentView?.backgroundColor = NSColor.black
     }
     
@@ -139,6 +138,7 @@ extension MainWindowController: ServerMessageOutput {
         let hours = (time/60)
         ingameTimeTextField.stringValue = "Ingame Time: \(time) minutes (\(hours) hours)"
         // TODO: -- Rank from the ClientStatus info!
+		// Except probably not here because, well.
     }
 }
 

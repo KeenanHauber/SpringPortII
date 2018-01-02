@@ -191,7 +191,12 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
     ////////////////////////////////////////////////
     // MARK: - BattleRoomWindowControllerDelegate //
     ////////////////////////////////////////////////
-    
+	
+	func promoteBattle() {
+		guard let battle = battleroomController?.battle else { debugPrint("Non-Fatal Error: Cannot promote battle; no battle set."); return }
+		server?.send(PromoteCommand(battleId: battle.battleId))
+	}
+	
     func send(_ battleMessage: String) {
         server?.send(SayBattleCommand(message: battleMessage)) // TODO: -- IRCStyle messages (/me)
     }
