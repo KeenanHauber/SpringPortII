@@ -49,6 +49,7 @@ class BattleListController: ServerBattleListDelegate, BattleListDataSource {
         }
         battleUpdated()
     }
+	
     func server(_ server: TASServer, userNamed name: String, didJoinBattleWithId battleId: String) {
         battles
             .filter { $0.battleId == battleId }

@@ -79,10 +79,7 @@ class BattleroomController: ServerBattleDelegate {
     func didJoin(_ battle: Battle) {
         self.battle = battle
         setBattleChatLog()
-        
-        output?.updateSpectators()
-        output?.updatePlayers()
-        output?.updateBattleStatus()
+		updateUsers(for: battle)
     }
     func didLeaveBattle() {
         battle = nil
@@ -92,8 +89,7 @@ class BattleroomController: ServerBattleDelegate {
     //MARK: - ServerBattleDelegate
     func server(_ server: TASServer, didReceiveScriptTagsAs message: String) {
         battle?.process(scriptTags: message)
-        output?.updateSpectators()
-        output?.updatePlayers()
+        update()
     }
     
     func server(_ server: TASServer, recievedFromBattle message: String, from sender: String, ofStyle style: String) {
@@ -102,25 +98,21 @@ class BattleroomController: ServerBattleDelegate {
     }
     
     func server(_ server: TASServer, didSetBattleStatus battleStatus: BattleStatus, forUserNamed username: String) {
-        output?.updateSpectators()
-        output?.updatePlayers()
-        output?.updateBattleStatus()
+		update()
     }
     
     func server(_ server: TASServer, userNamed name: String, didJoinBattleWithId battleId: String) {
-        if battleId == battle?.battleId {
-            battleMessages.append(Message(timeStamp: timeStamp(), sender: "Server", message: "\(name) joined the battle", style: "Server"))
-        }
+        guard battleId == battle?.battleId else { return }
+		battleMessages.append(Message(timeStamp: timeStamp(), sender: "Server", message: "\(name) joined the battle", style: "Server"))
         setBattleChatLog()
-        output?.updatePlayers()
+        update()
     }
     
     func server(_ server: TASServer, userNamed name: String, didLeaveBattleWithId battleId: String) {
-        if battleId == battle?.battleId {
-            battleMessages.append(Message(timeStamp: timeStamp(), sender: "Server", message: "\(name) left the battle", style: "Server"))
-        }
-        setBattleChatLog()
-        output?.updatePlayers()
+		guard battleId == battle?.battleId else { return }
+        battleMessages.append(Message(timeStamp: timeStamp(), sender: "Server", message: "\(name) left the battle", style: "Server"))
+		setBattleChatLog()
+		update()
     }
     
     func serverDidRequestBattleStatus() {
@@ -132,7 +124,7 @@ class BattleroomController: ServerBattleDelegate {
         let handicap = 0
         let syncStatus = 1
         let side = 1
-        //        let color = 0
+        let color = 0
         
         battleStatus += isReady*2 // 2^1
         battleStatus += teamNumber*4 // 2^2
@@ -150,6 +142,13 @@ class BattleroomController: ServerBattleDelegate {
         //        alert.beginSheetModal(for: window, completionHandler: { (response) -> Void in
         //        })
     }
+	
+	func update() {
+		battle?.updateNumberOfPlayers()
+		output?.updateBattleStatus()
+		output?.updateSpectators()
+		output?.updatePlayers()
+	}
     
 }
 
@@ -172,7 +171,7 @@ extension BattleroomController: BattleRoomDataSource { // I am so trusting with 
 			players.append(user)
 		}
 		players = players.filter { $0.battleStatus?.isPlayer == true }
-        players.sort {$0.username < $1.username}
+        players.sort {$0.username.localizedCaseInsensitiveCompare($1.username) == .orderedAscending}
         players.sort {($0.battleStatus?.allyNumber ?? 0) < ($1.battleStatus?.allyNumber ?? 1)}
 		
         if row < players.count {
@@ -194,7 +193,6 @@ extension BattleroomController: BattleRoomDataSource { // I am so trusting with 
 		spectators = spectators.filter { $0.battleStatus?.isPlayer == false }
 		
         spectators.sort {$0.username < $1.username}
-        battle.updateNumberOfPlayers()
 		
         if row < spectators.count {
             return spectators[row]
