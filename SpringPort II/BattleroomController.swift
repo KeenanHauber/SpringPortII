@@ -122,11 +122,11 @@ class BattleroomController: ServerBattleDelegate {
         let teamNumber = 1
         let allyNumber = 1
         let isPlayer = 1
-        let handicap = 0
+//        let handicap = 0
         let syncStatus = 1
         let side = 1
-        let color = 0
-        
+//        let color = 0
+		
         battleStatus += isReady*2 // 2^1
         battleStatus += teamNumber*4 // 2^2
         battleStatus += allyNumber*64 // 2^6

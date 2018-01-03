@@ -8,7 +8,7 @@
 
 import Cocoa
 
-protocol ServerMessageControllerDelegate: class, ServerCommandRouter {
+protocol ServerMessageControllerDelegate: ServerCommandRouter { // "class" requirement is implied
     func present(_ message: String)
 }
 

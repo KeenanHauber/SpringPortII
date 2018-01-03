@@ -11,6 +11,8 @@ import Cocoa
 class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource, BattleRoomWindowControllerDelegate, MainWindowControllerDelegate {
     var mainWindowController: MainWindowController!
     var battleRoomWindowController: BattleRoomWindowController?
+	
+	
     //////////////////////////////////
     // MARK: - Overriding Functions //
     //////////////////////////////////
@@ -24,13 +26,6 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         let battleroomController = BattleroomController()
         let serverCommandController = ServerCommandController()
         let singlePlayerController = SinglePlayerController()
-        
-        
-//        let replayController = ReplayController()
-//        replayController.replays.append(Replay())
-//        replayController.delegate = self
-//        self.replayController = replayController
-//        launch(Replay())
         
         loginController.delegate = self
         serverMessageController.delegate = self
@@ -92,15 +87,17 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         battleRoomWindowController.delegate = self
         battleRoomWindowController.playerTableViewDataController.dataSource = battleroomController
         battleRoomWindowController.spectatorTableViewDataController.dataSource = battleroomController
-        
         self.battleroomController?.output = battleRoomWindowController
-        
         self.battleRoomWindowController = battleRoomWindowController
+		if ingame == false {
+			menuDelegate.enableSpectate()
+		}
     }
     
     override func leaveBattleRoom() {
         battleRoomWindowController = nil
         self.battleroomController?.output = nil
+		menuDelegate.disableSpectate()
     }
     
     override func present(_ agreement: String) {
@@ -136,7 +133,7 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         switch first {
         case "/me":
             components.remove(at: 0)
-            let remainder = components.joined(separator: " ")
+//            let remainder = components.joined(separator: " ")
         default:
             server?.send(SayCommand(chanName: chanName, message: message))
         }

@@ -19,50 +19,20 @@ class ScriptTxtManager {
     let username: String
     let scriptPassword: String
     let game: SinglePlayerGame? // Please rename this better
-    
+	
     let replay: Replay?
-    
+	
     weak var delegate: ScriptTxtManagerDelegate?
 
-    
-    let scriptDotTxtPath = "\(NSHomeDirectory())/.spring/script.txt"
-    let file = "script.txt" // use .html instead of .txt to create html files
-    var writingText = "some text"
-    
-    func writeToFile() {
-        
-        if fileManager.fileExists(atPath: scriptDotTxtPath) == true {
-            do {
-                try writingText.write(toFile: scriptDotTxtPath, atomically: false, encoding: String.Encoding.utf8)
-            } catch {
-                debugPrint("failed to write to file; creating new file")
-                delegate?.present(error: "failed to write to file; creating new file")
-                createScriptDotTxtFile()
-            }
-        } else {
-            createScriptDotTxtFile()
-            delegate?.present(error: "creating new file")
-        }
+	let dir = "\(NSHomeDirectory())/.spring/"
+    let filePath = "\(NSHomeDirectory())/.spring/script.txt"
+    let fileName = "script.txt"
+    var writingText = ""
+	
+	func setFile(at location: String, with contents: Data) {
+		fileManager.createFile(atPath: filePath, contents: contents, attributes: nil)
     }
-    
-    func createScriptDotTxtFile() {
-		guard let url = URL(string: scriptDotTxtPath) else {
-			debugPrint("Non-Fatal Error: cannot convert scriptDotTxtPath to URL. (Should never happen). Will not procede to attempt to write file.")
-			return
-		}
-        do {
-			print("trying to create new file…")
-			try fileManager.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
-        } catch {
-            debugPrint("failed to create file, returning")
-			delegate?.present(error: "failed to create file, returning") // TODO: -- Remove
-            return
-        }
-        print("successfully wrote to file")
-        delegate?.present(error: "successfully wrote to file")
-        writeToFile()
-    }
-    
+	
     init(ip: String, port: String, username: String, scriptPassword: String) {
         self.ip = ip
         self.port = port
@@ -87,10 +57,10 @@ class ScriptTxtManager {
         self.game = game
         self.replay = nil
     }
-    
+		
     func prepareForLaunchOfReplay() {
         guard let replay = replay else { return }
-        let scriptPassword = self.scriptPassword
+//        let scriptPassword = self.scriptPassword
         var messageAsArray: [String] = []
         // [GAME]
         let gameTag = "[GAME]"
@@ -98,21 +68,21 @@ class ScriptTxtManager {
         //        let demoFile = "\tDemoFile=~/.config/spring/demos/\(self.replay.fileName);"
         let demoFile: String = "\tDemoFile=\(NSHomeDirectory())/.config/spring/demos/\(replay.fileName);"
         let closeBrace = "}"
-        
+		
         messageAsArray.append(contentsOf: [gameTag, openBrace, demoFile, closeBrace])
-        self.writingText = messageAsArray.joined(separator: "\n")
-        writeToFile()
+        guard let contents = messageAsArray.joined(separator: "\n").data(using: String.Encoding.utf8) else { fatalError("Fatal Error: cannot convert file contents from String to Data") }
+        setFile(at: filePath, with: contents)
     }
-    
+		
     func prepareForLaunchOfSinglePlayerGame() {
         guard let game = game else { return }
         var teamCounter = 0
         let gameTag = "[GAME]"
         let playerTag = "[PLAYER0]"
-        let modOptionsTag = "[MODOPTIONS]"
+//        let modOptionsTag = "[MODOPTIONS]"
         let openBrace = "{"
         let closeBrace = "}"
-        
+		
         let mapName = "MapName=\(game.mapName);"
         //        /*temp*/let mapHash = "MapHash=4144070437;"
         let gameType = "GameType=\(game.gameType);"
@@ -123,7 +93,7 @@ class ScriptTxtManager {
         let hostPort = "HostPort=8452;"
         let myPlayerName = "MyPlayerName=\(game.myPlayerName);"
         let isHost = "IsHost=1;"
-        
+		
         let name = "Name=\(game.myPlayerName);" // this makes game.username obselete, but who cares right?
         let password = "Password=\(game.password);"
         let team = "Team=\(teamCounter);"
@@ -131,7 +101,7 @@ class ScriptTxtManager {
         let isFromDemo = "IsFromDemo=\(game.isFromDemo);"
         let countryCode = "CountryCode=\(game.countryCode);"
         let rank = "Rank=\(game.rank);"
-        
+		
         var aIs: [String] = []
         for i in 0..<game.names.count {
             let tag = "[AI\(i)]"
@@ -143,7 +113,7 @@ class ScriptTxtManager {
             let host = "Host=0;"
             aIs.append(contentsOf: [tag, openBrace, aiName, shortName, version, team, host, closeBrace])
         }
-        
+		
         var teams: [String] = []
         for i in 0..<game.teams.count {
             let team = game.teams[i]
@@ -164,61 +134,61 @@ class ScriptTxtManager {
             allyTeams.append(contentsOf: [tag, openBrace, closeBrace])
             //            guard game.gameType == "0" else { break }
         }
-        
+		
         var modOptions: [String] = []
         for modOption in game.modOptions {
             modOptions.append("\(modOption.name)=\(modOption.value);")
         }
         var messageAsArray: [String] = []
-        messageAsArray.append(contentsOf: [gameTag,
-                                           openBrace,
-                                           mapName,
-                                           //                                           mapHash,
-            gameType,
-            //                                           modHash,
-            startPosType,
-            recordDemo,
-            hostIp,
-            hostPort,
-            myPlayerName,
-            isHost,
-            playerTag,
-            openBrace,
-            name,
-            password,
-            team,
-            isFromDemo,
-            countryCode,
-            rank,
-            closeBrace])
+        messageAsArray.append(contentsOf: [ gameTag,
+											openBrace,
+											mapName,
+			//                              mapHash,
+            								gameType,
+            //                              modHash,
+            								startPosType,
+											recordDemo,
+											hostIp,
+											hostPort,
+											myPlayerName,
+											isHost,
+											playerTag,
+											openBrace,
+											name,
+											password,
+											team,
+											isFromDemo,
+											countryCode,
+											rank,
+											closeBrace])
         messageAsArray.append(contentsOf: aIs)
         messageAsArray.append(contentsOf: teams)
         messageAsArray.append(contentsOf: allyTeams)
         messageAsArray.append(contentsOf: modOptions)
         messageAsArray.append(closeBrace)
-        self.writingText = messageAsArray.joined(separator: "\n")
-        writeToFile()
+		guard let contents = messageAsArray.joined(separator: "\n").data(using: String.Encoding.utf8) else { fatalError("Fatal Error: cannot convert file contents from String to Data") }
+		setFile(at: filePath, with: contents)
     }
-    
+		
     func prepareForLaunchOfSpringAsClient() {
         let scriptPassword = self.scriptPassword
         var messageAsArray: [String] = []
         // [GAME]
         let gameTag = "[GAME]"
         let openBrace = "{"
-        
+		
         let hostIpLine = "\tHostIP=\(self.ip);"
         let hostPortLine = "\tHostPort=\(self.port);"
-        
+		
         let myPlayerNameLine = "\tMyPlayerName=\(self.username);"
         let myPasswdLine = "\tMyPasswd=\(scriptPassword);"
         let isHostLine = "\tIsHost=0;"
-        
+		
         let closeBrace = "}"
-        
+		
         messageAsArray.append(contentsOf: [gameTag, openBrace, hostIpLine, hostPortLine, myPlayerNameLine, myPasswdLine, isHostLine, closeBrace])
-        self.writingText = messageAsArray.joined(separator: "\n")
-        writeToFile()
+        guard let contents = messageAsArray.joined(separator: "\n").data(using: String.Encoding.utf8) else { fatalError("Fatal Error: cannot convert file contents from String to Data") }
+        setFile(at: filePath, with: contents)
     }
 }
 

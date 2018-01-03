@@ -8,14 +8,16 @@
 
 import Cocoa
 
+protocol SpringProcessControllerDelegate: class {
+	func springLaunched()
+	func springExited()
+}
+
 class SpringProcessController {
     var springProcess: Process?
-    var username: String?
-    var password: String?
+	weak var delegate: SpringProcessControllerDelegate!
     
     func launchSpring(andConnectTo ip: String, at port: String, with username: String, and password: String) {
-        self.username = username
-        self.password = password
         let scriptTxtManager = ScriptTxtManager(ip: ip, port: port, username: username, scriptPassword: password)
         scriptTxtManager.delegate = self
         scriptTxtManager.prepareForLaunchOfSpringAsClient()
@@ -23,7 +25,6 @@ class SpringProcessController {
     }
     
     func forceLaunchSpring(andConnectTo ip: String, at port: String, with scriptPassword: String, and username: String) {
-        self.username = username
         let scriptTxtManager = ScriptTxtManager(ip: ip, port: port, username: username, scriptPassword: scriptPassword)
         scriptTxtManager.delegate = self
         scriptTxtManager.prepareForLaunchOfSpringAsClient()
@@ -32,19 +33,21 @@ class SpringProcessController {
     
     func startSpringRTS() {
 		// TODO: --Some sort of cache interface to allow multiple engines to be used
-        guard let path = NSWorkspace.shared().fullPath(forApplication: "Spring_103.0.app") else { debugPrint("Non-Fatal Error: could not find Spring_103.0.app"); return}
-		guard let bundle = Bundle(path: path) else { debugPrint("Non-Fatal Error: could not create bundle object for SpringRTS"); return}
+        guard let path = NSWorkspace.shared().fullPath(forApplication: "Spring_103.0.app") else { debugPrint("Non-Fatal Error: could not find Spring_103.0.app"); return }
+		guard let bundle = Bundle(path: path) else { debugPrint("Non-Fatal Error: could not create bundle object for SpringRTS"); return }
         
         let scriptFileName = "script.txt"
         let process = Process()
         process.launchPath = bundle.executablePath
         process.arguments = ["\(NSHomeDirectory())/.spring/\(scriptFileName)"]
         process.terminationHandler = { _ in
-            print("Spring engine exited")
+            debugPrint("Spring engine exited")
             self.springProcess = nil
+			self.delegate?.springExited()
         }
+		process.launch()
         springProcess = process
-        process.launch()
+		delegate?.springLaunched()
     }
     
     func launch(_ replay: Replay) {
@@ -63,14 +66,10 @@ class SpringProcessController {
 }
 
 extension SpringProcessController: ScriptTxtManagerDelegate {
-    // MARK: - ADelegate
     func present(error errorMessage: String) {
         let alert = NSAlert()
         alert.messageText = errorMessage
         alert.addButton(withTitle: "Ok")
-        //let window = mainWindowController.window!// I want this as a popup, independant of the MWC. Please.
-        //alert.beginSheetModal(for: window, completionHandler: { (response) -> Void in
-        //})
     }
 }
 

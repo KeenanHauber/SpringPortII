@@ -19,6 +19,8 @@ func timeStamp() -> String {
     return timestamp
 }
 
+
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate { // Each specific step - make an object for it? Completes its purpose, then can be taken down
     var windows: [NSWindow] = []
@@ -41,21 +43,32 @@ class AppDelegate: NSObject, NSApplicationDelegate { // Each specific step - mak
     @IBAction func singlePlayerGameMenuItemPressed(_ sender: Any) {
         primaryCoordinator.mainWindowController.openSinglePlayerMenu()
     }
-    
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let primaryCoordinator = PrimaryCoordinator()
+	
+	func applicationDidFinishLaunching(_ aNotification: Notification) {
+		let primaryCoordinator = PrimaryCoordinator(menuDelegate: self)
         primaryCoordinator.setUp()
         self.primaryCoordinator = primaryCoordinator
+		relaunchSpringMenuItem.isEnabled = false
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
         
     }
-    
-//    func callCacheManager() {
-//        let cacheManager = CacheManager()
-//        cacheManager.loadUnitSyncWrapper()
-//        cacheManager.loadMaps2()
-//        self.cacheManager = cacheManager
-//    }
 }
+
+protocol MenuDelegate: class {
+	func disableSpectate()
+	func enableSpectate()
+	func disableSoloGame()
+	func enableSoloGame()
+}
+
+extension AppDelegate: MenuDelegate {
+	func disableSpectate() { relaunchSpringMenuItem.isEnabled = false }
+	func enableSpectate() { relaunchSpringMenuItem.isEnabled = true }
+	
+	func disableSoloGame() { singlePlayerGameMenuItem.isEnabled = false }
+	func enableSoloGame() { singlePlayerGameMenuItem.isEnabled = true }
+}
+
+

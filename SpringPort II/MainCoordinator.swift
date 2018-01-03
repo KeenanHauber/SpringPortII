@@ -17,16 +17,17 @@ protocol ServerCommandRouter: class {
     func myUsername() -> String
 }
 
-class MainCoordinator: ServerCommandRouter, LoginControllerDelegate, ServerMessageControllerDelegate, UsersDataControllerDelegate, ChannelDataControllerDelegate, BattleListControllerDelegate, BattleroomControllerDelegate, ServerCommandControllerDelegate, ReplayControllerDelegate {
+class MainCoordinator: ServerCommandRouter, LoginControllerDelegate, ServerMessageControllerDelegate, UsersDataControllerDelegate, ChannelDataControllerDelegate, BattleListControllerDelegate, BattleroomControllerDelegate, ServerCommandControllerDelegate, ReplayControllerDelegate, SpringProcessControllerDelegate {
     var username: String?
     var password: String?
     
-    var cacheManager: CacheManager?
-    
     var connectingToRegister: Bool = false
-    
+	var ingame: Bool = false
+	
+	var cacheManager: CacheManager?
     weak var server: TASServer? // This is stored in the ServerCommandController object. Be careful to not deallocate it.
-    
+	var springProcess: Process?
+	
     var springProcessController: SpringProcessController?
     var replayController: ReplayController?
     var singlePlayerController: SinglePlayerController?
@@ -38,11 +39,17 @@ class MainCoordinator: ServerCommandRouter, LoginControllerDelegate, ServerMessa
     var battleListController: BattleListController?
     var battleroomController: BattleroomController?
     
-    var serverCommandController = ServerCommandController()
+    var serverCommandController = ServerCommandController() // Investigate making this an optional
+	
+	weak var menuDelegate: MenuDelegate!
+	
+	init(menuDelegate: MenuDelegate) {
+		self.menuDelegate = menuDelegate
+	}
     
     // MARK: - Functions to override
     func setUp() { // To be overridden
-        // Called by init()
+		// Called by declaring object
     }
     func loginSetUp() { // To be overridden
         // Called by didSuccessfullyLogIn()
@@ -111,7 +118,7 @@ class MainCoordinator: ServerCommandRouter, LoginControllerDelegate, ServerMessa
 				debugPrint("Non-Fatal Error: No username or password with which to connect to host. This should never happen.")
 				return
 			}
-			springProcessController?.launchSpring(andConnectTo: ip, at: port, with: username, and: password) // username is a variable name used twice in this function; please fix?
+			SpringProcessController().launchSpring(andConnectTo: ip, at: port, with: username, and: password) // username is a variable name used twice in this function; please fix?
         }
     }
     
@@ -155,8 +162,8 @@ class MainCoordinator: ServerCommandRouter, LoginControllerDelegate, ServerMessa
 		}
         
         let springProcessController = SpringProcessController()
-        springProcessController.launchSpring(andConnectTo: ip, at: port, with: username, and: password) 
-        self.springProcessController = springProcessController
+        springProcessController.launchSpring(andConnectTo: ip, at: port, with: username, and: password)
+		self.springProcessController = springProcessController
     }
 
     // MARK: - ServerCommandControllerDelegate
@@ -184,7 +191,22 @@ class MainCoordinator: ServerCommandRouter, LoginControllerDelegate, ServerMessa
 
     // MARK: - ReplayControllerDelegate
     func launch(_ replay: Replay) {
-        self.springProcessController = SpringProcessController()
-//        springProcessController?.launch(replay)
+//        let springProcessController = SpringProcessController()
+//		self.springProcess = springProcessController.launch(<#T##replay: Replay##Replay#>)
     }
+	
+	// MARK: - SpringProcessControllerDelegate
+	
+	func springLaunched() {
+		menuDelegate.disableSoloGame()
+		menuDelegate.disableSpectate()
+	}
+	
+	func springExited() {
+		springProcessController = nil
+		menuDelegate.enableSoloGame()
+		if battleroomController?.battle != nil {
+			menuDelegate.enableSpectate()
+		}
+	}
 }

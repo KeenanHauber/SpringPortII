@@ -8,7 +8,7 @@
 
 import Cocoa
 
-protocol MainWindowControllerDelegate: class, SinglePlayerViewControllerDelegate {
+protocol MainWindowControllerDelegate: SinglePlayerViewControllerDelegate { // "class" requirement is implied
     func sendChannelMessage(message: String)
 	func selectChannel(atIndex index: Int) //selectChannel(at index: Int)
     func login(to server: String, with username: String, and password: String)
