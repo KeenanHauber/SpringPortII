@@ -29,8 +29,9 @@ class ScriptTxtManager {
     let fileName = "script.txt"
     var writingText = ""
 	
-	func setFile(at location: String, with contents: Data) {
-		fileManager.createFile(atPath: filePath, contents: contents, attributes: nil)
+	func setFile(at location: String, with contents: [String]) {
+		guard let contentsData = contents.joined(separator: "\n").data(using: String.Encoding.utf8) else { fatalError("Fatal Error: cannot convert file contents from String to Data") }
+		fileManager.createFile(atPath: filePath, contents: contentsData, attributes: nil)
     }
 	
     init(ip: String, port: String, username: String, scriptPassword: String) {
@@ -60,8 +61,7 @@ class ScriptTxtManager {
 		
     func prepareForLaunchOfReplay() {
         guard let replay = replay else { return }
-//        let scriptPassword = self.scriptPassword
-        var messageAsArray: [String] = []
+        var contents: [String] = []
         // [GAME]
         let gameTag = "[GAME]"
         let openBrace = "{"
@@ -69,12 +69,12 @@ class ScriptTxtManager {
         let demoFile: String = "\tDemoFile=\(NSHomeDirectory())/.config/spring/demos/\(replay.fileName);"
         let closeBrace = "}"
 		
-        messageAsArray.append(contentsOf: [gameTag, openBrace, demoFile, closeBrace])
-        guard let contents = messageAsArray.joined(separator: "\n").data(using: String.Encoding.utf8) else { fatalError("Fatal Error: cannot convert file contents from String to Data") }
+        contents.append(contentsOf: [gameTag, openBrace, demoFile, closeBrace])
         setFile(at: filePath, with: contents)
     }
 		
     func prepareForLaunchOfSinglePlayerGame() {
+		// TODO: -- Shorten this function!!!
         guard let game = game else { return }
         var teamCounter = 0
         let gameTag = "[GAME]"
@@ -115,7 +115,7 @@ class ScriptTxtManager {
         }
 		
         var teams: [String] = []
-        for i in 0..<game.teams.count {
+		for i in 0..<game.teams.count {
             let team = game.teams[i]
             let tag = "[TEAM\(i)]"
             let teamLeader = "TeamLeader=\(team.teamLeader);"
@@ -139,8 +139,8 @@ class ScriptTxtManager {
         for modOption in game.modOptions {
             modOptions.append("\(modOption.name)=\(modOption.value);")
         }
-        var messageAsArray: [String] = []
-        messageAsArray.append(contentsOf: [ gameTag,
+        var contents: [String] = []
+        contents.append(contentsOf: [ gameTag,
 											openBrace,
 											mapName,
 			//                              mapHash,
@@ -161,18 +161,17 @@ class ScriptTxtManager {
 											countryCode,
 											rank,
 											closeBrace])
-        messageAsArray.append(contentsOf: aIs)
-        messageAsArray.append(contentsOf: teams)
-        messageAsArray.append(contentsOf: allyTeams)
-        messageAsArray.append(contentsOf: modOptions)
-        messageAsArray.append(closeBrace)
-		guard let contents = messageAsArray.joined(separator: "\n").data(using: String.Encoding.utf8) else { fatalError("Fatal Error: cannot convert file contents from String to Data") }
+        contents.append(contentsOf: aIs)
+        contents.append(contentsOf: teams)
+        contents.append(contentsOf: allyTeams)
+        contents.append(contentsOf: modOptions)
+        contents.append(closeBrace)
 		setFile(at: filePath, with: contents)
     }
 		
     func prepareForLaunchOfSpringAsClient() {
         let scriptPassword = self.scriptPassword
-        var messageAsArray: [String] = []
+        var contents: [String] = []
         // [GAME]
         let gameTag = "[GAME]"
         let openBrace = "{"
@@ -186,8 +185,7 @@ class ScriptTxtManager {
 		
         let closeBrace = "}"
 		
-        messageAsArray.append(contentsOf: [gameTag, openBrace, hostIpLine, hostPortLine, myPlayerNameLine, myPasswdLine, isHostLine, closeBrace])
-        guard let contents = messageAsArray.joined(separator: "\n").data(using: String.Encoding.utf8) else { fatalError("Fatal Error: cannot convert file contents from String to Data") }
+        contents.append(contentsOf: [gameTag, openBrace, hostIpLine, hostPortLine, myPlayerNameLine, myPasswdLine, isHostLine, closeBrace])
         setFile(at: filePath, with: contents)
     }
 }
