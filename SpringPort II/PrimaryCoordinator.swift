@@ -108,10 +108,10 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         let response = alert.runModal()
         
         switch response {
-        case NSAlertFirstButtonReturn:
+        case NSApplication.ModalResponse.alertFirstButtonReturn:
             // TODO: -- Alert or sth
             break
-        case NSAlertSecondButtonReturn:
+        case NSApplication.ModalResponse.alertSecondButtonReturn:
             self.server?.send(ConfirmAgreementCommand())
             self.connectingToRegister = false
             self.sendLoginCommand()

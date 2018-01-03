@@ -19,7 +19,7 @@ class SpectatorTableViewDataController: NSObject, NSTableViewDelegate, NSTableVi
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let cellView = tableView.make(withIdentifier: "spectatorTableCellView", owner: self)
+        let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "spectatorTableCellView"), owner: self)
         guard let tableCellView = cellView as? SpectatorTableCellView else { fatalError("Invalid Cell Configuration")}
         
         guard let user = dataSource?.spectator(at: row) else { return cellView}

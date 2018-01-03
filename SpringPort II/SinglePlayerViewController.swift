@@ -15,8 +15,8 @@ protocol SinglePlayerViewControllerDelegate: class {
 
 class SinglePlayerViewController: NSViewController {
     weak var delegate: SinglePlayerViewControllerDelegate?
-    override var nibName: String {
-        return "SinglePlayerViewController"
+    override var nibName: NSNib.Name {
+        return NSNib.Name("SinglePlayerViewController")
     }
     @IBOutlet weak var quickGameButton: NSTextField!
 

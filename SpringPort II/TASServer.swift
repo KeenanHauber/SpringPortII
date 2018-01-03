@@ -123,7 +123,7 @@ class TASServer: NSObject {
         perform(#selector(TASServer.sendPing), with: nil, afterDelay: 30)
     }
 
-    func sendPing() {
+    @objc func sendPing() {
         socket.send(message: "PING\n")
         perform(#selector(TASServer.sendPing), with: nil, afterDelay: 30)
     }

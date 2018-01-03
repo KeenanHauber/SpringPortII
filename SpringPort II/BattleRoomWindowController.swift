@@ -28,8 +28,8 @@ protocol BattleRoomWindowControllerDelegate: class {
 }
 
 class BattleRoomWindowController: NSWindowController {
-    override var windowNibName: String {
-        return "BattleRoomWindowController"
+    override var windowNibName: NSNib.Name {
+        return NSNib.Name("BattleRoomWindowController")
     }
 
     override func windowDidLoad() {

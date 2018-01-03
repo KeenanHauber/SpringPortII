@@ -26,7 +26,7 @@ class OpenBattleListDataController: NSObject, NSCollectionViewDelegate, NSCollec
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: "BattleListCollectionViewItem", for: indexPath) as! BattleListCollectionViewItem
+        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "BattleListCollectionViewItem"), for: indexPath) as! BattleListCollectionViewItem
         
         guard let battle = dataSource?.openBattle(for: indexPath) else { return item }
         let text = "\(battle.playerCount)/\(battle.maxPlayers)"
@@ -83,7 +83,7 @@ extension OpenBattleListDataController: NSCollectionViewDelegateFlowLayout {
         return NSSize(width: collectionView.bounds.width, height: 49)
     }
     
-    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, insetForSectionAt section: Int) -> EdgeInsets {
+    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, insetForSectionAt section: Int) -> NSEdgeInsets {
         return NSEdgeInsetsZero
     }
     

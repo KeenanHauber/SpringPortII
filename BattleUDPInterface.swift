@@ -19,7 +19,7 @@ class BattleUDPInterface: NSObject, SocketDelegate {
         super.init()
         socket.delegate = self
     }
-    func sendPing() {
+    @objc func sendPing() {
         socket.send(message: "PING\n")
         perform(#selector(BattleUDPInterface.sendPing), with: nil, afterDelay: 30)
     }

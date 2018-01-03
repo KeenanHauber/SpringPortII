@@ -117,17 +117,17 @@ class ChannelDataController: ServerChannelDelegate, ChannelDataSource {
             switch message.style {
             case "Standard":
                 let messageAsString = "[\(message.timeStamp)] <\(message.sender)> \(message.message)\n"
-                let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSForegroundColorAttributeName : NSColor.orange] )
+                let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSAttributedStringKey.foregroundColor : NSColor.orange] )
                 log.append(messageAsNSAttributedString)
                 
             case "IRCStyle":
                 let messageAsString = "[\(message.timeStamp)] \(message.sender) \(message.message)\n"
-                let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSForegroundColorAttributeName : NSColor.magenta] )
+                let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSAttributedStringKey.foregroundColor : NSColor.magenta] )
                 log.append(messageAsNSAttributedString)
                 
             case "Server":
                 let messageAsString = "[\(message.timeStamp)] ### \(message.sender) ### \(message.message)\n"
-                let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSForegroundColorAttributeName : NSColor.blue] )
+                let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSAttributedStringKey.foregroundColor : NSColor.blue] )
                 log.append(messageAsNSAttributedString)
                 
             default:

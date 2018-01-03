@@ -15,8 +15,8 @@ protocol BattleListCollectionViewItemDelegate: class {
 class BattleListCollectionViewItem: NSCollectionViewItem {
     var battleId: String = ""
     weak var delegate: BattleListCollectionViewItemDelegate?
-    override var nibName: String {
-        return "BattleListCollectionViewItem"
+    override var nibName: NSNib.Name {
+        return NSNib.Name("BattleListCollectionViewItem")
     }
 
     override func viewDidLoad() {

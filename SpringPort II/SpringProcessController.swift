@@ -33,7 +33,7 @@ class SpringProcessController {
     
     func startSpringRTS() {
 		// TODO: --Some sort of cache interface to allow multiple engines to be used
-        guard let path = NSWorkspace.shared().fullPath(forApplication: "Spring_103.0.app") else { debugPrint("Non-Fatal Error: could not find Spring_103.0.app"); return }
+        guard let path = NSWorkspace.shared.fullPath(forApplication: "Spring_103.0.app") else { debugPrint("Non-Fatal Error: could not find Spring_103.0.app"); return }
 		guard let bundle = Bundle(path: path) else { debugPrint("Non-Fatal Error: could not create bundle object for SpringRTS"); return }
         
         let scriptFileName = "script.txt"

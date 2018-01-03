@@ -24,8 +24,8 @@ class MainWindowController: NSWindowController {
     var loginViewController: LoginViewController?
     weak var delegate: MainWindowControllerDelegate?
     
-    override var windowNibName: String {
-        return "MainWindowController"
+    override var windowNibName: NSNib.Name {
+        return NSNib.Name("MainWindowController")
     }
     override func windowDidLoad() {
         window?.title = "MacTASClient"

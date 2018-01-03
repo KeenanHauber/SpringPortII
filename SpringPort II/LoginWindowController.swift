@@ -17,8 +17,8 @@ class LoginWindowController: NSWindowController {
     @IBOutlet weak var passwordTextField: NSTextField!
     @IBOutlet weak var serverTextField: NSTextField!
     
-    override var windowNibName: String {
-        return "LoginWindowController"
+    override var windowNibName: NSNib.Name {
+        return NSNib.Name("LoginWindowController")
     }
     
     override func windowDidLoad() {
@@ -41,7 +41,7 @@ class LoginWindowController: NSWindowController {
         delegate?.connect(toServer: server, withUsername: username, andPassword: password)
     }
     
-    func dismissWithModalResponse(_ response: NSModalResponse) {
+    func dismissWithModalResponse(_ response: NSApplication.ModalResponse) {
 		guard let window = window else {
 			debugPrint("Non-Fatal Error: No Window to dismiss modally.")
 			return

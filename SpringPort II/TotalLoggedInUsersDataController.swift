@@ -20,7 +20,7 @@ class TotalLoggedInUsersDataController: NSObject, NSTableViewDelegate, NSTableVi
     }
 	
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let cellView = tableView.make(withIdentifier: "channelUserTableCellView", owner: self)
+        let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "channelUserTableCellView"), owner: self)
         guard let tableCellView = cellView as? ChannelUserTableCellView else { fatalError("Invalid Cell Configuration")}
         
         guard let user = dataSource?.user(at: row) else { return cellView }
