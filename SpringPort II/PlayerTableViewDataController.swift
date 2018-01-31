@@ -22,7 +22,7 @@ class PlayerTableViewDataController: NSObject, NSTableViewDelegate, NSTableViewD
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "playerTableCellView"), owner: self)
-        guard let tableCellView = cellView as? PlayerTableCellView else { fatalError("Invalid Cell Configuration")}
+		guard let tableCellView = cellView as? PlayerTableCellView else { fatalError("Fatal Error: Invalid Cell Configuration")}
 		
 		guard let dataSource = dataSource else { return cellView }
 		

@@ -98,14 +98,6 @@
 		D52FEDF21E21F68F00CBF40A /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FEDF01E21F68F00CBF40A /* LoginWindowController.swift */; };
 		D52FEDF31E21F68F00CBF40A /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D52FEDF11E21F68F00CBF40A /* LoginWindowController.xib */; };
 		D55B69A21E1AF1EE0098BB09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69A11E1AF1EE0098BB09 /* AppDelegate.swift */; };
-		D55B69D01E1AF2B30098BB09 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69CE1E1AF2B30098BB09 /* ChatViewController.swift */; };
-		D55B69D11E1AF2B30098BB09 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55B69CF1E1AF2B30098BB09 /* ChatViewController.xib */; };
-		D55B69D41E1AF2EC0098BB09 /* BattleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69D21E1AF2EC0098BB09 /* BattleListViewController.swift */; };
-		D55B69D51E1AF2EC0098BB09 /* BattleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55B69D31E1AF2EC0098BB09 /* BattleListViewController.xib */; };
-		D55B69D81E1AF2FB0098BB09 /* BattleRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69D61E1AF2FB0098BB09 /* BattleRoomViewController.swift */; };
-		D55B69D91E1AF2FB0098BB09 /* BattleRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55B69D71E1AF2FB0098BB09 /* BattleRoomViewController.xib */; };
-		D55B69DC1E1AF3100098BB09 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69DA1E1AF3100098BB09 /* UserListViewController.swift */; };
-		D55B69DD1E1AF3100098BB09 /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55B69DB1E1AF3100098BB09 /* UserListViewController.xib */; };
 		D55B69E21E1AF47C0098BB09 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69E01E1AF47C0098BB09 /* Channel.swift */; };
 		D55B69E31E1AF47C0098BB09 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69E11E1AF47C0098BB09 /* Message.swift */; };
 		D55B69E61E1AF4970098BB09 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69E41E1AF4970098BB09 /* Battle.swift */; };
@@ -127,9 +119,6 @@
 		D55B6A081E1AF8A10098BB09 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69FB1E1AF8A10098BB09 /* String+MD5.swift */; };
 		D55B6A091E1AF8A10098BB09 /* TASServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69FC1E1AF8A10098BB09 /* TASServer.swift */; };
 		D55B6A0C1E1B01220098BB09 /* BattleStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B6A0B1E1B01220098BB09 /* BattleStatus.swift */; };
-		D55B6A131E1B1C330098BB09 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B6A111E1B1C330098BB09 /* SideBarViewController.swift */; };
-		D55B6A141E1B1C330098BB09 /* SideBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55B6A121E1B1C330098BB09 /* SideBarViewController.xib */; };
-		D55B6A161E1B1EB00098BB09 /* PanelBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B6A151E1B1EB00098BB09 /* PanelBackgroundView.swift */; };
 		D55B6A1B1E1BB97C0098BB09 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B6A191E1BB97C0098BB09 /* MainWindowController.swift */; };
 		D55B6A1C1E1BB97C0098BB09 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55B6A1A1E1BB97C0098BB09 /* MainWindowController.xib */; };
 		D55B6A1E1E1BBD5A0098BB09 /* Background Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B6A1D1E1BBD5A0098BB09 /* Background Views.swift */; };
@@ -253,14 +242,6 @@
 		D55B69A81E1AF1EE0098BB09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D55B69AD1E1AF1EE0098BB09 /* SpringPort IITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SpringPort IITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D55B69B81E1AF1EE0098BB09 /* SpringPort IIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SpringPort IIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D55B69CE1E1AF2B30098BB09 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		D55B69CF1E1AF2B30098BB09 /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
-		D55B69D21E1AF2EC0098BB09 /* BattleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleListViewController.swift; sourceTree = "<group>"; };
-		D55B69D31E1AF2EC0098BB09 /* BattleListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BattleListViewController.xib; sourceTree = "<group>"; };
-		D55B69D61E1AF2FB0098BB09 /* BattleRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleRoomViewController.swift; sourceTree = "<group>"; };
-		D55B69D71E1AF2FB0098BB09 /* BattleRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BattleRoomViewController.xib; sourceTree = "<group>"; };
-		D55B69DA1E1AF3100098BB09 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
-		D55B69DB1E1AF3100098BB09 /* UserListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserListViewController.xib; sourceTree = "<group>"; };
 		D55B69E01E1AF47C0098BB09 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		D55B69E11E1AF47C0098BB09 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D55B69E41E1AF4970098BB09 /* Battle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
@@ -283,9 +264,6 @@
 		D55B69FC1E1AF8A10098BB09 /* TASServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASServer.swift; sourceTree = "<group>"; };
 		D55B6A0B1E1B01220098BB09 /* BattleStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleStatus.swift; sourceTree = "<group>"; };
 		D55B6A0D1E1B047B0098BB09 /* SpringPort II-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpringPort II-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		D55B6A111E1B1C330098BB09 /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
-		D55B6A121E1B1C330098BB09 /* SideBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideBarViewController.xib; sourceTree = "<group>"; };
-		D55B6A151E1B1EB00098BB09 /* PanelBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelBackgroundView.swift; sourceTree = "<group>"; };
 		D55B6A191E1BB97C0098BB09 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		D55B6A1A1E1BB97C0098BB09 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		D55B6A1D1E1BBD5A0098BB09 /* Background Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Background Views.swift"; sourceTree = "<group>"; };
@@ -484,8 +462,6 @@
 				6BF666D81E8E1C53003E0ADE /* LoginViewController.xib */,
 				D52FEDF01E21F68F00CBF40A /* LoginWindowController.swift */,
 				D52FEDF11E21F68F00CBF40A /* LoginWindowController.xib */,
-				D55B6A171E1BB8A90098BB09 /* Ignore for now */,
-				D55B6A181E1BB8F80098BB09 /* Ignore for now */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -503,31 +479,6 @@
 				D55B69FC1E1AF8A10098BB09 /* TASServer.swift */,
 			);
 			name = Server;
-			sourceTree = "<group>";
-		};
-		D55B6A171E1BB8A90098BB09 /* Ignore for now */ = {
-			isa = PBXGroup;
-			children = (
-				D55B6A111E1B1C330098BB09 /* SideBarViewController.swift */,
-				D55B6A121E1B1C330098BB09 /* SideBarViewController.xib */,
-				D55B6A151E1B1EB00098BB09 /* PanelBackgroundView.swift */,
-			);
-			name = "Ignore for now";
-			sourceTree = "<group>";
-		};
-		D55B6A181E1BB8F80098BB09 /* Ignore for now */ = {
-			isa = PBXGroup;
-			children = (
-				D55B69CE1E1AF2B30098BB09 /* ChatViewController.swift */,
-				D55B69CF1E1AF2B30098BB09 /* ChatViewController.xib */,
-				D55B69D21E1AF2EC0098BB09 /* BattleListViewController.swift */,
-				D55B69D31E1AF2EC0098BB09 /* BattleListViewController.xib */,
-				D55B69D61E1AF2FB0098BB09 /* BattleRoomViewController.swift */,
-				D55B69D71E1AF2FB0098BB09 /* BattleRoomViewController.xib */,
-				D55B69DA1E1AF3100098BB09 /* UserListViewController.swift */,
-				D55B69DB1E1AF3100098BB09 /* UserListViewController.xib */,
-			);
-			name = "Ignore for now";
 			sourceTree = "<group>";
 		};
 		D55D38681E1C443B00618EB1 /* MainWindowController */ = {
@@ -777,21 +728,16 @@
 			files = (
 				6BF666DA1E8E1C53003E0ADE /* LoginViewController.xib in Resources */,
 				D55D387D1E1D944800618EB1 /* BattleRoomWindowController.xib in Resources */,
-				D55B69DD1E1AF3100098BB09 /* UserListViewController.xib in Resources */,
 				D52FEDF31E21F68F00CBF40A /* LoginWindowController.xib in Resources */,
 				6BF666D61E8DD798003E0ADE /* Functionality in Resources */,
 				6BBE4B3B1F64180C00E95AA2 /* LICENSE in Resources */,
 				6BC8CC491F64322400AB7110 /* Assets.xcassets in Resources */,
 				D55B6A1C1E1BB97C0098BB09 /* MainWindowController.xib in Resources */,
 				D55D386C1E1C445600618EB1 /* ChatUsersCollectionViewItem.xib in Resources */,
-				D55B6A141E1B1C330098BB09 /* SideBarViewController.xib in Resources */,
 				6BF14E4E1E8C9BE500A6F766 /* SinglePlayerViewController.xib in Resources */,
-				D55B69D11E1AF2B30098BB09 /* ChatViewController.xib in Resources */,
 				6B58FE421FCA864500EE03E0 /* Unitsync in Resources */,
 				D55D38671E1C443700618EB1 /* BattleListCollectionViewItem.xib in Resources */,
-				D55B69D51E1AF2EC0098BB09 /* BattleListViewController.xib in Resources */,
 				6BF14E541E8CA9D500A6F766 /* TodoList in Resources */,
-				D55B69D91E1AF2FB0098BB09 /* BattleRoomViewController.xib in Resources */,
 				6BA912CC1FF9C82600A8C60E /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -893,11 +839,9 @@
 				6BF666D91E8E1C53003E0ADE /* LoginViewController.swift in Sources */,
 				D55B69EC1E1AF4AE0098BB09 /* CountryCode.swift in Sources */,
 				6B8D9E0C1E85B02800544CE2 /* BattleroomController.swift in Sources */,
-				D55B6A161E1B1EB00098BB09 /* PanelBackgroundView.swift in Sources */,
 				D55D386E1E1C476E00618EB1 /* OpenBattleListDataController.swift in Sources */,
 				6BBE4B011F63FED200E95AA2 /* LaunchScriptManager.swift in Sources */,
 				D55D387C1E1D944800618EB1 /* BattleRoomWindowController.swift in Sources */,
-				D55B69D81E1AF2FB0098BB09 /* BattleRoomViewController.swift in Sources */,
 				D55B6A041E1AF8A10098BB09 /* ServerMessage.swift in Sources */,
 				D55B6A031E1AF8A10098BB09 /* LobbyServerInfo.swift in Sources */,
 				D55B69E21E1AF47C0098BB09 /* Channel.swift in Sources */,
@@ -908,7 +852,6 @@
 				6B8D9E151E85BAF100544CE2 /* SpringProcessController.swift in Sources */,
 				D55B6A091E1AF8A10098BB09 /* TASServer.swift in Sources */,
 				D55D38801E1DF9C900618EB1 /* PlayerTableViewDataController.swift in Sources */,
-				D55B69D41E1AF2EC0098BB09 /* BattleListViewController.swift in Sources */,
 				D55B69E61E1AF4970098BB09 /* Battle.swift in Sources */,
 				D55B6A061E1AF8A10098BB09 /* PersistentContainer.swift in Sources */,
 				6B8D9E0A1E85B00500544CE2 /* BattleListController.swift in Sources */,
@@ -939,11 +882,9 @@
 				6B8D9E791E860B1000544CE2 /* PrimaryCoordinator.swift in Sources */,
 				6BF14E4D1E8C9BE500A6F766 /* SinglePlayerViewController.swift in Sources */,
 				D55B69FE1E1AF8A10098BB09 /* LeaveChannelCommand.swift in Sources */,
-				D55B69D01E1AF2B30098BB09 /* ChatViewController.swift in Sources */,
 				D55B6A011E1AF8A10098BB09 /* BattleCommands.swift in Sources */,
 				6BA5FB881FC8DFA900FFB47C /* ModData.swift in Sources */,
 				D55B69EB1E1AF4AE0098BB09 /* User.swift in Sources */,
-				D55B6A131E1B1C330098BB09 /* SideBarViewController.swift in Sources */,
 				6BA5FB841FC8D0FB00FFB47C /* DynamicLibraryHandle.swift in Sources */,
 				D55D38821E1DF9E300618EB1 /* SpectatorTableViewDataController.swift in Sources */,
 				6BE957621EBBBB9B009EE315 /* HostedBattleroomController.swift in Sources */,
@@ -959,7 +900,6 @@
 				6B33E94D1EE3FD5300534A8B /* CollectionViewItemSelectionDelegate.swift in Sources */,
 				D5AEA2841E1F4DE0004AE192 /* TotalLoggedInUsersDataController.swift in Sources */,
 				D55B6A201E1C37C20098BB09 /* NSView+BackgroundColor.swift in Sources */,
-				D55B69DC1E1AF3100098BB09 /* UserListViewController.swift in Sources */,
 				6B9E6B3F1E95B86200E1AD78 /* AgreementCommands.swift in Sources */,
 				D55B69FD1E1AF8A10098BB09 /* ChatMessageCommands.swift in Sources */,
 				6B2494361E89A7AC00718001 /* ReplayController.swift in Sources */,
