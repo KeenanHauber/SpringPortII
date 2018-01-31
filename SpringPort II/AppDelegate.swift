@@ -22,7 +22,7 @@ func timeStamp() -> String { // Make this a class thing?
 
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate { 
+class AppDelegate: NSObject, NSApplicationDelegate {
     var primaryCoordinator: PrimaryCoordinator! // ???
     var cacheManager: CacheManager!
     

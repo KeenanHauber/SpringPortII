@@ -36,24 +36,28 @@ class BattleRoomWindowController: NSWindowController {
         super.windowDidLoad()
         window?.contentView?.backgroundColor = NSColor.darkGray
         belowImageView.isHidden = true
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
+	
+	@IBOutlet var battleChatTextView: NSTextView!
     @IBOutlet weak var overImageView: NSImageView!
     @IBOutlet weak var belowImageView: NSImageView!
     @IBOutlet weak var playersTableView: NSTableView!
     @IBOutlet weak var spectatorsTableView: NSTableView!
     @IBOutlet weak var chatTextField: NSTextField!
     @IBOutlet weak var chatButton: NSButton!
-    @IBOutlet var battleChatTextView: NSTextView!
     @IBOutlet weak var spectateButton: NSButton!
+	@IBOutlet weak var readyButton: NSButton!
+	@IBOutlet weak var natTypeTextField: NSTextField!
+	
+	
 	@IBAction func promoteButtonPressed(_ sender: Any) {
 		delegate?.promoteBattle()
 	}
+	
 	@IBAction func leaveBattleButtonPressed(_ sender: Any) {
         delegate?.leaveBattle()
     }
-    @IBOutlet weak var readyButton: NSButton!
-    @IBOutlet weak var natTypeTextField: NSTextField!
+	
     @IBAction func spectateButtonPressed(_ sender: Any) {
         if spectateButton.image == #imageLiteral(resourceName: "SpectatorButtonOff") {
             delegate?.updateClientBattleStatus(to: .Spectator)
@@ -61,6 +65,7 @@ class BattleRoomWindowController: NSWindowController {
             delegate?.updateClientBattleStatus(to: .Player)
         }
     }
+	
     @IBAction func readyButtonPressed(_ sender: Any) {
         if readyButton.image == #imageLiteral(resourceName: "Unready") {
             delegate?.updateClientBattleStatus(to: .Ready)
@@ -68,29 +73,29 @@ class BattleRoomWindowController: NSWindowController {
             delegate?.updateClientBattleStatus(to: .Unready)
         }
     }
+	
+	@IBAction func chatButtonPressed(_ sender: Any) {
+		delegate?.send(chatTextField.stringValue)
+		chatTextField.stringValue = ""
+	}
+	@IBAction func enterButtonPressedInTextField(_ sender: Any) {
+		delegate?.send(chatTextField.stringValue)
+		chatTextField.stringValue = ""
+	}
     
     weak var delegate: BattleRoomWindowControllerDelegate?
     weak var dataSource: BattleRoomWindowControllerDataSource?
+	
     let playerTableViewDataController = PlayerTableViewDataController()
     let spectatorTableViewDataController = SpectatorTableViewDataController()
     
-    @IBAction func chatButtonPressed(_ sender: Any) {
-        delegate?.send(chatTextField.stringValue)
-        chatTextField.stringValue = ""
-    }
-    @IBAction func enterButtonPressedInTextField(_ sender: Any) {
-        delegate?.send(chatTextField.stringValue)
-        chatTextField.stringValue = ""
-    }
-    
+	
     func setUp() {
         playersTableView.dataSource = playerTableViewDataController
         playersTableView.delegate = playerTableViewDataController
         spectatorsTableView.dataSource = spectatorTableViewDataController
         spectatorsTableView.delegate = spectatorTableViewDataController
-        
-//        playerTableViewDataController.dataSource = self.dataSource
-//        spectatorTableViewDataController.dataSource = self.dataSource
+		
         guard let natType = dataSource?.myBattleNATType() else { return }
         switch natType {
         case .none:

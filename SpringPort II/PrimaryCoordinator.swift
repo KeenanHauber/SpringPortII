@@ -17,7 +17,7 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
     // MARK: - Overriding Functions //
     //////////////////////////////////
     
-    override func setUp() {
+    override func setUp() { // Please cut this down!!
         let loginController = LoginController()
         let serverMessageController = ServerMessageController()
         let usersDataController = UsersDataController()
@@ -56,8 +56,6 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         usersDataController.output = mainWindowController
         serverMessageController.output = mainWindowController
         battleListController.outputs.append(mainWindowController)
-        
-        
         
         mainWindowController.presentLoginSheet()
 
@@ -110,6 +108,7 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         switch response {
         case NSApplication.ModalResponse.alertFirstButtonReturn:
             // TODO: -- Alert or sth
+			fatalError("Fatal Error: Did not agree to agreement")
             break
         case NSApplication.ModalResponse.alertSecondButtonReturn:
             self.server?.send(ConfirmAgreementCommand())
@@ -133,7 +132,8 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         switch first {
         case "/me":
             components.remove(at: 0)
-//            let remainder = components.joined(separator: " ")
+            let remainder = components.joined(separator: " ")
+			server?.send(SayexCommand(chanName: chanName, message: message))
         default:
             server?.send(SayCommand(chanName: chanName, message: message))
         }
@@ -143,7 +143,7 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         channelDataController?.setSelectedChannel(as: index)
     }
     
-    func startQuickGame() {
+    func startQuickGame() { // TODO: -- Move this to the MainCoordinator? Or sth.
         guard let singlePlayerController = singlePlayerController else { return }
         guard let springProcessController = self.springProcessController else {
             let springProcessController = SpringProcessController()
@@ -153,7 +153,6 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
             return
         }
         springProcessController.launch(singlePlayerController.generateGame())
-        // TODO: -- Move this to the MainCoordinator? Or sth.
         mainWindowController.singlePlayerWindow = nil
     }
     
