@@ -8,14 +8,14 @@
 
 import Cocoa
 
-func timeStamp() -> String {
+func timeStamp() -> String { // Make this a class thing?
     let dateFormatter = DateFormatter()
-    
+
     dateFormatter.dateFormat = "HH:mm:ss"
     dateFormatter.timeZone = TimeZone.current
-    
+
     let timestamp = dateFormatter.string(from: Date())
-    
+
     return timestamp
 }
 
@@ -29,8 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate { // Each specific step - mak
     var password: String?
     var ingameTimeAsString: String = ""
     var ingameTime: Int = 0
-    
-    // TODO: Joining battles that use hole punching -- var battleUDPInterface: BattleUDPInterface?
+
     var primaryCoordinator: PrimaryCoordinator!
     var cacheManager: CacheManager!
     
@@ -70,5 +69,3 @@ extension AppDelegate: MenuDelegate {
 	func disableSoloGame() { singlePlayerGameMenuItem.isEnabled = false }
 	func enableSoloGame() { singlePlayerGameMenuItem.isEnabled = true }
 }
-
-
