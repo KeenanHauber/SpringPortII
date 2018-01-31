@@ -26,10 +26,6 @@ class SpectatorTableViewDataController: NSObject, NSTableViewDelegate, NSTableVi
         
         tableCellView.usernameTextField.stringValue = user.username
         
-//        if user.country == "AU" {
-//            tableCellView.flagImageView.image = #imageLiteral(resourceName: "Aussie Flag")
-//        }
-        
         if user.status.isBot == true {
             tableCellView.rankImageView.image = #imageLiteral(resourceName: "ServerStack")
         } else {
@@ -47,18 +43,10 @@ class SpectatorTableViewDataController: NSObject, NSTableViewDelegate, NSTableVi
         }
         
         if let battleStatus = user.battleStatus {
-//            if battleStatus.synced == .synced || battleStatus.synced == .unknown {
-//                tableCellView.statusImageView.image = #imageLiteral(resourceName: "Caution")
-//            } else if battleStatus.isReady == true {
-//                tableCellView.statusImageView.image = #imageLiteral(resourceName: "OpenBattleIcon")
-//            } else {
-//                tableCellView.statusImageView.image = #imageLiteral(resourceName: "Unready")
-//            }
             tableCellView.trueSkillTextField.stringValue = String(battleStatus.trueSkill)
-//            tableCellView.teamTextField.stringValue = String(battleStatus.teamNumber)
-//            tableCellView.allyTextField.stringValue = String(battleStatus.allyNumber)
-//            tableCellView.colorWell.color = battleStatus.color
-        }
+		} else {
+			debugPrint("Non-Fatal Error: Could not find battlestatus for a user")
+		}
         
         if let trueSkills = dataSource?.trueSkillDictionary() {
             let lowerCaseName = user.username.lowercased()
