@@ -23,8 +23,10 @@ class PlayerTableViewDataController: NSObject, NSTableViewDelegate, NSTableViewD
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "playerTableCellView"), owner: self)
         guard let tableCellView = cellView as? PlayerTableCellView else { fatalError("Invalid Cell Configuration")}
-        
-        guard let user = dataSource?.player(at: row) else { return cellView}
+		
+		guard let dataSource = dataSource else { return cellView }
+		
+		let user = dataSource.player(at: row)
         
         tableCellView.usernameTextField.stringValue = user.username
         
@@ -54,24 +56,23 @@ class PlayerTableViewDataController: NSObject, NSTableViewDelegate, NSTableViewD
         if let battleStatus = user.battleStatus {
 			if battleStatus.synced == .unsynced || battleStatus.synced == .unknown {// TODO: -- Make this a switch case thing
                 tableCellView.statusImageView.image = #imageLiteral(resourceName: "Caution")
-            }else if user.status.isInGame == true {
+            } else if user.status.isInGame == true {
                 tableCellView.statusImageView.image = #imageLiteral(resourceName: "In Battle Icon")
             } else if battleStatus.isReady == true {
                 tableCellView.statusImageView.image = #imageLiteral(resourceName: "ReadyCircle")
             } else {
                 tableCellView.statusImageView.image = #imageLiteral(resourceName: "UnreadyCircle")
             }
-//            tableCellView.trueSkillTextField.stringValue = String(battleStatus.trueSkill)
+
             tableCellView.teamTextField.stringValue = String(battleStatus.teamNumber+1)
             tableCellView.allyTextField.stringValue = String(battleStatus.allyNumber+1)
             tableCellView.colorWell.color = battleStatus.color
         }
-        if let trueSkills = dataSource?.trueSkillDictionary() {
-            let lowerCaseName = user.username.lowercased()
-            if let name = trueSkills[lowerCaseName] {
-                tableCellView.trueSkillTextField.stringValue = name
-            }
-        }
+        let trueSkills = dataSource.trueSkillDictionary()
+		let lowerCaseName = user.username.lowercased()
+		if let name = trueSkills[lowerCaseName] {
+			tableCellView.trueSkillTextField.stringValue = name
+		}
         
         return cellView
     }
