@@ -76,7 +76,7 @@ extension SpringProcessController: ScriptTxtManagerDelegate {
 extension SpringProcessController: ServerSomethingDelegate {
     func server(_ server: TASServer, instructedToConnectTo ipAndPort: String, with scriptPassword: String) {
         let anArray = ipAndPort.components(separatedBy: ":")
-        let username = "MasterBel2" // TODO: - Do something about this, get the actual value for somewhere. Currently stored int the ServerCommandController :(
+        let username = "MasterBel2" // TODO: -- Do something about this, get the actual value for somewhere. Currently stored int the ServerCommandController :(
         forceLaunchSpring(andConnectTo: anArray[0], at: anArray[1], with: scriptPassword, and: username)
     }
 }

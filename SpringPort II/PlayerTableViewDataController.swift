@@ -30,8 +30,6 @@ class PlayerTableViewDataController: NSObject, NSTableViewDelegate, NSTableViewD
         
         tableCellView.usernameTextField.stringValue = user.username
         
-        // TODO: fix ui to work with the below
-        
         let country = user.country
         tableCellView.countryTextField.stringValue = country.flag
         tableCellView.countryTextField.toolTip = country.name

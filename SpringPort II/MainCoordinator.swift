@@ -208,5 +208,6 @@ class MainCoordinator: ServerCommandRouter, LoginControllerDelegate, ServerMessa
 		if battleroomController?.battle != nil {
 			menuDelegate.enableSpectate()
 		}
+		server?.send(GetIngameTimeCommand())
 	}
 }
