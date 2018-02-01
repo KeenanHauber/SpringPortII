@@ -21,6 +21,9 @@ protocol BattleListDataSource: class {
     func openBattle(for indexPath: IndexPath) -> Battle
     func founder(for battle: Battle) -> User
     func request(toJoin battle: String, with password: String)
+	func has(engine version: String) -> Bool
+	func hasMap(with checksum: UInt32) -> Bool
+	func has(_ game: String/*, versioned version: String*/) -> Bool
 }
 
 protocol BattleListDataOutput: class {
@@ -29,6 +32,7 @@ protocol BattleListDataOutput: class {
 
 class BattleListController: ServerBattleListDelegate, BattleListDataSource {
     weak var delegate: BattleListControllerDelegate!
+	weak var cache: Cache?
     var outputs: [BattleListDataOutput] = []
     var battles: [Battle] = []
     
@@ -120,4 +124,18 @@ class BattleListController: ServerBattleListDelegate, BattleListDataSource {
         let filteredBattles = battles.filter {$0.playerCount > 0}
         return filteredBattles[indexPath.item]
     }
+	
+	func has(engine version: String) -> Bool {
+		return cache?.has(version) ?? false
+	}
+	
+	func hasMap(with checksum: UInt32) -> Bool {
+		return cache?.hasMap(with: checksum) ?? false
+	}
+	
+	func has(_ game: String/*, versioned version: String*/) -> Bool {
+		return false
+//		return cache?.has(gameName, versioned: version) ?? false
+	}
+	
 }

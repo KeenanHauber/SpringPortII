@@ -40,6 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let primaryCoordinator = PrimaryCoordinator(menuDelegate: self)
 		let cache: Cache = CacheManager()
 		cache.setup()
+		primaryCoordinator.cache = cache
         primaryCoordinator.setUp()
         self.primaryCoordinator = primaryCoordinator
 		relaunchSpringMenuItem.isEnabled = false

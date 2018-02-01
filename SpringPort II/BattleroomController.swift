@@ -33,11 +33,12 @@ protocol BattleRoomDataOutput: class {
 class BattleroomController: ServerBattleDelegate {
     weak var delegate: BattleroomControllerDelegate?
     weak var output: BattleRoomDataOutput?
+	weak var cache: Cache?
     
 	var battle: Battle? // TODO: -- Make this a non-optional to save later error checking
     var battleMessages: [Message] = []
     
-    func relaunchSpring() {
+	func relaunchSpring() {
         guard let battle = self.battle else { return }
         if battle.natType == .none {
             if let host = delegate?.find(user: battle.founder) {

@@ -64,7 +64,7 @@ protocol Cache: class {
 	
 	func has(_ engine: String) -> Bool
 	func hasMap(with checksum: UInt32) -> Bool
-	func has(game: String, versioned version: String) -> Bool
+	func has(_ game: String, versioned version: String) -> Bool
 }
 
 class CacheManager: Cache {
@@ -169,7 +169,7 @@ class CacheManager: Cache {
 			return temp
 		}
 	}
-	func has(game: String, versioned version: String) -> Bool {
+	func has(_ game: String, versioned version: String) -> Bool {
 		return false // TODO: -- Fix
 	}
 	private func loadGames() {

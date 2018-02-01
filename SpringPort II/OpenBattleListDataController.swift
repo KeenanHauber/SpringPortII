@@ -12,6 +12,7 @@ protocol OpenBattleListDataControllerDataSource: class/*, BattleListCollectionVi
     func battleCount() -> Int
     func battle(for indexPath: IndexPath) -> Battle
     func founder(for battle: Battle) -> User
+	func has()
 }
 
 class OpenBattleListDataController: NSObject, NSCollectionViewDelegate, NSCollectionViewDataSource {
@@ -27,27 +28,46 @@ class OpenBattleListDataController: NSObject, NSCollectionViewDelegate, NSCollec
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "BattleListCollectionViewItem"), for: indexPath) as! BattleListCollectionViewItem
-        
-        guard let battle = dataSource?.openBattle(for: indexPath) else { return item }
+		
+		guard let dataSource = dataSource else { return item }
+        let battle = dataSource.openBattle(for: indexPath)
         let text = "\(battle.playerCount)/\(battle.maxPlayers)"
-        
         
         item.descriptionTextField.stringValue = (battle.title)
         item.descriptionTextField.textColor = NSColor.blue
+		
         item.engineVersionTextField.stringValue = (battle.engineVersion)
-        item.engineVersionTextField.textColor = NSColor.orange
-        item.gameNameTextField.stringValue = (battle.gameName)
-        item.gameNameTextField.textColor = NSColor.orange
-        item.playersTextField.stringValue = text
+		
+		if dataSource.has(engine: battle.engineVersion) == true {
+			item.engineVersionTextField.textColor = NSColor.green
+		} else {
+			item.engineVersionTextField.textColor = NSColor.red
+		}
+		
+		item.gameNameTextField.stringValue = (battle.gameName)
+		
+		if dataSource.has(battle.gameName) == true {
+			item.gameNameTextField.textColor = NSColor.green
+		} else {
+			item.gameNameTextField.textColor = NSColor.red
+		}
+		
+		item.playersTextField.stringValue = text
         if battle.playerCount == battle.maxPlayers {
             item.playersTextField.textColor = NSColor.red
         } else {
             item.playersTextField.textColor = NSColor.green
         }
         item.mapNameTextField.stringValue = (battle.mapName)
-        item.mapNameTextField.textColor = NSColor.red
+		if dataSource.hasMap(with: battle.mapHash) {// TODO: -- Fix!!
+			item.mapNameTextField.textColor = NSColor.green
+		} else {
+			item.mapNameTextField.textColor = NSColor.red
+		}
+
         item.hostNameTextField.stringValue = battle.founder
         item.hostNameTextField.textColor = NSColor.blue
+		
         
         if battle.isLocked == true || battle.passworded == true {
             item.statusImageView.image = #imageLiteral(resourceName: "Locked Icon")

@@ -36,6 +36,8 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         serverCommandController.delegate = self
 		
 		singlePlayerController.cache = cache
+		battleListController.cache = cache
+		battleroomController.cache = cache
         
         self.singlePlayerController = singlePlayerController
         self.loginController = loginController
