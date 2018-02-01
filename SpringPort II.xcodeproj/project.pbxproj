@@ -74,12 +74,10 @@
 		6BA5FB831FC8D0FB00FFB47C /* UnitsyncWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB801FC8D0FB00FFB47C /* UnitsyncWrapper.swift */; };
 		6BA5FB841FC8D0FB00FFB47C /* DynamicLibraryHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB811FC8D0FB00FFB47C /* DynamicLibraryHandle.swift */; };
 		6BA5FB861FC8DFA200FFB47C /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB851FC8DFA200FFB47C /* MapData.swift */; };
-		6BA5FB881FC8DFA900FFB47C /* ModData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB871FC8DFA900FFB47C /* ModData.swift */; };
 		6BA5FB8B1FC8EE9600FFB47C /* DynamicLibraryHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB811FC8D0FB00FFB47C /* DynamicLibraryHandle.swift */; };
 		6BA5FB8C1FC8EE9900FFB47C /* UnitsyncConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB7F1FC8D0FB00FFB47C /* UnitsyncConfig.swift */; };
 		6BA5FB8D1FC8EE9B00FFB47C /* UnitsyncWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB801FC8D0FB00FFB47C /* UnitsyncWrapper.swift */; };
 		6BA5FB8E1FC8EE9E00FFB47C /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB851FC8DFA200FFB47C /* MapData.swift */; };
-		6BA5FB8F1FC8EEA000FFB47C /* ModData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB871FC8DFA900FFB47C /* ModData.swift */; };
 		6BA5FB921FC91A7900FFB47C /* EngineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB911FC91A7900FFB47C /* EngineData.swift */; };
 		6BA5FB931FC91AA100FFB47C /* EngineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB911FC91A7900FFB47C /* EngineData.swift */; };
 		6BA912CC1FF9C82600A8C60E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA912CB1FF9C82600A8C60E /* MainMenu.xib */; };
@@ -221,7 +219,6 @@
 		6BA5FB801FC8D0FB00FFB47C /* UnitsyncWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsyncWrapper.swift; sourceTree = "<group>"; };
 		6BA5FB811FC8D0FB00FFB47C /* DynamicLibraryHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicLibraryHandle.swift; sourceTree = "<group>"; };
 		6BA5FB851FC8DFA200FFB47C /* MapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapData.swift; sourceTree = "<group>"; };
-		6BA5FB871FC8DFA900FFB47C /* ModData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModData.swift; sourceTree = "<group>"; };
 		6BA5FB911FC91A7900FFB47C /* EngineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineData.swift; sourceTree = "<group>"; };
 		6BA912CB1FF9C82600A8C60E /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		6BBE4B001F63FED200E95AA2 /* LaunchScriptManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScriptManager.swift; sourceTree = "<group>"; };
@@ -377,7 +374,6 @@
 				D5A280631E20416B00E46A0D /* CacheManager.swift */,
 				6BA5FB911FC91A7900FFB47C /* EngineData.swift */,
 				6BA5FB851FC8DFA200FFB47C /* MapData.swift */,
-				6BA5FB871FC8DFA900FFB47C /* ModData.swift */,
 				6BE2CB7C1FB5105400D50C94 /* Unitsync */,
 			);
 			name = Cache;
@@ -787,7 +783,6 @@
 				6B8D9E451E85BC9700544CE2 /* BattleUDPInterface.swift in Sources */,
 				6B8D9E581E85BCB000544CE2 /* PersistentContainer.swift in Sources */,
 				6B8D9E571E85BCB000544CE2 /* NSData+Base64.swift in Sources */,
-				6BA5FB8F1FC8EEA000FFB47C /* ModData.swift in Sources */,
 				6B90426A1EC005D800431848 /* MainCoordinator.swift in Sources */,
 				6B9042741EC005D800431848 /* ServerCommandController.swift in Sources */,
 				6B8D9E551E85BCB000544CE2 /* LobbyServerInfo.swift in Sources */,
@@ -883,7 +878,6 @@
 				6BF14E4D1E8C9BE500A6F766 /* SinglePlayerViewController.swift in Sources */,
 				D55B69FE1E1AF8A10098BB09 /* LeaveChannelCommand.swift in Sources */,
 				D55B6A011E1AF8A10098BB09 /* BattleCommands.swift in Sources */,
-				6BA5FB881FC8DFA900FFB47C /* ModData.swift in Sources */,
 				D55B69EB1E1AF4AE0098BB09 /* User.swift in Sources */,
 				6BA5FB841FC8D0FB00FFB47C /* DynamicLibraryHandle.swift in Sources */,
 				D55D38821E1DF9E300618EB1 /* SpectatorTableViewDataController.swift in Sources */,
