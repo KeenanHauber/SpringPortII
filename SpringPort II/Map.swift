@@ -8,11 +8,12 @@
 
 import Cocoa
 
-class Map {
-    let mapHash: String
-    let mapName: String
-    init(mapHash: String, mapName: String) {
-        self.mapHash = mapHash
-        self.mapName = mapName
-    }
-}
+//class Map {
+//    let mapHash: String
+//    let mapName: String
+//    init(mapHash: String, mapName: String) {
+//        self.mapHash = mapHash
+//        self.mapName = mapName
+//    }
+//}
+

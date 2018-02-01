@@ -20,7 +20,7 @@ class BattleStatus: NSObject { // Why is this a class?
     var isPlayer: Bool
     var handicap: Int // At this point in time I know not what to do with this
     var synced: SyncStatus
-    var side: Int // Later when you can do unisync stuff this should really be of type Side (enum) Probably not actually. But whatever.
+    var side: Int 
     var trueSkill: Int = 20
     var skillUncertainty: Int = 0
     

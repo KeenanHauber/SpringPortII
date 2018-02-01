@@ -13,7 +13,7 @@ import Foundation
 
  - Note: This class is *not thread safe*. Be sure to invoke all functions via `performBlock` for asynchronous processing, or `performBlockAndWait` for synchronous processing. This class uses a private serial queue to dispatch all operations.
  */
-class UnitsyncWrapper {
+class UnitsyncWrapper: MapDataSource {
 
     private let handle: DynamicLibraryHandle
     private let queue = DispatchQueue(label: "com.springport.unitsyncwrapper")
@@ -124,7 +124,7 @@ class UnitsyncWrapper {
 
     var mapCount: Int { return Int(GetMapCount()) }
     
-    func map(at index: Int) -> MapData {
+    func map(at index: Int) -> Map {
         let cIndex = CInt(index)
         
         let mapName = String(cString: GetMapName(cIndex))
@@ -139,9 +139,7 @@ class UnitsyncWrapper {
         let resourceCount = Int(GetMapResourceCount(cIndex))
         let checksum = GetMapChecksum(cIndex)
         let miniMapData: [UInt16] = []
-        let map = MapData(
-            name: mapName,
-            fileName: fileName,
+        let mapData = MapData(
             description: description,
             mapWidth: mapWidth,
             mapHeight: mapHeight,
@@ -150,20 +148,12 @@ class UnitsyncWrapper {
             windMax: windMax,
             mapGravity: mapGravity,
             resourceCount: resourceCount,
-            checksum: checksum,
             miniMapData: miniMapData)
+		let map = Map(name: mapName, checksum: checksum, fileName: fileName, mapData: mapData)
         return map
     }
-    var modCount: Int { return Int(GetPrimaryModCount()) }
-    
-    func mod(at index: Int) -> ModData {
-        let cIndex = CInt(index)
-        
-        let name = String(cString: GetPrimaryModArchive(cIndex))
-        let checksum = GetPrimaryModChecksum(cIndex)
-        
-        return ModData(name: name, checksum: checksum)
-    }
+	
+    var gameCount: Int { return Int(GetPrimaryModCount()) } // Mods in unitsync are actually games
 
     // MARK: - PRIVATE -- handles to all the unitsync functions
 

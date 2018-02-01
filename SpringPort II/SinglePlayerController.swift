@@ -13,13 +13,13 @@ protocol SinglePlayerDelegate: class {
     func launch(_ game: SinglePlayerGame)
 }
 
-enum Side {
-    case Arm
-    case Core
-    case TLL
-    
-    //More to come ??? Or as a string?
-}
+//enum Side {
+//    case Arm
+//    case Core
+//    case TLL
+//
+//    //More to come ??? Or as a string?
+//}
 
 struct Scenario {
     let mapName: String
@@ -115,10 +115,11 @@ struct SinglePlayerGame {
 class SinglePlayerController {
     // TODO: - Implement a rating system, so that the players are presented with games that aren't far too hard for them
     var game: SinglePlayerGame?
-    var delegate: SinglePlayerDelegate?
+    weak var delegate: SinglePlayerDelegate?
+	weak var cache: Cache?
     
-    func generateGame() -> SinglePlayerGame {
-        let scenario = generateScenario()
+    func generateGame() -> SinglePlayerGame? {
+		guard let scenario = generateScenario() else { return nil }
         let gameType = "Balanced Annihilation V9.46"
         let gameStartDelay = 4
         
@@ -179,22 +180,13 @@ class SinglePlayerController {
         return game
     }
     
-    func generateScenario() -> Scenario {
-//        let int = arc4random_uniform(4)
-        let int = 0
-        var scenario: Scenario!
-        switch int {
-        case 0:
-            scenario = Scenario(mapName: "Comet Catcher Redux", startPosType: "0", numberOfAIs: 1, AIShortName: "ShardLua", startPosX: nil, startPosY: nil)
-        case 1:
-            scenario = Scenario(mapName: "Talus", startPosType: "0", numberOfAIs: 1, AIShortName: "ShardLua", startPosX: nil, startPosY: nil)
-        case 2:
-            scenario = Scenario(mapName: "Titan-v2", startPosType: "0", numberOfAIs: 1, AIShortName: "ShardLua", startPosX: nil, startPosY: nil)
-        case 3:
-            scenario = Scenario(mapName: "Victoria Crater", startPosType: "0", numberOfAIs: 1, AIShortName: "ShardLua", startPosX: nil, startPosY: nil)
-        default:
-            scenario = Scenario(mapName: "Comet Catcher Redux", startPosType: "0", numberOfAIs: 1, AIShortName: "ShardLua", startPosX: nil, startPosY: nil)
-        }
+    private func generateScenario() -> Scenario? {
+		guard let maps = cache?.mapNames else { return nil }
+        let int = Int(arc4random_uniform(UInt32(maps.count-1))) // LEL
+		let map = maps[int]
+		let scenario = Scenario(mapName: map, startPosType: "0", numberOfAIs: 1, AIShortName: "ShardLua", startPosX: nil, startPosY: nil)
+		
+		
         return scenario
     }
 }

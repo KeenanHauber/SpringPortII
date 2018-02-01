@@ -374,8 +374,8 @@
 		6BA5FB901FC8EEC500FFB47C /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				6BA5FB911FC91A7900FFB47C /* EngineData.swift */,
 				D5A280631E20416B00E46A0D /* CacheManager.swift */,
+				6BA5FB911FC91A7900FFB47C /* EngineData.swift */,
 				6BA5FB851FC8DFA200FFB47C /* MapData.swift */,
 				6BA5FB871FC8DFA900FFB47C /* ModData.swift */,
 				6BE2CB7C1FB5105400D50C94 /* Unitsync */,

@@ -9,8 +9,6 @@
 import Foundation
 
 struct MapData {
-    let name: String
-    let fileName: String
     let description: String
     let mapWidth: Int
     let mapHeight: Int
@@ -19,6 +17,5 @@ struct MapData {
     let windMax: Int
     let mapGravity: Int
     let resourceCount: Int
-    let checksum: UInt32
     let miniMapData: [UInt16]
 }

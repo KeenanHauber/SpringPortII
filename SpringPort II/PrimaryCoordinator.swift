@@ -23,7 +23,7 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         let usersDataController = UsersDataController()
         let channelDataController = ChannelDataController()
         let battleListController = BattleListController()
-        let battleroomController = BattleroomController()
+        let battleroomController = BattleroomController() // Does this need to exist while no battleroom has been joined?
         let serverCommandController = ServerCommandController()
         let singlePlayerController = SinglePlayerController()
         
@@ -147,12 +147,14 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         guard let singlePlayerController = singlePlayerController else { return }
         guard let springProcessController = self.springProcessController else {
             let springProcessController = SpringProcessController()
-            springProcessController.launch(singlePlayerController.generateGame())
+			guard let game = singlePlayerController.generateGame() else { debugPrint("Non-FatalError: Could not start a single player game"); return }
+            springProcessController.launch(game)
             self.springProcessController = springProcessController
             mainWindowController.singlePlayerWindow = nil
             return
         }
-        springProcessController.launch(singlePlayerController.generateGame())
+		guard let game = singlePlayerController.generateGame() else { debugPrint("Non-FatalError: Could not start a single player game"); return }
+		springProcessController.launch(game)
         mainWindowController.singlePlayerWindow = nil
     }
     
