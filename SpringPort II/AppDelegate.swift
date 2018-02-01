@@ -24,7 +24,6 @@ func timeStamp() -> String { // Make this a class thing?
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     var primaryCoordinator: PrimaryCoordinator! // ???
-    var cacheManager: CacheManager!
     
     @IBOutlet weak var singlePlayerGameMenuItem: NSMenuItem!
     @IBOutlet weak var relaunchSpringMenuItem: NSMenuItem! // When selected will join an already in-game game
@@ -39,6 +38,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		let primaryCoordinator = PrimaryCoordinator(menuDelegate: self)
+		let cache: Cache = CacheManager()
+		cache.setup()
         primaryCoordinator.setUp()
         self.primaryCoordinator = primaryCoordinator
 		relaunchSpringMenuItem.isEnabled = false

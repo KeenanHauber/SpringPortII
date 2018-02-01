@@ -13,6 +13,17 @@ struct Map {
 	let checksum: UInt32
 	let fileName: String
 	var mapData: MapData?
+	init(identification: (String, UInt32, String)) {
+		self.name = identification.0
+		self.checksum = identification.1
+		self.fileName = identification.2
+	}
+	init(name: String, checksum: UInt32, fileName: String, mapData: MapData) {
+		self.name = name
+		self.checksum = checksum
+		self.fileName = fileName
+		self.mapData = mapData
+	}
 }
 
 struct Game {
@@ -42,7 +53,10 @@ protocol GameDataSource {
 }
 
 protocol Cache: class {
-	func autodetectSpringVersions()
+	func setup()
+	func reloadGames()
+	func reloadMaps()
+	func reloadEngines()
 	
 	var engineVersions: [String] { get }
 	var mapNames: [String] { get }
@@ -54,7 +68,13 @@ protocol Cache: class {
 }
 
 class CacheManager: Cache {
-	func autodetectSpringVersions() {
+	func setup() {
+		autodetectSpringVersions()
+		loadMaps()
+		loadGames()
+	}
+	
+	private func autodetectSpringVersions() {
 		let fileManager = FileManager.default
 		let allApplicationURLs =
 			fileManager.urls(for: .allApplicationsDirectory, in: .localDomainMask)
@@ -65,11 +85,10 @@ class CacheManager: Cache {
 		for applicationURL in allApplicationURLs {
 			let config = UnitsyncConfig(appURL: applicationURL)
 			if let wrapper = UnitsyncWrapper(config: config) {
-				let version = wrapper.springVersion
-				engines.append(EngineData(version: version, url: applicationURL, unitsyncWrapper: wrapper))
-				//				wrapper.performBlock {
-				//					print("Available Spring version: \(wrapper.springVersion) (at \(applicationURL.path))")
-				//				}
+				wrapper.performBlockAndWait {
+					let version = wrapper.springVersion
+					engines.append(EngineData(version: version, url: applicationURL, unitsyncWrapper: wrapper))
+				}
 			}
 		}
 	}
@@ -77,6 +96,12 @@ class CacheManager: Cache {
 	// ENGINE
 	
 	private var engines: [EngineData] = []
+	private var latestEngine: EngineData? {
+		get {
+			let sortedVersions = self.engines.sorted { $0.version > $1.version }
+			return sortedVersions.first
+		}
+	}
 	var engineVersions: [String] {
 		get {
 			var temp: [String] = []
@@ -93,6 +118,10 @@ class CacheManager: Cache {
 			}
 		}
 		return false
+	}
+	func reloadEngines() {
+		engines = []
+		autodetectSpringVersions()
 	}
 	
 	// MAPS
@@ -115,6 +144,18 @@ class CacheManager: Cache {
 		}
 		return false
 	}
+	private func loadMaps() {
+		guard let engine = latestEngine else { debugPrint("Non-Fatal Error: No engines, cannot load maps"); return }
+		guard let unitsync = engine.unitsyncWrapper else { debugPrint("No unitsync wrapper to detect games"); return }
+		for index in 0..<unitsync.mapCount {
+			let map = Map(identification: unitsync.mapIdentification(at: index))
+			maps.append(map)
+		}
+	}
+	func reloadMaps() {
+		maps = []
+		loadMaps()
+	}
 	
 	// GAMES
 	
@@ -130,5 +171,14 @@ class CacheManager: Cache {
 	}
 	func has(game: String, versioned version: String) -> Bool {
 		return false // TODO: -- Fix
+	}
+	private func loadGames() {
+		guard let engine = latestEngine else { debugPrint("Non-Fatal Error: No engines, cannot load games"); return }
+		guard let unitsync = engine.unitsyncWrapper else { debugPrint("No unitsync wrapper to detect games"); return }
+		// TODO: -- loadGames() does nothing atm
+	}
+	func reloadGames() {
+		games = []
+		loadGames()
 	}
 }

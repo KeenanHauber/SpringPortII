@@ -123,6 +123,14 @@ class UnitsyncWrapper: MapDataSource {
     }
 
     var mapCount: Int { return Int(GetMapCount()) }
+	
+	func mapIdentification(at index: Int) -> (String, UInt32, String) {
+		let cIndex = CInt(index)
+		let mapName = String(cString: GetMapName(cIndex))
+		let checksum = GetMapChecksum(cIndex)
+		let fileName = String(cString: GetMapFileName(cIndex))
+		return (mapName, checksum, fileName)
+	}
     
     func map(at index: Int) -> Map {
         let cIndex = CInt(index)

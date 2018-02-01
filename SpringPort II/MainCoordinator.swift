@@ -24,8 +24,9 @@ class MainCoordinator: ServerCommandRouter, LoginControllerDelegate, ServerMessa
     var connectingToRegister: Bool = false
 	var ingame: Bool = false
 	
-	var cacheManager: CacheManager?
+	var cache: Cache?
     weak var server: TASServer? // This is stored in the ServerCommandController object. Be careful to not deallocate it.
+	// TODO: -- Fix that
 	var springProcess: Process?
 	
     var springProcessController: SpringProcessController?
