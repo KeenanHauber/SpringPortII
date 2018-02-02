@@ -13,7 +13,7 @@ class UpdatedBattleInfo {
     let battleId: String
     let spectatorCount: Int
     let isLocked: Bool
-    let mapHash: UInt32
+    let mapHash: Int32
     let mapName: String
 
     // UPDATEBATTLEINFO battleID spectatorCount locked mapHash {mapName}
@@ -23,7 +23,7 @@ class UpdatedBattleInfo {
         battleId = components[1]
         spectatorCount = Int(components[2]) ?? 0
         isLocked = components[3] != "0"
-        mapHash = UInt32(components[4]) ?? 0
+        mapHash = Int32(components[4]) ?? 0
 
         let mapNameComponents = components[5..<components.count]
         mapName = mapNameComponents.joined(separator: " ")

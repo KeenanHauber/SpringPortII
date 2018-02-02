@@ -81,6 +81,8 @@
 		6BA5FB921FC91A7900FFB47C /* EngineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB911FC91A7900FFB47C /* EngineData.swift */; };
 		6BA5FB931FC91AA100FFB47C /* EngineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5FB911FC91A7900FFB47C /* EngineData.swift */; };
 		6BA912CC1FF9C82600A8C60E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA912CB1FF9C82600A8C60E /* MainMenu.xib */; };
+		6BAA5F5920243E2100818A9F /* NSImage+RGB565.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA5F5820243E2100818A9F /* NSImage+RGB565.swift */; };
+		6BAA5F5B20243E8900818A9F /* UInt16+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA5F5A20243E8900818A9F /* UInt16+RGB.swift */; };
 		6BBE4B011F63FED200E95AA2 /* LaunchScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE4B001F63FED200E95AA2 /* LaunchScriptManager.swift */; };
 		6BBE4B021F63FED200E95AA2 /* LaunchScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE4B001F63FED200E95AA2 /* LaunchScriptManager.swift */; };
 		6BBE4B3B1F64180C00E95AA2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE4B3A1F64180C00E95AA2 /* LICENSE */; };
@@ -221,6 +223,8 @@
 		6BA5FB851FC8DFA200FFB47C /* MapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapData.swift; sourceTree = "<group>"; };
 		6BA5FB911FC91A7900FFB47C /* EngineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineData.swift; sourceTree = "<group>"; };
 		6BA912CB1FF9C82600A8C60E /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		6BAA5F5820243E2100818A9F /* NSImage+RGB565.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+RGB565.swift"; sourceTree = "<group>"; };
+		6BAA5F5A20243E8900818A9F /* UInt16+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt16+RGB.swift"; sourceTree = "<group>"; };
 		6BBE4B001F63FED200E95AA2 /* LaunchScriptManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScriptManager.swift; sourceTree = "<group>"; };
 		6BBE4B3A1F64180C00E95AA2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6BDBB4A91FFB007400F9DC95 /* PromoteCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoteCommand.swift; sourceTree = "<group>"; };
@@ -421,8 +425,10 @@
 				D55B69A11E1AF1EE0098BB09 /* AppDelegate.swift */,
 				D55B6A1D1E1BBD5A0098BB09 /* Background Views.swift */,
 				6BA912CB1FF9C82600A8C60E /* MainMenu.xib */,
+				6BAA5F5820243E2100818A9F /* NSImage+RGB565.swift */,
 				6B8D9E781E860B1000544CE2 /* PrimaryCoordinator.swift */,
 				6BF14E4B1E8C9BE500A6F766 /* SinglePlayerViewController.swift */,
+				6BAA5F5A20243E8900818A9F /* UInt16+RGB.swift */,
 				6BF14E4C1E8C9BE500A6F766 /* SinglePlayerViewController.xib */,
 				D55B6A0D1E1B047B0098BB09 /* SpringPort II-Bridging-Header.h */,
 				D55B69A81E1AF1EE0098BB09 /* Info.plist */,
@@ -832,7 +838,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BF666D91E8E1C53003E0ADE /* LoginViewController.swift in Sources */,
+				6BAA5F5920243E2100818A9F /* NSImage+RGB565.swift in Sources */,
 				D55B69EC1E1AF4AE0098BB09 /* CountryCode.swift in Sources */,
+				6BAA5F5B20243E8900818A9F /* UInt16+RGB.swift in Sources */,
 				6B8D9E0C1E85B02800544CE2 /* BattleroomController.swift in Sources */,
 				D55D386E1E1C476E00618EB1 /* OpenBattleListDataController.swift in Sources */,
 				6BBE4B011F63FED200E95AA2 /* LaunchScriptManager.swift in Sources */,

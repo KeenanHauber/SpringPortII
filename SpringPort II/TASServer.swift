@@ -54,6 +54,7 @@ protocol ServerBattleDelegate: class {
     func server(_ server: TASServer, recievedFromBattle message: String, from sender: String, ofStyle style: String)
     
     func server(_ server: TASServer, didSetBattleStatus battleStatus: BattleStatus, forUserNamed username: String)
+	func server(_ server: TASServer, didUpdate battle: UpdatedBattleInfo)
     
     func server(_ server: TASServer, userNamed name: String, didJoinBattleWithId battleId: String)
     func server(_ server: TASServer, userNamed name: String, didLeaveBattleWithId battleId: String)
@@ -237,6 +238,9 @@ extension TASServer: SocketDelegate {
             for delegate in battleListDelegates {
                 delegate.server(self, didUpdate: updatedBattleInfo)
             }
+			for delegate in battleDelegates {
+				delegate.server(self, didUpdate: updatedBattleInfo)
+			}
 
         case "JOINEDBATTLE":
             // JOINEDBATTLE battleID userName [scriptPassword]

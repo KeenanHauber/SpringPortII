@@ -124,20 +124,20 @@ class UnitsyncWrapper: MapDataSource {
 
     var mapCount: Int { return Int(GetMapCount()) }
 	
-	func mapIdentification(at index: Int) -> (String, UInt32, String) {
+	func mapIdentification(at index: Int) -> (String, Int32, String, Int) {
 		let cIndex = CInt(index)
 		let mapName = String(cString: GetMapName(cIndex))
 		let checksum = GetMapChecksum(cIndex)
 		let fileName = String(cString: GetMapFileName(cIndex))
-		return (mapName, checksum, fileName)
+		return (mapName, checksum, fileName, index)
 	}
     
-    func map(at index: Int) -> Map {
-        let cIndex = CInt(index)
-        
-        let mapName = String(cString: GetMapName(cIndex))
-        let fileName = String(cString: GetMapFileName(cIndex))
-        let description = String(cString: GetMapFileName(cIndex))
+    func mapData(for map: Map) -> MapData {
+        let cIndex = CInt(map.index)
+		
+		let mipLevel = 1
+
+		let description = String(cString: GetMapDescription(cIndex))
         let mapWidth = Int(GetMapWidth(cIndex))
         let mapHeight = Int(GetMapHeight(cIndex))
         let tidalStrength = Int(GetMapTidalStrength(cIndex))
@@ -145,8 +145,9 @@ class UnitsyncWrapper: MapDataSource {
         let windMax = Int(GetMapWindMax(cIndex))
         let mapGravity = Int(GetMapGravity(cIndex))
         let resourceCount = Int(GetMapResourceCount(cIndex))
-        let checksum = GetMapChecksum(cIndex)
-        let miniMapData: [UInt16] = []
+		
+		let miniMapData: [UInt16] = []
+		
         let mapData = MapData(
             description: description,
             mapWidth: mapWidth,
@@ -157,8 +158,7 @@ class UnitsyncWrapper: MapDataSource {
             mapGravity: mapGravity,
             resourceCount: resourceCount,
             miniMapData: miniMapData)
-		let map = Map(name: mapName, checksum: checksum, fileName: fileName, mapData: mapData)
-        return map
+        return mapData
     }
 	
     var gameCount: Int { return Int(GetPrimaryModCount()) } // Mods in unitsync are actually games
@@ -185,7 +185,7 @@ class UnitsyncWrapper: MapDataSource {
     private let AddArchive: @convention(c) (UnsafePointer<CChar>) -> Void
     private let AddAllArchives: @convention(c) (UnsafePointer<CChar>) -> Void
     private let RemoveAllArchives: @convention(c) () -> Void
-    private let GetArchiveChecksum: @convention(c) (UnsafePointer<CChar>) -> UInt32
+    private let GetArchiveChecksum: @convention(c) (UnsafePointer<CChar>) -> Int32
     private let GetArchivePath: @convention(c) (UnsafePointer<CChar>) -> UnsafePointer<CChar>
 
     // Map related functions
@@ -212,8 +212,8 @@ class UnitsyncWrapper: MapDataSource {
     private let GetMapMaxHeight: @convention(c) (UnsafePointer<CChar>) -> CFloat
     private let GetMapArchiveCount: @convention(c) (UnsafePointer<CChar>) -> CInt
     private let GetMapArchiveName: @convention(c) (CInt) -> UnsafePointer<CChar>
-    private let GetMapChecksum: @convention(c) (CInt) -> UInt32
-    private let GetMapChecksumFromName: @convention(c) (UnsafePointer<CChar>) -> UInt32
+    private let GetMapChecksum: @convention(c) (CInt) -> Int32
+    private let GetMapChecksumFromName: @convention(c) (UnsafePointer<CChar>) -> Int32
     private let GetMinimap: @convention(c) (UnsafePointer<CChar>,CInt) -> UnsafeMutablePointer<UInt16>?
     private let GetInfoMapSize: @convention(c) (UnsafePointer<CChar>,UnsafePointer<CChar>,UnsafePointer<CInt>,UnsafePointer<CInt>) -> CInt
     private let GetInfoMap: @convention(c) (UnsafePointer<CChar>,UnsafePointer<CChar>,UnsafePointer<UInt8>,CInt) -> CInt
@@ -235,8 +235,8 @@ class UnitsyncWrapper: MapDataSource {
     private let GetPrimaryModArchiveCount: @convention(c) (CInt) -> CInt
     private let GetPrimaryModArchiveList: @convention(c) (CInt) -> UnsafePointer<CChar>
     private let GetPrimaryModIndex: @convention(c) (UnsafePointer<CChar>) -> CInt
-    private let GetPrimaryModChecksum: @convention(c) (CInt) -> UInt32
-    private let GetPrimaryModChecksumFromName: @convention(c) (UnsafePointer<CChar>) -> UInt32
+    private let GetPrimaryModChecksum: @convention(c) (CInt) -> Int32
+    private let GetPrimaryModChecksumFromName: @convention(c) (UnsafePointer<CChar>) -> Int32
 
     private let GetSideCount: @convention(c) () -> CInt
     private let GetSideName: @convention(c) (CInt) -> UnsafePointer<CChar>

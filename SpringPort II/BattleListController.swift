@@ -22,7 +22,7 @@ protocol BattleListDataSource: class {
     func founder(for battle: Battle) -> User
     func request(toJoin battle: String, with password: String)
 	func has(engine version: String) -> Bool
-	func hasMap(with checksum: UInt32) -> Bool
+	func hasMap(with checksum: Int32) -> Bool
 	func has(_ game: String/*, versioned version: String*/) -> Bool
 }
 
@@ -129,7 +129,7 @@ class BattleListController: ServerBattleListDelegate, BattleListDataSource {
 		return cache?.has(version) ?? false
 	}
 	
-	func hasMap(with checksum: UInt32) -> Bool {
+	func hasMap(with checksum: Int32) -> Bool {
 		return cache?.hasMap(with: checksum) ?? false
 	}
 	

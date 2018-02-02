@@ -28,6 +28,8 @@ protocol BattleRoomDataOutput: class {
     func updatePlayers()
     func updateBattleStatus()
     func newChatLog(_ log: NSAttributedString)
+	func display(_ mapImage: NSImage)
+	func display(infoFor map: Map)
 }
 
 class BattleroomController: ServerBattleDelegate {
@@ -73,7 +75,7 @@ class BattleroomController: ServerBattleDelegate {
             }
             
         }
-        
+		
         output?.newChatLog(log)
     }
     
@@ -81,6 +83,10 @@ class BattleroomController: ServerBattleDelegate {
         self.battle = battle
         setBattleChatLog()
 		update()
+		if let cache = cache {
+			output?.display(cache.minimap(for: battle.mapHash))
+		} else { output?.display(#imageLiteral(resourceName: "Caution"))}
+		
     }
     func didLeaveBattle() {
         battle = nil
@@ -101,6 +107,19 @@ class BattleroomController: ServerBattleDelegate {
     func server(_ server: TASServer, didSetBattleStatus battleStatus: BattleStatus, forUserNamed username: String) {
 		update()
     }
+	
+	func server(_ server: TASServer, didUpdate battle: UpdatedBattleInfo) {
+		guard let currentBattle = self.battle else { debugPrint("Non-Fatal Error: Battleroom Controller exists, but user is not in a battle."); return }
+		guard battle.battleId == currentBattle.battleId else { return }
+		
+//		if currentBattle.mapHash != battle.mapHash { // Updates in BattleListController, so this check won't pass right.
+//			currentBattle.mapHash = battle.mapHash
+		if let cache = cache {
+			output?.display(cache.minimap(for: currentBattle.mapHash))
+		} else {
+			output?.display(#imageLiteral(resourceName: "Caution"))
+		}
+	}
     
     func server(_ server: TASServer, userNamed name: String, didJoinBattleWithId battleId: String) {
         guard let battle = battle, battleId == battle.battleId else { return }

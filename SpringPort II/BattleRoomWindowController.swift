@@ -122,6 +122,10 @@ class BattleRoomWindowController: NSWindowController {
             readyButton.image = #imageLiteral(resourceName: "Unready")
         }
     }
+	func display(_ mapImage: NSImage) {
+		overImageView.image = mapImage
+		belowImageView.image = mapImage
+	}
     
 }
 
@@ -153,6 +157,10 @@ extension BattleRoomWindowController: BattleRoomDataOutput {
         battleChatTextView.isEditable = false
         battleChatTextView.scrollToEndOfDocument(self)
     }
+	
+	func display(infoFor map: Map) {
+//		<#code#>
+	}
 }
 
 class PlayerTableCellView: NSTableCellView {

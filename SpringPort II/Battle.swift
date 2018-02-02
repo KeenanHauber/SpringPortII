@@ -39,7 +39,7 @@ class Battle: NSObject {
     var maxPlayers: Int
     let passworded: Bool
     let rank: String
-    var mapHash: UInt32
+    var mapHash: Int32
     let engineName: String
     let engineVersion: String
     var mapName: String
@@ -75,7 +75,7 @@ class Battle: NSObject {
         maxPlayers = Int(parts[7]) ?? 0
         passworded = parts[8] != "0"
         rank = parts[9]
-        mapHash = UInt32(parts[10]) ?? 0
+        mapHash = Int32(parts[10]) ?? 0
         engineName = parts[11]
 
         engineVersion = sentences[1]

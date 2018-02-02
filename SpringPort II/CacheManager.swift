@@ -8,21 +8,25 @@
 
 import Cocoa
 
-struct Map {
+class Map {
 	let name: String
-	let checksum: UInt32
+	let checksum: Int32
 	let fileName: String
+	let index: Int // this won't necessarily work if additional maps are added to the DIR. Please test.
+	
 	var mapData: MapData?
-	init(identification: (String, UInt32, String)) {
+	init(identification: (String, Int32, String, Int)) {
 		self.name = identification.0
 		self.checksum = identification.1
 		self.fileName = identification.2
+		self.index = identification.3
 	}
-	init(name: String, checksum: UInt32, fileName: String, mapData: MapData) {
+	init(name: String, checksum: Int32, fileName: String, index: Int, mapData: MapData) {
 		self.name = name
 		self.checksum = checksum
 		self.fileName = fileName
 		self.mapData = mapData
+		self.index = index
 	}
 }
 
@@ -38,13 +42,14 @@ struct Side {
 }
 
 struct GameData {
-	let checksum: UInt32
+	let checksum: Int32
 	let sides: [Side]
 }
 
 protocol MapDataSource {
 	var mapCount: Int { get }
-	func map(at index: Int) -> Map
+	func mapData(for map: Map) -> MapData
+	func mapIdentification(at index: Int) -> (String, Int32, String, Int)
 }
 
 protocol GameDataSource {
@@ -63,8 +68,10 @@ protocol Cache: class {
 	var gameNames: [String] { get }
 	
 	func has(_ engine: String) -> Bool
-	func hasMap(with checksum: UInt32) -> Bool
+	func hasMap(with checksum: Int32) -> Bool
 	func has(_ game: String, versioned version: String) -> Bool
+	
+	func minimap(for mapChecksum: Int32) -> NSImage
 }
 
 class CacheManager: Cache {
@@ -136,7 +143,7 @@ class CacheManager: Cache {
 			return temp
 		}
 	}
-	func hasMap(with checksum: UInt32) -> Bool {
+	func hasMap(with checksum: Int32) -> Bool {
 		for map in maps {
 			if map.checksum == checksum {
 				return true
@@ -155,6 +162,22 @@ class CacheManager: Cache {
 	func reloadMaps() {
 		maps = []
 		loadMaps()
+	}
+	func minimap(for mapChecksum: Int32) -> NSImage {
+		guard let engine = latestEngine else { debugPrint("Non-Fatal Error: No engines, cannot load minimap"); return #imageLiteral(resourceName: "Caution") }
+		guard let unitsync = engine.unitsyncWrapper else { debugPrint("No unitsync wrapper to detect games"); return #imageLiteral(resourceName: "Caution") }
+		
+		let matches = maps.filter { $0.checksum == mapChecksum }
+		guard matches.count == 1 else { return #imageLiteral(resourceName: "Caution") }
+		let map = matches[0]
+		
+		let mapData: MapData = map.mapData ?? unitsync.mapData(for: map)
+		
+		guard let image = NSImage(rgb565Pixels: mapData.miniMapData, width: 1024, height: 1024) else { debugPrint("Non-Fatal Error: Could not create NSImage from miniMapData"); return #imageLiteral(resourceName: "Caution") }
+		
+		image.size = CGSize(width: mapData.mapWidth, height: mapData.mapHeight)
+		
+		return image
 	}
 	
 	// GAMES
