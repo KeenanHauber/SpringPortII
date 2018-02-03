@@ -117,17 +117,17 @@ class ChannelDataController: ServerChannelDelegate, ChannelDataSource {
             switch message.style {
             case "Standard":
                 let messageAsString = "[\(message.timeStamp)] <\(message.sender)> \(message.message)\n"
-                let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSAttributedStringKey.foregroundColor : NSColor.orange] )
+				let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSAttributedStringKey.foregroundColor : #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1), NSAttributedStringKey.font : NSFont.systemFont(ofSize: 13)] )
                 log.append(messageAsNSAttributedString)
                 
             case "IRCStyle":
                 let messageAsString = "[\(message.timeStamp)] \(message.sender) \(message.message)\n"
-                let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSAttributedStringKey.foregroundColor : NSColor.magenta] )
+                let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSAttributedStringKey.foregroundColor : #colorLiteral(red: 0.9, green: 0, blue: 0.675, alpha: 1), NSAttributedStringKey.font : NSFont.systemFont(ofSize: 13)] )
                 log.append(messageAsNSAttributedString)
                 
             case "Server":
                 let messageAsString = "[\(message.timeStamp)] ### \(message.sender) ### \(message.message)\n"
-                let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSAttributedStringKey.foregroundColor : NSColor.blue] )
+                let messageAsNSAttributedString = NSAttributedString(string: messageAsString, attributes: [NSAttributedStringKey.foregroundColor : #colorLiteral(red: 0, green: 0.9, blue: 0.225, alpha: 1), NSAttributedStringKey.font : NSFont.systemFont(ofSize: 13)] )
                 log.append(messageAsNSAttributedString)
                 
             default:

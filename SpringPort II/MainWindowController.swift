@@ -55,8 +55,6 @@ class MainWindowController: NSWindowController {
     @IBAction func channelSelectionChanged(_ sender: Any) {
         delegate?.selectChannel(atIndex: channelSegmentedControl.selectedSegment)
     }
-    @IBOutlet weak var blurView: BlurView!
-    @IBOutlet weak var notLoggedInAlert: NSTextField!
     @IBOutlet weak var singlePlayerButton: NSTextField!
     @IBOutlet weak var singlePlayerClickGestureRecogniser: NSClickGestureRecognizer!
     @IBAction func openSinglePlayerMenu(_ sender: Any) {
@@ -65,8 +63,6 @@ class MainWindowController: NSWindowController {
 
     
     func hideSinglePlayerWarning() {
-        blurView.isHidden = true
-        notLoggedInAlert.isHidden = true
         singlePlayerButton.isHidden = true
     }
     
