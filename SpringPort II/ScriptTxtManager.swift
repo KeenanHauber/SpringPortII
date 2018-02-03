@@ -1,5 +1,5 @@
 //
-//  LaunchScriptManager.swift
+//  ScriptTxtManager.swift
 //  SpringPort II
 //
 //  Created by MasterBel2 on 9/9/17.

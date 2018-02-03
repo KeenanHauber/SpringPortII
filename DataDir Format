@@ -1,0 +1,27 @@
+Located in: ~/ApplicationSupport/MacTASClient
+
+./GameIndex
+	/indexSummary.txt
+	/<game_name-version>
+		/summary.txt
+		/loadpics
+			/loadpic.jpg
+./MapIndex
+	/indexSummary.txt
+	/<mapChecksum>
+		/summary.txt
+		/minimap.png
+		/changelog.txt
+_____
+Contents of game indexSummary.txt
+{fileName GameName-Version}{fileName GameName-Version}
+
+Contents of game summary.txt:
+{GameName}{Version}{FileName(.sdz/sd7)}{}
+_____
+Contents of map indexSummary.txt
+{fileName Checksum} {fileName Checksum}
+
+Contents of map summary.txt
+{Name}{FileName}{Description}{Width}{Height}{Tidal Strength}{WindMin}{WindMax}{MapGravity}{ResourceCount}
+_____

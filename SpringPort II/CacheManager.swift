@@ -32,8 +32,9 @@ class Map {
 
 struct Game {
 	let name: String
+	let version: String
 	let fileName: String
-	var gameData: GameData?
+	var gameData: GameData
 }
 
 struct Side {
@@ -42,7 +43,7 @@ struct Side {
 }
 
 struct GameData {
-	let checksum: Int32
+//	let checksum: Int32
 	let sides: [Side]
 }
 
@@ -52,29 +53,42 @@ protocol MapDataSource {
 	func mapIdentification(at index: Int) -> (String, Int32, String, Int)
 }
 
-protocol GameDataSource {
-	var gameCount: Int { get }
-	func game(at index: Int) -> Game
+//protocol GameDataSource {
+//	var gameCount: Int { get }
+//	func game(at index: Int) -> Game
+//}
+
+protocol GameCache: class {
+	func reloadGames()
+	func has(_ game: String, versioned version: String) -> Bool
+	var gameNames: [String] { get }
 }
 
-protocol Cache: class {
-	func setup()
-	func reloadGames()
+protocol MapCache: class {
 	func reloadMaps()
-	func reloadEngines()
-	
-	var engineVersions: [String] { get }
 	var mapNames: [String] { get }
-	var gameNames: [String] { get }
-	
-	func has(_ engine: String) -> Bool
 	func hasMap(with checksum: Int32) -> Bool
-	func has(_ game: String, versioned version: String) -> Bool
-	
 	func minimap(for mapChecksum: Int32) -> NSImage
+}
+protocol EngineCache: class {
+	func reloadEngines()
+	var engineVersions: [String] { get }
+	func has(_ engine: String) -> Bool
+}
+
+protocol Cache: MapCache, GameCache, EngineCache {
+	func setup()
 }
 
 class CacheManager: Cache {
+	let gameDataSource: GameCache!
+	
+	init() {
+		let indexer: GameIndexer = GameIndexerObject()
+		let gameDataSource = GameCacheManager(indexer)
+		self.gameDataSource = gameDataSource
+		
+	}
 	func setup() {
 		autodetectSpringVersions()
 		loadMaps()
