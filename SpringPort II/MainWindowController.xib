@@ -155,6 +155,9 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </clipView>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="175" id="PoE-38-LLk"/>
+                                                        </constraints>
                                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="s5k-6N-upg">
                                                             <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                                             <autoresizingMask key="autoresizingMask"/>
@@ -209,7 +212,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="3bz-qe-sdO" secondAttribute="trailing" id="txf-qK-zrD"/>
                                                 </constraints>
                                             </customView>
-                                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="xdu-eN-9o5" userLabel="(Channel Users) Bordered Scroll View - Table View">
+                                            <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="xdu-eN-9o5" userLabel="(Channel Users) Bordered Scroll View - Table View">
                                                 <rect key="frame" x="1090" y="0.0" width="267" height="464"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <clipView key="contentView" id="31D-it-PpW">
@@ -297,6 +300,9 @@
                                                         </tableView>
                                                     </subviews>
                                                 </clipView>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="RQ1-E9-lFh"/>
+                                                </constraints>
                                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="QNX-Nr-68K">
                                                     <rect key="frame" x="1" y="447" width="264" height="16"/>
                                                     <autoresizingMask key="autoresizingMask"/>
@@ -316,7 +322,7 @@
                                             <real value="250"/>
                                         </holdingPriorities>
                                     </splitView>
-                                    <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" scrollerKnobStyle="dark" id="ght-Jp-8YV" userLabel="(Battle List) Bordered Scroll View - Collection View">
+                                    <scrollView wantsLayer="YES" misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" scrollerKnobStyle="dark" id="ght-Jp-8YV" userLabel="(Battle List) Bordered Scroll View - Collection View">
                                         <rect key="frame" x="0.0" y="474" width="1357" height="429"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <clipView key="contentView" drawsBackground="NO" id="D7o-wN-fgQ">
@@ -332,6 +338,10 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </clipView>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="175" id="QJj-m4-M40"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="500" id="xvu-gC-0f3"/>
+                                        </constraints>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Vey-Gk-4dl">
                                             <rect key="frame" x="-100" y="-100" width="688" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -347,7 +357,7 @@
                                     <real value="250"/>
                                 </holdingPriorities>
                             </splitView>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="PsF-Md-XG5" userLabel="(Server Users) Bordered Scroll View - Table View">
+                            <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="PsF-Md-XG5" userLabel="(Server Users) Bordered Scroll View - Table View">
                                 <rect key="frame" x="1367" y="0.0" width="252" height="903"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" id="xrg-yh-Hym">
@@ -431,6 +441,9 @@
                                         </tableView>
                                     </subviews>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="adZ-yv-0B7"/>
+                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="o4h-cN-8ml">
                                     <rect key="frame" x="1" y="886" width="250" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -445,6 +458,9 @@
                                 </tableHeaderView>
                             </scrollView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="PsF-Md-XG5" firstAttribute="width" secondItem="xdu-eN-9o5" secondAttribute="width" id="Gzk-4O-JHT"/>
+                        </constraints>
                         <holdingPriorities>
                             <real value="250"/>
                             <real value="250"/>

@@ -34,7 +34,7 @@ class OpenBattleListDataController: NSObject, NSCollectionViewDelegate, NSCollec
         let text = "\(battle.playerCount)/\(battle.maxPlayers)"
         
         item.descriptionTextField.stringValue = (battle.title)
-        item.descriptionTextField.textColor = NSColor.blue
+        item.descriptionTextField.textColor = #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1)
 		
         item.engineVersionTextField.stringValue = (battle.engineVersion)
 		
@@ -66,7 +66,7 @@ class OpenBattleListDataController: NSObject, NSCollectionViewDelegate, NSCollec
 		}
 
         item.hostNameTextField.stringValue = battle.founder
-        item.hostNameTextField.textColor = NSColor.blue
+        item.hostNameTextField.textColor = #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1)
 		
         
         if battle.isLocked == true || battle.passworded == true {

@@ -137,7 +137,7 @@ class PrimaryCoordinator: MainCoordinator, BattleRoomWindowControllerDataSource,
         case "/me":
             components.remove(at: 0)
             let remainder = components.joined(separator: " ")
-			server?.send(SayexCommand(chanName: chanName, message: message))
+			server?.send(SayexCommand(chanName: chanName, message: remainder))
         default:
             server?.send(SayCommand(chanName: chanName, message: message))
         }
