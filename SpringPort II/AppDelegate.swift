@@ -23,27 +23,27 @@ func timeStamp() -> String { // Make this a class thing?
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    var primaryCoordinator: PrimaryCoordinator! // ???
+    var window: NSWindow?
+    
+    let server: TASServer = {
+        let serverName = "Official Server"
+        let serverAddress = "lobby.springrts.com"
+        let port = 8200
+        let server = TASServer(name: serverName, address: serverAddress, port: port)
+        return server
+    }()
     
     @IBOutlet weak var singlePlayerGameMenuItem: NSMenuItem!
     @IBOutlet weak var relaunchSpringMenuItem: NSMenuItem! // When selected will join an already in-game game
 	
 	@IBAction func relaunchSpringMenuItemPressed(_ sender: Any) {
-        primaryCoordinator.relaunchSpring()
+        
     }
 	
     @IBAction func singlePlayerGameMenuItemPressed(_ sender: Any) {
-        primaryCoordinator.mainWindowController.openSinglePlayerMenu()
     }
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		let primaryCoordinator = PrimaryCoordinator(menuDelegate: self)
-		let cache: Cache = CacheManager()
-		cache.setup()
-		primaryCoordinator.cache = cache
-        primaryCoordinator.setUp()
-        self.primaryCoordinator = primaryCoordinator
-		relaunchSpringMenuItem.isEnabled = false
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

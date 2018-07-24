@@ -21,6 +21,12 @@
 		6B58FE421FCA864500EE03E0 /* Unitsync in Resources */ = {isa = PBXBuildFile; fileRef = 6B58FE411FCA864500EE03E0 /* Unitsync */; };
 		6B6ACA0D1EC827B800A7E5E5 /* ToSortCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6ACA0C1EC827B800A7E5E5 /* ToSortCommands.swift */; };
 		6B6ACA0E1EC8282700A7E5E5 /* ToSortCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6ACA0C1EC827B800A7E5E5 /* ToSortCommands.swift */; };
+		6B71532D2107EFF200457AA6 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7153272107EFF200457AA6 /* LoginInteractor.swift */; };
+		6B71532F2107EFF200457AA6 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7153292107EFF200457AA6 /* LoginRouter.swift */; };
+		6B7153302107EFF200457AA6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B71532A2107EFF200457AA6 /* LoginViewController.xib */; };
+		6B7153312107EFF200457AA6 /* LoginDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B71532B2107EFF200457AA6 /* LoginDisplay.swift */; };
+		6B7153322107EFF200457AA6 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B71532C2107EFF200457AA6 /* LoginPresenter.swift */; };
+		6B7153342107F08200457AA6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7153332107F08200457AA6 /* LoginViewController.swift */; };
 		6B8D9E051E85AF6600544CE2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8D9E041E85AF6600544CE2 /* LoginController.swift */; };
 		6B8D9E081E85AFF800544CE2 /* ServerMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8D9E071E85AFF800544CE2 /* ServerMessageController.swift */; };
 		6B8D9E0A1E85B00500544CE2 /* BattleListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8D9E091E85B00500544CE2 /* BattleListController.swift */; };
@@ -98,10 +104,6 @@
 		6BF14E4E1E8C9BE500A6F766 /* SinglePlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BF14E4C1E8C9BE500A6F766 /* SinglePlayerViewController.xib */; };
 		6BF14E541E8CA9D500A6F766 /* TodoList in Resources */ = {isa = PBXBuildFile; fileRef = 6BF14E531E8CA9D500A6F766 /* TodoList */; };
 		6BF666D61E8DD798003E0ADE /* Functionality in Resources */ = {isa = PBXBuildFile; fileRef = 6BF666D51E8DD798003E0ADE /* Functionality */; };
-		6BF666D91E8E1C53003E0ADE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF666D71E8E1C53003E0ADE /* LoginViewController.swift */; };
-		6BF666DA1E8E1C53003E0ADE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BF666D81E8E1C53003E0ADE /* LoginViewController.xib */; };
-		D52FEDF21E21F68F00CBF40A /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FEDF01E21F68F00CBF40A /* LoginWindowController.swift */; };
-		D52FEDF31E21F68F00CBF40A /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D52FEDF11E21F68F00CBF40A /* LoginWindowController.xib */; };
 		D55B69A21E1AF1EE0098BB09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69A11E1AF1EE0098BB09 /* AppDelegate.swift */; };
 		D55B69E21E1AF47C0098BB09 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69E01E1AF47C0098BB09 /* Channel.swift */; };
 		D55B69E31E1AF47C0098BB09 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69E11E1AF47C0098BB09 /* Message.swift */; };
@@ -124,27 +126,14 @@
 		D55B6A081E1AF8A10098BB09 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69FB1E1AF8A10098BB09 /* String+MD5.swift */; };
 		D55B6A091E1AF8A10098BB09 /* TASServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69FC1E1AF8A10098BB09 /* TASServer.swift */; };
 		D55B6A0C1E1B01220098BB09 /* BattleStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B6A0B1E1B01220098BB09 /* BattleStatus.swift */; };
-		D55B6A1B1E1BB97C0098BB09 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B6A191E1BB97C0098BB09 /* MainWindowController.swift */; };
-		D55B6A1C1E1BB97C0098BB09 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55B6A1A1E1BB97C0098BB09 /* MainWindowController.xib */; };
 		D55B6A1E1E1BBD5A0098BB09 /* Background Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B6A1D1E1BBD5A0098BB09 /* Background Views.swift */; };
 		D55B6A201E1C37C20098BB09 /* NSView+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B6A1F1E1C37C20098BB09 /* NSView+BackgroundColor.swift */; };
-		D55D38661E1C443700618EB1 /* BattleListCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D38641E1C443700618EB1 /* BattleListCollectionViewItem.swift */; };
-		D55D38671E1C443700618EB1 /* BattleListCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55D38651E1C443700618EB1 /* BattleListCollectionViewItem.xib */; };
-		D55D386B1E1C445600618EB1 /* ChatUsersCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D38691E1C445600618EB1 /* ChatUsersCollectionViewItem.swift */; };
-		D55D386C1E1C445600618EB1 /* ChatUsersCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55D386A1E1C445600618EB1 /* ChatUsersCollectionViewItem.xib */; };
-		D55D386E1E1C476E00618EB1 /* OpenBattleListDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D386D1E1C476E00618EB1 /* OpenBattleListDataController.swift */; };
-		D55D38701E1C478800618EB1 /* ChannelUserListDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D386F1E1C478800618EB1 /* ChannelUserListDataController.swift */; };
 		D55D38771E1CCAA800618EB1 /* ServerInformationCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D38761E1CCAA800618EB1 /* ServerInformationCommands.swift */; };
 		D55D38791E1CE53900618EB1 /* AutoResizingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D38781E1CE53900618EB1 /* AutoResizingFlowLayout.swift */; };
-		D55D387C1E1D944800618EB1 /* BattleRoomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D387A1E1D944800618EB1 /* BattleRoomWindowController.swift */; };
-		D55D387D1E1D944800618EB1 /* BattleRoomWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55D387B1E1D944800618EB1 /* BattleRoomWindowController.xib */; };
-		D55D38801E1DF9C900618EB1 /* PlayerTableViewDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D387F1E1DF9C900618EB1 /* PlayerTableViewDataController.swift */; };
-		D55D38821E1DF9E300618EB1 /* SpectatorTableViewDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D38811E1DF9E300618EB1 /* SpectatorTableViewDataController.swift */; };
 		D57FB1831E1EE65C007A0A59 /* NSColor + Hex init.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57FB1821E1EE65C007A0A59 /* NSColor + Hex init.swift */; };
 		D5A2801F1E1F965300E46A0D /* BattleUDPInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2801E1E1F965300E46A0D /* BattleUDPInterface.swift */; };
 		D5A280641E20416B00E46A0D /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A280631E20416B00E46A0D /* CacheManager.swift */; };
 		D5A280661E2042C000E46A0D /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A280651E2042C000E46A0D /* Map.swift */; };
-		D5AEA2841E1F4DE0004AE192 /* TotalLoggedInUsersDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEA2831E1F4DE0004AE192 /* TotalLoggedInUsersDataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +201,12 @@
 		6B33E94C1EE3FD5300534A8B /* CollectionViewItemSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewItemSelectionDelegate.swift; sourceTree = "<group>"; };
 		6B58FE411FCA864500EE03E0 /* Unitsync */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unitsync; sourceTree = "<group>"; };
 		6B6ACA0C1EC827B800A7E5E5 /* ToSortCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToSortCommands.swift; sourceTree = "<group>"; };
+		6B7153272107EFF200457AA6 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		6B7153292107EFF200457AA6 /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		6B71532A2107EFF200457AA6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = "../../Documents/Documents - TheSquirrelScribe’s MacBook Pro/Productivity/Programming/TASClient/TASClient/LoginScene/LoginViewController.xib"; sourceTree = "<group>"; };
+		6B71532B2107EFF200457AA6 /* LoginDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDisplay.swift; sourceTree = "<group>"; };
+		6B71532C2107EFF200457AA6 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		6B7153332107F08200457AA6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6B8D9E041E85AF6600544CE2 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		6B8D9E071E85AFF800544CE2 /* ServerMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerMessageController.swift; sourceTree = "<group>"; };
 		6B8D9E091E85B00500544CE2 /* BattleListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleListController.swift; sourceTree = "<group>"; };
@@ -243,10 +238,6 @@
 		6BF14E4C1E8C9BE500A6F766 /* SinglePlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SinglePlayerViewController.xib; sourceTree = "<group>"; };
 		6BF14E531E8CA9D500A6F766 /* TodoList */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TodoList; sourceTree = "<group>"; };
 		6BF666D51E8DD798003E0ADE /* Functionality */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Functionality; sourceTree = "<group>"; };
-		6BF666D71E8E1C53003E0ADE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		6BF666D81E8E1C53003E0ADE /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		D52FEDF01E21F68F00CBF40A /* LoginWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
-		D52FEDF11E21F68F00CBF40A /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
 		D55B699E1E1AF1EE0098BB09 /* SpringPort II.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpringPort II.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D55B69A11E1AF1EE0098BB09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D55B69A31E1AF1EE0098BB09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -275,27 +266,14 @@
 		D55B69FC1E1AF8A10098BB09 /* TASServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASServer.swift; sourceTree = "<group>"; };
 		D55B6A0B1E1B01220098BB09 /* BattleStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleStatus.swift; sourceTree = "<group>"; };
 		D55B6A0D1E1B047B0098BB09 /* SpringPort II-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpringPort II-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		D55B6A191E1BB97C0098BB09 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		D55B6A1A1E1BB97C0098BB09 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		D55B6A1D1E1BBD5A0098BB09 /* Background Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Background Views.swift"; sourceTree = "<group>"; };
 		D55B6A1F1E1C37C20098BB09 /* NSView+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+BackgroundColor.swift"; sourceTree = "<group>"; };
-		D55D38641E1C443700618EB1 /* BattleListCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleListCollectionViewItem.swift; sourceTree = "<group>"; };
-		D55D38651E1C443700618EB1 /* BattleListCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BattleListCollectionViewItem.xib; sourceTree = "<group>"; };
-		D55D38691E1C445600618EB1 /* ChatUsersCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUsersCollectionViewItem.swift; sourceTree = "<group>"; };
-		D55D386A1E1C445600618EB1 /* ChatUsersCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatUsersCollectionViewItem.xib; sourceTree = "<group>"; };
-		D55D386D1E1C476E00618EB1 /* OpenBattleListDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenBattleListDataController.swift; sourceTree = "<group>"; };
-		D55D386F1E1C478800618EB1 /* ChannelUserListDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelUserListDataController.swift; sourceTree = "<group>"; };
 		D55D38761E1CCAA800618EB1 /* ServerInformationCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerInformationCommands.swift; sourceTree = "<group>"; };
 		D55D38781E1CE53900618EB1 /* AutoResizingFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoResizingFlowLayout.swift; sourceTree = "<group>"; };
-		D55D387A1E1D944800618EB1 /* BattleRoomWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleRoomWindowController.swift; sourceTree = "<group>"; };
-		D55D387B1E1D944800618EB1 /* BattleRoomWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BattleRoomWindowController.xib; sourceTree = "<group>"; };
-		D55D387F1E1DF9C900618EB1 /* PlayerTableViewDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewDataController.swift; sourceTree = "<group>"; };
-		D55D38811E1DF9E300618EB1 /* SpectatorTableViewDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpectatorTableViewDataController.swift; path = ../SpectatorTableViewDataController.swift; sourceTree = "<group>"; };
 		D57FB1821E1EE65C007A0A59 /* NSColor + Hex init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor + Hex init.swift"; sourceTree = "<group>"; };
 		D5A2801E1E1F965300E46A0D /* BattleUDPInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BattleUDPInterface.swift; path = ../BattleUDPInterface.swift; sourceTree = "<group>"; };
 		D5A280631E20416B00E46A0D /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		D5A280651E2042C000E46A0D /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
-		D5AEA2831E1F4DE0004AE192 /* TotalLoggedInUsersDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalLoggedInUsersDataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +322,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B7153262107EFBC00457AA6 /* Login Scene */ = {
+			isa = PBXGroup;
+			children = (
+				6B71532B2107EFF200457AA6 /* LoginDisplay.swift */,
+				6B7153272107EFF200457AA6 /* LoginInteractor.swift */,
+				6B71532C2107EFF200457AA6 /* LoginPresenter.swift */,
+				6B7153292107EFF200457AA6 /* LoginRouter.swift */,
+				6B7153332107F08200457AA6 /* LoginViewController.swift */,
+				6B71532A2107EFF200457AA6 /* LoginViewController.xib */,
+			);
+			name = "Login Scene";
+			sourceTree = "<group>";
+		};
 		6B8D9E061E85AF6A00544CE2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +427,7 @@
 		D55B69A01E1AF1EE0098BB09 /* SpringPort II */ = {
 			isa = PBXGroup;
 			children = (
+				6B7153262107EFBC00457AA6 /* Login Scene */,
 				6B1D3A022024F44300807846 /* FileOpener.swift */,
 				D55B69A11E1AF1EE0098BB09 /* AppDelegate.swift */,
 				D55B6A1D1E1BBD5A0098BB09 /* Background Views.swift */,
@@ -448,9 +440,6 @@
 				D55B6A0D1E1B047B0098BB09 /* SpringPort II-Bridging-Header.h */,
 				D55B69A81E1AF1EE0098BB09 /* Info.plist */,
 				D55B69A31E1AF1EE0098BB09 /* Assets.xcassets */,
-				D55D387E1E1DAEA400618EB1 /* BattleRoomWindowController */,
-				D55D38681E1C443B00618EB1 /* MainWindowController */,
-				D55B69EF1E1AF4BE0098BB09 /* ViewControllers */,
 			);
 			path = "SpringPort II";
 			sourceTree = "<group>";
@@ -472,17 +461,6 @@
 			name = Objects;
 			sourceTree = "<group>";
 		};
-		D55B69EF1E1AF4BE0098BB09 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				6BF666D71E8E1C53003E0ADE /* LoginViewController.swift */,
-				6BF666D81E8E1C53003E0ADE /* LoginViewController.xib */,
-				D52FEDF01E21F68F00CBF40A /* LoginWindowController.swift */,
-				D52FEDF11E21F68F00CBF40A /* LoginWindowController.xib */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
 		D55B6A0A1E1AF8A60098BB09 /* Server */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,22 +474,6 @@
 				D55B69FC1E1AF8A10098BB09 /* TASServer.swift */,
 			);
 			name = Server;
-			sourceTree = "<group>";
-		};
-		D55D38681E1C443B00618EB1 /* MainWindowController */ = {
-			isa = PBXGroup;
-			children = (
-				D55B6A191E1BB97C0098BB09 /* MainWindowController.swift */,
-				D55B6A1A1E1BB97C0098BB09 /* MainWindowController.xib */,
-				D55D38641E1C443700618EB1 /* BattleListCollectionViewItem.swift */,
-				D55D38651E1C443700618EB1 /* BattleListCollectionViewItem.xib */,
-				D55D38691E1C445600618EB1 /* ChatUsersCollectionViewItem.swift */,
-				D55D386A1E1C445600618EB1 /* ChatUsersCollectionViewItem.xib */,
-				D55D386D1E1C476E00618EB1 /* OpenBattleListDataController.swift */,
-				D55D386F1E1C478800618EB1 /* ChannelUserListDataController.swift */,
-				D5AEA2831E1F4DE0004AE192 /* TotalLoggedInUsersDataController.swift */,
-			);
-			name = MainWindowController;
 			sourceTree = "<group>";
 		};
 		D55D38731E1CCA6C00618EB1 /* Commands */ = {
@@ -529,17 +491,6 @@
 				6B6ACA0C1EC827B800A7E5E5 /* ToSortCommands.swift */,
 			);
 			name = Commands;
-			sourceTree = "<group>";
-		};
-		D55D387E1E1DAEA400618EB1 /* BattleRoomWindowController */ = {
-			isa = PBXGroup;
-			children = (
-				D55D387A1E1D944800618EB1 /* BattleRoomWindowController.swift */,
-				D55D387B1E1D944800618EB1 /* BattleRoomWindowController.xib */,
-				D55D387F1E1DF9C900618EB1 /* PlayerTableViewDataController.swift */,
-				D55D38811E1DF9E300618EB1 /* SpectatorTableViewDataController.swift */,
-			);
-			name = BattleRoomWindowController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -743,18 +694,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BF666DA1E8E1C53003E0ADE /* LoginViewController.xib in Resources */,
-				D55D387D1E1D944800618EB1 /* BattleRoomWindowController.xib in Resources */,
 				6B1D3A052024F74C00807846 /* DataDir Format in Resources */,
-				D52FEDF31E21F68F00CBF40A /* LoginWindowController.xib in Resources */,
 				6BF666D61E8DD798003E0ADE /* Functionality in Resources */,
+				6B7153302107EFF200457AA6 /* LoginViewController.xib in Resources */,
 				6BBE4B3B1F64180C00E95AA2 /* LICENSE in Resources */,
 				6BC8CC491F64322400AB7110 /* Assets.xcassets in Resources */,
-				D55B6A1C1E1BB97C0098BB09 /* MainWindowController.xib in Resources */,
-				D55D386C1E1C445600618EB1 /* ChatUsersCollectionViewItem.xib in Resources */,
 				6BF14E4E1E8C9BE500A6F766 /* SinglePlayerViewController.xib in Resources */,
 				6B58FE421FCA864500EE03E0 /* Unitsync in Resources */,
-				D55D38671E1C443700618EB1 /* BattleListCollectionViewItem.xib in Resources */,
 				6BF14E541E8CA9D500A6F766 /* TodoList in Resources */,
 				6BA912CC1FF9C82600A8C60E /* MainMenu.xib in Resources */,
 			);
@@ -853,26 +799,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BF666D91E8E1C53003E0ADE /* LoginViewController.swift in Sources */,
 				6B1D39FB2024DB9D00807846 /* GameIndexer.swift in Sources */,
 				6BAA5F5920243E2100818A9F /* NSImage+RGB565.swift in Sources */,
 				D55B69EC1E1AF4AE0098BB09 /* CountryCode.swift in Sources */,
 				6BAA5F5B20243E8900818A9F /* UInt16+RGB.swift in Sources */,
 				6B8D9E0C1E85B02800544CE2 /* BattleroomController.swift in Sources */,
-				D55D386E1E1C476E00618EB1 /* OpenBattleListDataController.swift in Sources */,
 				6BBE4B011F63FED200E95AA2 /* ScriptTxtManager.swift in Sources */,
-				D55D387C1E1D944800618EB1 /* BattleRoomWindowController.swift in Sources */,
 				6B1D39FF2024F36300807846 /* IndexParser.swift in Sources */,
 				D55B6A041E1AF8A10098BB09 /* ServerMessage.swift in Sources */,
 				D55B6A031E1AF8A10098BB09 /* LobbyServerInfo.swift in Sources */,
 				D55B69E21E1AF47C0098BB09 /* Channel.swift in Sources */,
 				D55D38791E1CE53900618EB1 /* AutoResizingFlowLayout.swift in Sources */,
-				D55D386B1E1C445600618EB1 /* ChatUsersCollectionViewItem.swift in Sources */,
+				6B71532F2107EFF200457AA6 /* LoginRouter.swift in Sources */,
 				D55B6A001E1AF8A10098BB09 /* JoinChannelCommand.swift in Sources */,
 				6B8D9E6D1E85D2B800544CE2 /* MainCoordinator.swift in Sources */,
 				6B8D9E151E85BAF100544CE2 /* SpringProcessController.swift in Sources */,
 				D55B6A091E1AF8A10098BB09 /* TASServer.swift in Sources */,
-				D55D38801E1DF9C900618EB1 /* PlayerTableViewDataController.swift in Sources */,
 				D55B69E61E1AF4970098BB09 /* Battle.swift in Sources */,
 				D55B6A061E1AF8A10098BB09 /* PersistentContainer.swift in Sources */,
 				6B8D9E0A1E85B00500544CE2 /* BattleListController.swift in Sources */,
@@ -882,16 +824,15 @@
 				6B6ACA0D1EC827B800A7E5E5 /* ToSortCommands.swift in Sources */,
 				D55B6A051E1AF8A10098BB09 /* NSData+Base64.swift in Sources */,
 				D5A280661E2042C000E46A0D /* Map.swift in Sources */,
-				D55B6A1B1E1BB97C0098BB09 /* MainWindowController.swift in Sources */,
 				D55D38771E1CCAA800618EB1 /* ServerInformationCommands.swift in Sources */,
 				D5A2801F1E1F965300E46A0D /* BattleUDPInterface.swift in Sources */,
+				6B7153342107F08200457AA6 /* LoginViewController.swift in Sources */,
 				D55B6A071E1AF8A10098BB09 /* Socket.swift in Sources */,
 				6B1D3A032024F44300807846 /* FileOpener.swift in Sources */,
 				D55B6A0C1E1B01220098BB09 /* BattleStatus.swift in Sources */,
 				6BA5FB861FC8DFA200FFB47C /* MapData.swift in Sources */,
 				6BDBB4AA1FFB007400F9DC95 /* PromoteCommand.swift in Sources */,
 				D55B6A081E1AF8A10098BB09 /* String+MD5.swift in Sources */,
-				D55D38701E1C478800618EB1 /* ChannelUserListDataController.swift in Sources */,
 				6B8D9E051E85AF6600544CE2 /* LoginController.swift in Sources */,
 				D55B69E71E1AF4970098BB09 /* UpdatedBattleInfo.swift in Sources */,
 				6B2494521E8A3E7800718001 /* SinglePlayerController.swift in Sources */,
@@ -899,18 +840,17 @@
 				D55B6A1E1E1BBD5A0098BB09 /* Background Views.swift in Sources */,
 				D55B69ED1E1AF4AE0098BB09 /* ClientStatus.swift in Sources */,
 				6B9E6B411E9731A400E1AD78 /* PrivateMessageCoordinator.swift in Sources */,
-				D55D38661E1C443700618EB1 /* BattleListCollectionViewItem.swift in Sources */,
-				D52FEDF21E21F68F00CBF40A /* LoginWindowController.swift in Sources */,
 				6B8D9E791E860B1000544CE2 /* PrimaryCoordinator.swift in Sources */,
+				6B7153312107EFF200457AA6 /* LoginDisplay.swift in Sources */,
 				6BF14E4D1E8C9BE500A6F766 /* SinglePlayerViewController.swift in Sources */,
 				D55B69FE1E1AF8A10098BB09 /* LeaveChannelCommand.swift in Sources */,
 				D55B6A011E1AF8A10098BB09 /* BattleCommands.swift in Sources */,
 				D55B69EB1E1AF4AE0098BB09 /* User.swift in Sources */,
 				6BA5FB841FC8D0FB00FFB47C /* DynamicLibraryHandle.swift in Sources */,
-				D55D38821E1DF9E300618EB1 /* SpectatorTableViewDataController.swift in Sources */,
 				6BE957621EBBBB9B009EE315 /* HostedBattleroomController.swift in Sources */,
 				6B8D9E101E85B06E00544CE2 /* ChannelDataController.swift in Sources */,
 				6BA5FB831FC8D0FB00FFB47C /* UnitsyncWrapper.swift in Sources */,
+				6B7153322107EFF200457AA6 /* LoginPresenter.swift in Sources */,
 				6BA5FB921FC91A7900FFB47C /* EngineData.swift in Sources */,
 				6B8D9E0E1E85B05800544CE2 /* UsersDataController.swift in Sources */,
 				D55B69FF1E1AF8A10098BB09 /* LoginCommand.swift in Sources */,
@@ -919,7 +859,7 @@
 				D55B69A21E1AF1EE0098BB09 /* AppDelegate.swift in Sources */,
 				6B8D9E131E85B5E400544CE2 /* ServerCommandController.swift in Sources */,
 				6B33E94D1EE3FD5300534A8B /* CollectionViewItemSelectionDelegate.swift in Sources */,
-				D5AEA2841E1F4DE0004AE192 /* TotalLoggedInUsersDataController.swift in Sources */,
+				6B71532D2107EFF200457AA6 /* LoginInteractor.swift in Sources */,
 				D55B6A201E1C37C20098BB09 /* NSView+BackgroundColor.swift in Sources */,
 				6B9E6B3F1E95B86200E1AD78 /* AgreementCommands.swift in Sources */,
 				6B1D39FD2024DC0A00807846 /* GameCacheManager.swift in Sources */,
