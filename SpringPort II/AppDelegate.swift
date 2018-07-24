@@ -44,6 +44,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
+        let window = NSWindow()
+        let presenter = LoginPresenter()
+        let interactor = LoginInteractor(presenter: presenter, server: server)
+        let viewController = LoginViewController(interactor: interactor)
+        presenter.display = viewController
+        
+        window.contentViewController = viewController
+        window.makeKeyAndOrderFront(self)
+        
+        self.window = window
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

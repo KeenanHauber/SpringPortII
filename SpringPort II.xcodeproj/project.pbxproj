@@ -64,7 +64,6 @@
 		6B8D9E6A1E85BCBE00544CE2 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69E91E1AF4AE0098BB09 /* CountryCode.swift */; };
 		6B8D9E6B1E85BCBE00544CE2 /* ClientStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69EA1E1AF4AE0098BB09 /* ClientStatus.swift */; };
 		6B8D9E6D1E85D2B800544CE2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8D9E6C1E85D2B800544CE2 /* MainCoordinator.swift */; };
-		6B8D9E791E860B1000544CE2 /* PrimaryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8D9E781E860B1000544CE2 /* PrimaryCoordinator.swift */; };
 		6B9042691EC005D800431848 /* SinglePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2494511E8A3E7800718001 /* SinglePlayerController.swift */; };
 		6B90426A1EC005D800431848 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8D9E6C1E85D2B800544CE2 /* MainCoordinator.swift */; };
 		6B90426B1EC005D800431848 /* PrivateMessageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E6B401E9731A400E1AD78 /* PrivateMessageCoordinator.swift */; };
@@ -840,7 +839,6 @@
 				D55B6A1E1E1BBD5A0098BB09 /* Background Views.swift in Sources */,
 				D55B69ED1E1AF4AE0098BB09 /* ClientStatus.swift in Sources */,
 				6B9E6B411E9731A400E1AD78 /* PrivateMessageCoordinator.swift in Sources */,
-				6B8D9E791E860B1000544CE2 /* PrimaryCoordinator.swift in Sources */,
 				6B7153312107EFF200457AA6 /* LoginDisplay.swift in Sources */,
 				6BF14E4D1E8C9BE500A6F766 /* SinglePlayerViewController.swift in Sources */,
 				D55B69FE1E1AF8A10098BB09 /* LeaveChannelCommand.swift in Sources */,
