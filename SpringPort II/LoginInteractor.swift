@@ -33,7 +33,10 @@ final class LoginInteractor: LoginInteracting {
     }
     
     func sendLoginRequest(for username: String, and password: String) {
+        self.username = username
+        self.password = password
         presenter.freezeDisplay()
+        server.loginListener = self
         server.connect() // Don't want to send this here, but oh well
     }
     
