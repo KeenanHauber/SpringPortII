@@ -15,6 +15,7 @@ protocol ServerCommand: CustomStringConvertible { }
 /// See here for an implementation in C++ https://github.com/cleanrock/flobby/tree/master/src/model
 class TASServer: NSObject {
     weak var loginListener: LoginListening?
+    weak var battleListener: BattleListening?
     
     //    let name: String
     let socket: Socket
@@ -115,10 +116,12 @@ extension TASServer: SocketDelegate {
             
         case "BATTLEOPENED":
             guard let battle = Battle(message: message) else { break }
+            battleListener?.battleOpened()
             
         case "BATTLECLOSED":
             guard components.count == 2 else { break }
             let battleId = components[1]
+            battleListener?.battleClosed()
             
         case "UPDATEBATTLEINFO":
             // UPDATEBATTLEINFO battleID spectatorCount locked mapHash {mapName}

@@ -59,7 +59,7 @@ class Battle: NSObject {
         switch parts[2] {
         case "0": type = .normal
         case "1": type = .replay
-        default: fatalError("Unsupported battle info type: \(parts[1])")
+        default: fatalError("Unsupported battle type: \(parts[1])")
         }
 
         switch parts[3] {
