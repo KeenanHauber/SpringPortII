@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BattleListCollectionViewItem" customModule="SpringPort_II" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionField" destination="Ufc-q4-WPb" id="kyI-Bx-wZZ"/>
+                <outlet property="gameField" destination="v88-lZ-yRY" id="0zw-ps-n8n"/>
+                <outlet property="hostField" destination="9Or-Wg-Afg" id="yL1-Vv-W4b"/>
+                <outlet property="ingameField" destination="84n-4u-eVk" id="6yx-OT-Ekz"/>
+                <outlet property="mapField" destination="qLP-fH-xCa" id="HK8-eg-tw0"/>
+                <outlet property="playerCountField" destination="Zuk-pO-tEh" id="dij-eq-4nu"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="586" height="87"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Or-Wg-Afg">
+                    <rect key="frame" x="18" y="20" width="117" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Host: DarkEnergy1" id="WsD-qj-7A5">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="84n-4u-eVk">
+                    <rect key="frame" x="139" y="20" width="121" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Ingame for 2:46:53" id="798-6N-V4T">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qLP-fH-xCa">
+                    <rect key="frame" x="458" y="20" width="110" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="DeltaSiegeDry v8" id="hbF-Zy-Cn9">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ufc-q4-WPb">
+                    <rect key="frame" x="18" y="45" width="477" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="!!!(OSX Compatible) Balanced Annihilation - Official Host!!!" id="qmV-29-Oiy">
+                        <font key="font" metaFont="system" size="18"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zuk-pO-tEh">
+                    <rect key="frame" x="499" y="45" width="69" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="128/128" id="oQJ-QE-OuC">
+                        <font key="font" metaFont="system" size="18"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v88-lZ-yRY">
+                    <rect key="frame" x="287" y="20" width="167" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Balanced Annihilation 10.11" id="JE5-Ys-miy">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Zuk-pO-tEh" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="5Ls-Xx-DoO"/>
+                <constraint firstAttribute="trailing" secondItem="qLP-fH-xCa" secondAttribute="trailing" constant="20" id="AwP-Hr-Qit"/>
+                <constraint firstItem="Ufc-q4-WPb" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="CcD-jI-0ox"/>
+                <constraint firstAttribute="bottom" secondItem="v88-lZ-yRY" secondAttribute="bottom" constant="20" id="F1l-e3-TrR"/>
+                <constraint firstAttribute="bottom" secondItem="84n-4u-eVk" secondAttribute="bottom" constant="20" id="Fpu-tr-mrv"/>
+                <constraint firstItem="84n-4u-eVk" firstAttribute="leading" secondItem="9Or-Wg-Afg" secondAttribute="trailing" constant="8" id="J4v-lp-rNE"/>
+                <constraint firstItem="9Or-Wg-Afg" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="RME-ac-8SQ"/>
+                <constraint firstItem="9Or-Wg-Afg" firstAttribute="top" secondItem="Ufc-q4-WPb" secondAttribute="bottom" constant="8" id="ThA-pA-2bO"/>
+                <constraint firstAttribute="bottom" secondItem="9Or-Wg-Afg" secondAttribute="bottom" constant="20" id="dbM-lf-6wJ"/>
+                <constraint firstAttribute="trailing" secondItem="Zuk-pO-tEh" secondAttribute="trailing" constant="20" id="hpx-3I-DhX"/>
+                <constraint firstItem="qLP-fH-xCa" firstAttribute="leading" secondItem="v88-lZ-yRY" secondAttribute="trailing" constant="8" id="qRv-Jx-2i4"/>
+                <constraint firstItem="Ufc-q4-WPb" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="s2h-rx-jvy"/>
+                <constraint firstAttribute="bottom" secondItem="qLP-fH-xCa" secondAttribute="bottom" constant="20" id="vYF-bk-jtG"/>
+            </constraints>
+            <point key="canvasLocation" x="192" y="75.5"/>
+        </customView>
+    </objects>
+</document>

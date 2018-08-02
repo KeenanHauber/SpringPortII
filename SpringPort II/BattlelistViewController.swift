@@ -9,7 +9,7 @@
 import Cocoa
 
 protocol BattlelistDisplay {
-    
+    func display(_ sections: [CollectionViewSection])
 }
 
 protocol BattlelistOptionRepository: class {
@@ -32,16 +32,30 @@ class BattlelistViewController: NSViewController, BattlelistDisplay {
     
     let interactor: BattlelistInteracting
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    required init(interactor: BattlelistInteracting) {
+        self.interactor = interactor
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         interactor.setDisplayOptionsSource(self)
+        
     }
     
     @IBAction func displayOptionsChanged(_ sender: Any) {
         interactor.displayOptionsChanged()
     }
     
+    func display(_ sections: [CollectionViewSection]) {
+        
+        battlesCollectionView.reloadData()
+    }
 }
 
 extension BattlelistViewController: BattlelistOptionRepository {

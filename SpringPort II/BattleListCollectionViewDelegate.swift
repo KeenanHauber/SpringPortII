@@ -6,8 +6,7 @@
 //  Copyright © 2018 MasterBel2. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
-class BattlelistCollectionViewControllerDelegate {
-    
+class BattlelistCollectionViewControllerDelegate: NSObject, NSCollectionViewDelegate {
 }

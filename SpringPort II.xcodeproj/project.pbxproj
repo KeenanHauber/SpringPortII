@@ -57,6 +57,9 @@
 		6B8D9E6B1E85BCBE00544CE2 /* ClientStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69EA1E1AF4AE0098BB09 /* ClientStatus.swift */; };
 		6B9042761EC005DE00431848 /* AgreementCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E6B3E1E95B86200E1AD78 /* AgreementCommands.swift */; };
 		6B9C6CAC21128AE500A6E7DB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6B9C6CAB21128AE400A6E7DB /* README.md */; };
+		6B9C6CAF21128D3000A6E7DB /* BattleListCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C6CAD21128D3000A6E7DB /* BattleListCollectionViewItem.swift */; };
+		6B9C6CB021128D3000A6E7DB /* BattleListCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B9C6CAE21128D3000A6E7DB /* BattleListCollectionViewItem.xib */; };
+		6B9C6CB22112929900A6E7DB /* BattleListCollectionViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C6CB12112929900A6E7DB /* BattleListCollectionViewControllerDataSource.swift */; };
 		6B9E6B3F1E95B86200E1AD78 /* AgreementCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E6B3E1E95B86200E1AD78 /* AgreementCommands.swift */; };
 		6BA5E1D521124C7C00BD772F /* BattleListCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5E1D421124C7C00BD772F /* BattleListCollectionViewDelegate.swift */; };
 		6BA5E1D721124C9000BD772F /* GameListCollectionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5E1D621124C9000BD772F /* GameListCollectionViewControllerDelegate.swift */; };
@@ -190,6 +193,9 @@
 		6B8D9E281E85BC5300544CE2 /* SpringRTSHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpringRTSHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8D9E331E85BC5300544CE2 /* SpringRTSHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpringRTSHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B9C6CAB21128AE400A6E7DB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6B9C6CAD21128D3000A6E7DB /* BattleListCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleListCollectionViewItem.swift; sourceTree = "<group>"; };
+		6B9C6CAE21128D3000A6E7DB /* BattleListCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BattleListCollectionViewItem.xib; sourceTree = "<group>"; };
+		6B9C6CB12112929900A6E7DB /* BattleListCollectionViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleListCollectionViewControllerDataSource.swift; sourceTree = "<group>"; };
 		6B9E6B3E1E95B86200E1AD78 /* AgreementCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementCommands.swift; sourceTree = "<group>"; };
 		6BA5E1D421124C7C00BD772F /* BattleListCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleListCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		6BA5E1D621124C9000BD772F /* GameListCollectionViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListCollectionViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -312,6 +318,9 @@
 				6B71533621080D3F00457AA6 /* BattleListInteractor.swift */,
 				6B71533821080E0400457AA6 /* BattlelistPresenter.swift */,
 				6BD146B5210D731C00912FD3 /* BattlelistViewController.swift */,
+				6B9C6CB12112929900A6E7DB /* BattleListCollectionViewControllerDataSource.swift */,
+				6B9C6CAD21128D3000A6E7DB /* BattleListCollectionViewItem.swift */,
+				6B9C6CAE21128D3000A6E7DB /* BattleListCollectionViewItem.xib */,
 				6BA5E1D421124C7C00BD772F /* BattleListCollectionViewDelegate.swift */,
 				6BA5E1D621124C9000BD772F /* GameListCollectionViewControllerDelegate.swift */,
 				6BD146B6210D731C00912FD3 /* BattlelistViewController.xib */,
@@ -666,6 +675,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B1D3A052024F74C00807846 /* DataDir Format in Resources */,
+				6B9C6CB021128D3000A6E7DB /* BattleListCollectionViewItem.xib in Resources */,
 				6BF666D61E8DD798003E0ADE /* Functionality in Resources */,
 				6B9C6CAC21128AE500A6E7DB /* README.md in Resources */,
 				6B7153302107EFF200457AA6 /* LoginViewController.xib in Resources */,
@@ -783,6 +793,7 @@
 				D55B6A051E1AF8A10098BB09 /* NSData+Base64.swift in Sources */,
 				D5A280661E2042C000E46A0D /* Map.swift in Sources */,
 				D55D38771E1CCAA800618EB1 /* ServerInformationCommands.swift in Sources */,
+				6B9C6CAF21128D3000A6E7DB /* BattleListCollectionViewItem.swift in Sources */,
 				D5A2801F1E1F965300E46A0D /* BattleUDPInterface.swift in Sources */,
 				6B7153342107F08200457AA6 /* LoginViewController.swift in Sources */,
 				6BA5E1D721124C9000BD772F /* GameListCollectionViewControllerDelegate.swift in Sources */,
@@ -804,6 +815,7 @@
 				6BA5FB841FC8D0FB00FFB47C /* DynamicLibraryHandle.swift in Sources */,
 				6BA5FB831FC8D0FB00FFB47C /* UnitsyncWrapper.swift in Sources */,
 				6B7153322107EFF200457AA6 /* LoginPresenter.swift in Sources */,
+				6B9C6CB22112929900A6E7DB /* BattleListCollectionViewControllerDataSource.swift in Sources */,
 				6BA5FB921FC91A7900FFB47C /* EngineData.swift in Sources */,
 				D55B69FF1E1AF8A10098BB09 /* LoginCommand.swift in Sources */,
 				D57FB1831E1EE65C007A0A59 /* NSColor + Hex init.swift in Sources */,

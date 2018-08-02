@@ -33,7 +33,7 @@ class Battle: NSObject {
     let battleId: String
     let type: BattleType
     let natType: NATType
-    let founder: String
+    let host: String
     let ip: String
     let port: String
     var maxPlayers: Int
@@ -68,8 +68,8 @@ class Battle: NSObject {
         case "2": natType = .fixedSourcePorts
         default: fatalError("Unsupported nat type: \(parts[2])")
         }
-        // Establish which user entity is the founder
-        founder = parts[4]
+        // Establish which user entity is the host
+        host = parts[4]
         ip = parts[5]
         port = parts[6]
         maxPlayers = Int(parts[7]) ?? 0
@@ -83,7 +83,7 @@ class Battle: NSObject {
         title = sentences[3]
         gameName = sentences[4]
         
-        players.append(founder)
+        players.append(host)
         playerCount = players.count - spectatorCount
     }
     
