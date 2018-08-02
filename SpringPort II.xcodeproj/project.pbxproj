@@ -56,6 +56,7 @@
 		6B8D9E6A1E85BCBE00544CE2 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69E91E1AF4AE0098BB09 /* CountryCode.swift */; };
 		6B8D9E6B1E85BCBE00544CE2 /* ClientStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B69EA1E1AF4AE0098BB09 /* ClientStatus.swift */; };
 		6B9042761EC005DE00431848 /* AgreementCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E6B3E1E95B86200E1AD78 /* AgreementCommands.swift */; };
+		6B9C6CAC21128AE500A6E7DB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6B9C6CAB21128AE400A6E7DB /* README.md */; };
 		6B9E6B3F1E95B86200E1AD78 /* AgreementCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E6B3E1E95B86200E1AD78 /* AgreementCommands.swift */; };
 		6BA5E1D521124C7C00BD772F /* BattleListCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5E1D421124C7C00BD772F /* BattleListCollectionViewDelegate.swift */; };
 		6BA5E1D721124C9000BD772F /* GameListCollectionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5E1D621124C9000BD772F /* GameListCollectionViewControllerDelegate.swift */; };
@@ -188,6 +189,7 @@
 		6B8D9E1A1E85BC5300544CE2 /* SpringRTSHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpringRTSHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8D9E281E85BC5300544CE2 /* SpringRTSHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpringRTSHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8D9E331E85BC5300544CE2 /* SpringRTSHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpringRTSHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B9C6CAB21128AE400A6E7DB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6B9E6B3E1E95B86200E1AD78 /* AgreementCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementCommands.swift; sourceTree = "<group>"; };
 		6BA5E1D421124C7C00BD772F /* BattleListCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleListCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		6BA5E1D621124C9000BD772F /* GameListCollectionViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListCollectionViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				6B1D3A042024F74C00807846 /* DataDir Format */,
+				6B9C6CAB21128AE400A6E7DB /* README.md */,
 				6BBE4B3A1F64180C00E95AA2 /* LICENSE */,
 				6B58FE411FCA864500EE03E0 /* Unitsync */,
 				6BF14E531E8CA9D500A6F766 /* TodoList */,
@@ -664,6 +667,7 @@
 			files = (
 				6B1D3A052024F74C00807846 /* DataDir Format in Resources */,
 				6BF666D61E8DD798003E0ADE /* Functionality in Resources */,
+				6B9C6CAC21128AE500A6E7DB /* README.md in Resources */,
 				6B7153302107EFF200457AA6 /* LoginViewController.xib in Resources */,
 				6BBE4B3B1F64180C00E95AA2 /* LICENSE in Resources */,
 				6BC8CC491F64322400AB7110 /* Assets.xcassets in Resources */,
