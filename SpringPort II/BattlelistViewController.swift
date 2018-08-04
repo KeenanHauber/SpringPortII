@@ -8,7 +8,7 @@
 
 import Cocoa
 
-protocol BattlelistDisplay {
+protocol BattlelistDisplay: class {
     func display(_ sections: [CollectionViewSection])
 }
 

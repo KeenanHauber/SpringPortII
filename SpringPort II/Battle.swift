@@ -27,8 +27,6 @@ class Battle: NSObject {
     var playerCount: Int = 0
     var spectatorCount: Int = 0
     var isLocked: Bool = false
-    var trueSkillDictionary: [String : String] = [:]
-    var modOptionDictionary: [String : String] = [:]
 
     let battleId: String
     let type: BattleType
@@ -91,35 +89,11 @@ class Battle: NSObject {
         playerCount = players.count - spectatorCount
     }
     
-    func updateBattle(withInfo battleInfo: UpdatedBattleInfo) {
+    func update(for battleInfo: UpdatedBattleInfo) {
         self.spectatorCount = battleInfo.spectatorCount
         self.isLocked = battleInfo.isLocked
         self.mapHash = battleInfo.mapHash
         self.mapName = battleInfo.mapName
         updateNumberOfPlayers()
-    }
-    
-    func process(scriptTags scriptTagsAsMessage: String) {
-        let messageAsArrayOfScriptTags = scriptTagsAsMessage.components(separatedBy: "\t")
-        for scriptTag in messageAsArrayOfScriptTags {
-            let scriptTagAsArray = scriptTag.components(separatedBy: "/")
-            switch scriptTagAsArray[1] {
-            case "players":
-                let playerName = scriptTagAsArray[2]
-                let trueSkill = scriptTagAsArray[3].components(separatedBy: "=")
-                if trueSkill[0] == "skill" {
-                    trueSkillDictionary["\(playerName.lowercased())"] = "\(trueSkill[1])"
-                } else { // trueSkill[1] == "skilluncertainty"
-                    break // TODO
-                }
-                
-            case "modoptions":
-                let modOptionCombined = scriptTagAsArray[2].components(separatedBy: "=")
-                modOptionDictionary["\(modOptionCombined[0])"] = "\(modOptionCombined[1])"
-                
-            default:
-                break
-            }
-        }
     }
 }

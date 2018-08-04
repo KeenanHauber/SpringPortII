@@ -23,15 +23,10 @@ func timeStamp() -> String { // Make this a class thing?
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
     var window: NSWindow?
     
-    let server: TASServer = {
-        let serverName = "Official Server"
-        let serverAddress = "lobby.springrts.com"
-        let port = 8200
-        let server = TASServer(name: serverName, address: serverAddress, port: port)
-        return server
-    }()
+    
     
     @IBOutlet weak var singlePlayerGameMenuItem: NSMenuItem!
     @IBOutlet weak var relaunchSpringMenuItem: NSMenuItem! // When selected will join an already in-game game
@@ -44,11 +39,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
         let window = NSWindow()
-        let presenter = LoginPresenter()
-        let interactor = LoginInteractor(presenter: presenter, server: server)
-        let viewController = LoginViewController(interactor: interactor)
-        presenter.display = viewController
+        let storyboard = DefaultStoryboard(window: window)
+        let viewController = storyboard.loginViewController()
         
         window.contentViewController = viewController
         window.makeKeyAndOrderFront(self)

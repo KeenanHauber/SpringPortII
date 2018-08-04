@@ -16,22 +16,23 @@ class LoginViewController: NSViewController {
     
     let interactor: LoginInteracting
     
-    convenience init() { // ichhhhhhh
-        let server: TASServer = {
-            let serverName = "Official Server"
-            let serverAddress = "lobby.springrts.com"
-            let port = 8200
-            let server = TASServer(name: serverName, address: serverAddress, port: port)
-            return server
-        }()
-        
-        let presenter = LoginPresenter()
-//        let router = RegisterRouter()
-        let defaultInteractor = LoginInteractor(presenter: presenter, server: server/*, router: router*/)
-        self.init(interactor: defaultInteractor)
-        presenter.display = self
-//        router.sourceViewController = self
-    }
+//    convenience init() { // ichhhhhhh
+//        let server: TASServer = {
+//            let serverName = "Official Server"
+//            let serverAddress = "lobby.springrts.com"
+//            let port = 8200
+//            let server = TASServer(name: serverName, address: serverAddress, port: port)
+//            return server
+//        }()
+//        
+//        let router = LoginRouter(storyboard: DefaultStoryboard())
+//        
+//        let presenter = LoginPresenter()
+//        let defaultInteractor = LoginInteractor(presenter: presenter, server: server, router: router)
+//        self.init(interactor: defaultInteractor)
+//        presenter.display = self
+////        router.sourceViewController = self
+//    }
     
     required init(interactor: LoginInteracting) {
         self.interactor = interactor

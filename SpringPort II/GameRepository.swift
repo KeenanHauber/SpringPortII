@@ -12,6 +12,6 @@ protocol GameRepository {
     
 }
 
-class DefaultGameRepository {
+class DefaultGameRepository: GameRepository {
     let games: [Game] = []
 }

@@ -20,16 +20,17 @@ protocol LoginInteracting: class {
 }
 
 final class LoginInteractor: LoginInteracting {
-    let router: LoginRouting = LoginRouter()
+    let router: LoginRouting
     let presenter: LoginPresenting
     let server: TASServer
     
     var username: String?
     var password: String?
     
-    init(presenter: LoginPresenting, server: TASServer) {
+    init(presenter: LoginPresenting, server: TASServer, router: LoginRouting) {
         self.presenter = presenter
         self.server = server
+        self.router = router
     }
     
     func sendLoginRequest(for username: String, and password: String) {
@@ -47,7 +48,7 @@ final class LoginInteractor: LoginInteracting {
 
 extension LoginInteractor: LoginListening {
     func loginAccepted() {
-        router.routeToNext()
+        router.routeToNext(server: self.server)
     }
     func loginDenied(_ error: String) {
         presenter.resetForNewLoginAttempt(error)

@@ -17,6 +17,17 @@ protocol BattlelistInteracting {
 
 class BattleListInteractor: BattlelistInteracting {
     
+    var sorting: Sorting = .PlayersDescending
+    
+    var battleIndices: [Int : String] = [:]
+    
+    enum Sorting {
+        case PlayersDescending
+        case PlayersAscending
+        case HostDescending
+        case HostAscending
+    }
+    
     let presenter: BattlelistPresenting
     let repository: BattleRepository
     let gameRepository: GameRepository
@@ -29,7 +40,9 @@ class BattleListInteractor: BattlelistInteracting {
     }
     
     func selectedBattle(at index: Int) {
-        let battle = repository.battle(at: index)
+        guard let id = battleIndices[index] else {return}
+        guard let battle = repository.battle(id) else {return}
+//        let battle = repository.battle(at: index)
     }
     
     func selectedGame(at index: Int) {
@@ -37,7 +50,13 @@ class BattleListInteractor: BattlelistInteracting {
     }
     
     func battleListUpdated(battles: [Battle]) {
-        
+        var index = 0
+        let sortedBattles = battles.sorted { $0.playerCount > $1.playerCount }
+        battleIndices = [ : ]
+        sortedBattles.forEach { battle in
+            battleIndices[index] = battle.battleId
+            index += 1
+        }
     }
     
     

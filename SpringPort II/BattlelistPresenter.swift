@@ -13,11 +13,11 @@ protocol BattlelistPresenting {
 }
 
 class BattleListPresenter: BattlelistPresenting {
-    let display: BattlelistDisplay
+    weak var display: BattlelistDisplay?
     
-    init(display: BattlelistDisplay) {
-        self.display = display
-    }
+//    init(display: BattlelistDisplay) {
+//        self.display = display
+//    }
     
     func present(_ games: [String], battles: [Battle]) {
         let gameCount = games.count
@@ -32,7 +32,7 @@ class BattleListPresenter: BattlelistPresenting {
             var section = CollectionViewSection(title: game, items: [])
             sections.append(section)
         }
-        display.display(sections)
+        display!.display(sections)
     }
     
     private func battleListItem(for battle: Battle) -> NSCollectionViewItem { // Should this be moved to the display?

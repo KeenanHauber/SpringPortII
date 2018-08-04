@@ -114,37 +114,34 @@ extension TASServer: SocketDelegate {
             guard components.count == 2 else { break }
             debugPrint("Promote requested for battle of ID \(components[1])")
             
-        case "BATTLEOPENED":
-            guard let battle = Battle(message: message) else { break }
-            battleListener?.battleOpened()
+        case "BATTLEOPENED": // BATTLEOPENED battleID type natType founder ip port maxPlayers passworded rank mapHash {engineName} {engineVersion} {map} {title} {gameName}
+            guard components.count == 11 else {
+                debugPrint("BATTLEOPENED not called with 12 arguments; called with \(components.count)")
+                break
+            }
+            battleListener?.battleOpened(message)
             
         case "BATTLECLOSED":
             guard components.count == 2 else { break }
-            let battleId = components[1]
-            battleListener?.battleClosed()
+            let id = components[1]
+            battleListener?.battleClosed(id)
             
         case "UPDATEBATTLEINFO":
             // UPDATEBATTLEINFO battleID spectatorCount locked mapHash {mapName}
-            guard let updatedBattleInfo = UpdatedBattleInfo(components: components) else { break }
+            battleListener?.updateBattleInfo(components)
             
         case "JOINEDBATTLE":
             // JOINEDBATTLE battleID userName [scriptPassword]
-            guard components.count >= 3 else { break }
-            let battleId = components[1]
-            let username = components[2]
+            battleListener?.joinedBattle(components)
             
         case "LEFTBATTLE":
             // LEFTBATTLE battleID userName
-            guard components.count == 3 else { break }
-            let battleId = components[1]
-            let username = components[2]
-            
+            battleListener?.leftBattle(components)
             
         case "JOINBATTLE":
             // JOINBATTLE battleID hashCode
-            guard components.count == 3 else { break }
-            let battleID = components[1]
-            let hash = components[2]
+//            battleListener?.joinBattle(components)
+            break
             
         case "SETSCRIPTTAGS":
             // SETSCRIPTTAGS {pair1} [{pair2}] etc…
