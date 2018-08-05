@@ -31,9 +31,12 @@ class BattleListInteractor: BattlelistInteracting {
     let presenter: BattlelistPresenting
     let repository: BattleRepository
     let gameRepository: GameRepository
+    let server: TASServer
+    
     weak var displayOptionRepository: BattlelistOptionRepository?
     
-    init(presenter: BattlelistPresenting, battleRepository: BattleRepository, gamesRepository: GameRepository) {
+    init(server: TASServer, presenter: BattlelistPresenting, battleRepository: BattleRepository, gamesRepository: GameRepository) {
+        self.server = server
         self.presenter = presenter
         self.repository = battleRepository
         self.gameRepository = gamesRepository

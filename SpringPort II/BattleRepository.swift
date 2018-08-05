@@ -48,7 +48,6 @@ class DefaultBattleRepository: BattleRepository {
     
     var battles: [String : Battle] = [ : ] // BattleId, Battle
     
-    
     private func updateOutputs() {
         for updateBlock in updateBlocks {
             updateBlock(battles)

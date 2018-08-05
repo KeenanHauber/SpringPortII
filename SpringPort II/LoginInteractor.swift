@@ -44,6 +44,14 @@ final class LoginInteractor: LoginInteracting {
     func requestNewAccount() {
 //        router.routeToRegister()
     }
+    
+    func defaultServer() -> TASServer {
+        let serverName = "Official Server"
+        let serverAddress = "lobby.springrts.com"
+        let port = 8200
+        let server = TASServer(name: serverName, address: serverAddress, port: port)
+        return server
+    }
 }
 
 extension LoginInteractor: LoginListening {

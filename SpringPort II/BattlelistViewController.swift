@@ -45,11 +45,18 @@ class BattlelistViewController: NSViewController, BattlelistDisplay {
         super.viewDidLoad()
         // Do view setup here.
         interactor.setDisplayOptionsSource(self)
-        
+        setGameCollectionViewScrollDirection()
     }
     
     @IBAction func displayOptionsChanged(_ sender: Any) {
         interactor.displayOptionsChanged()
+    }
+    
+    func setGameCollectionViewScrollDirection() {
+        let flowLayout = NSCollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        gamesCollectionView.collectionViewLayout = flowLayout
+        
     }
     
     func display(_ sections: [CollectionViewSection]) {
