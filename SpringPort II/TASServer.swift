@@ -115,10 +115,10 @@ extension TASServer: SocketDelegate {
             debugPrint("Promote requested for battle of ID \(components[1])")
             
         case "BATTLEOPENED": // BATTLEOPENED battleID type natType founder ip port maxPlayers passworded rank mapHash {engineName} {engineVersion} {map} {title} {gameName}
-            guard components.count == 11 else {
-                debugPrint("BATTLEOPENED not called with 12 arguments; called with \(components.count)")
-                break
-            }
+//            guard components.count == 11 else {
+//                debugPrint("BATTLEOPENED not called with 12 arguments; called with \(components.count)")
+//                break
+//            }
             battleListener?.battleOpened(message)
             
         case "BATTLECLOSED":
