@@ -2,8 +2,8 @@
 //  LoginRouter.swift
 //  TASClient
 //
-//  Created by Keenan Hauber on 18/7/18.
-//  Copyright © 2018 Keenan Hauber. All rights reserved.
+//  Created by MasterBel2 on 18/7/18.
+//  Copyright © 2018 MasterBel2. All rights reserved.
 //
 
 import Cocoa

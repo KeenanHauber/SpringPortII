@@ -2,7 +2,7 @@
 //  BattleListCollectionViewControllerDelegate.swift
 //  SpringPort II
 //
-//  Created by Keenan Hauber on 2/8/18.
+//  Created by MasterBel2 on 2/8/18.
 //  Copyright © 2018 MasterBel2. All rights reserved.
 //
 

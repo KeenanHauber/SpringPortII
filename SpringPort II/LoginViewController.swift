@@ -2,8 +2,8 @@
 //  LoginViewController.swift
 //  TASClient
 //
-//  Created by Keenan Hauber on 17/7/18.
-//  Copyright © 2018 Keenan Hauber. All rights reserved.
+//  Created by MasterBel2 on 17/7/18.
+//  Copyright © 2018 MasterBel2. All rights reserved.
 //
 
 import Cocoa

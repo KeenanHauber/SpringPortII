@@ -22,14 +22,19 @@ protocol LoginInteracting: class {
 final class LoginInteractor: LoginInteracting {
     let router: LoginRouting
     let presenter: LoginPresenting
-    let server: TASServer
+    let server: TASServer = {
+        let serverName = "Official Server"
+        let serverAddress = "lobby.springrts.com"
+        let port = 8200
+        let server = TASServer(name: serverName, address: serverAddress, port: port)
+        return server
+    }()
     
     var username: String?
     var password: String?
     
-    init(presenter: LoginPresenting, server: TASServer, router: LoginRouting) {
+    init(presenter: LoginPresenting, router: LoginRouting) {
         self.presenter = presenter
-        self.server = server
         self.router = router
     }
     
@@ -43,14 +48,6 @@ final class LoginInteractor: LoginInteracting {
     
     func requestNewAccount() {
 //        router.routeToRegister()
-    }
-    
-    func defaultServer() -> TASServer {
-        let serverName = "Official Server"
-        let serverAddress = "lobby.springrts.com"
-        let port = 8200
-        let server = TASServer(name: serverName, address: serverAddress, port: port)
-        return server
     }
 }
 
