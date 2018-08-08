@@ -8,6 +8,12 @@
 
 import Foundation
 
+protocol BattleListening: class {
+//    func battleOpened(_ sth: String)
+//    func battleOpened(_ sth: String)
+//    func battleOpened(_ sth: String)
+}
+
 /// A server command is a command given by the client to the server
 protocol ServerCommand: CustomStringConvertible { }
 
@@ -119,24 +125,28 @@ extension TASServer: SocketDelegate {
 //                debugPrint("BATTLEOPENED not called with 12 arguments; called with \(components.count)")
 //                break
 //            }
-            battleListener?.battleOpened(message)
+//            battleListener?.battleOpened(message)
+            break
             
         case "BATTLECLOSED":
             guard components.count == 2 else { break }
             let id = components[1]
-            battleListener?.battleClosed(id)
+//            battleListener?.battleClosed(id)
             
         case "UPDATEBATTLEINFO":
             // UPDATEBATTLEINFO battleID spectatorCount locked mapHash {mapName}
-            battleListener?.updateBattleInfo(components)
+//            battleListener?.updateBattleInfo(components)
+            break
             
         case "JOINEDBATTLE":
             // JOINEDBATTLE battleID userName [scriptPassword]
-            battleListener?.joinedBattle(components)
+//            battleListener?.joinedBattle(components)
+            break
             
         case "LEFTBATTLE":
             // LEFTBATTLE battleID userName
-            battleListener?.leftBattle(components)
+//            battleListener?.leftBattle(components)
+            break
             
         case "JOINBATTLE":
             // JOINBATTLE battleID hashCode
