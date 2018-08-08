@@ -16,6 +16,7 @@ protocol BattlelistOptionRepository: class {
     var hidingEmpty: Bool { get }
     var showingLocked: Bool { get }
     var showingPrivate: Bool { get }
+    var games: [String] { get }
 }
 
 class BattlelistViewController: NSViewController, BattlelistDisplay {
@@ -78,5 +79,7 @@ extension BattlelistViewController: BattlelistOptionRepository {
         return showPrivateBattlesCheckbox.state == .on
     } // combine into one!
     
-    
+    var games: [String] {
+        return ["Balanced Annihilation"]
+    }
 }

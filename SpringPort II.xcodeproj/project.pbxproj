@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B0D658C21190BF7006203A4 /* BattlelistServerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D658B21190BF7006203A4 /* BattlelistServerInterface.swift */; };
+		6B0D658E2119182F006203A4 /* ForumRSSLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D658D2119182F006203A4 /* ForumRSSLoader.swift */; };
 		6B1D39FB2024DB9D00807846 /* GameIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D39FA2024DB9D00807846 /* GameIndexer.swift */; };
 		6B1D39FD2024DC0A00807846 /* GameCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D39FC2024DC0A00807846 /* GameCacheManager.swift */; };
 		6B1D39FF2024F36300807846 /* IndexParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D39FE2024F36300807846 /* IndexParser.swift */; };
@@ -175,6 +177,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6B0D658B21190BF7006203A4 /* BattlelistServerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlelistServerInterface.swift; sourceTree = "<group>"; };
+		6B0D658D2119182F006203A4 /* ForumRSSLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumRSSLoader.swift; sourceTree = "<group>"; };
 		6B1D39FA2024DB9D00807846 /* GameIndexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameIndexer.swift; sourceTree = "<group>"; };
 		6B1D39FC2024DC0A00807846 /* GameCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCacheManager.swift; sourceTree = "<group>"; };
 		6B1D39FE2024F36300807846 /* IndexParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexParser.swift; sourceTree = "<group>"; };
@@ -185,7 +189,7 @@
 		6B6ACA0C1EC827B800A7E5E5 /* ToSortCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToSortCommands.swift; sourceTree = "<group>"; };
 		6B7153272107EFF200457AA6 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		6B7153292107EFF200457AA6 /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
-		6B71532A2107EFF200457AA6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = "../../Documents/Documents - TheSquirrelScribe’s MacBook Pro/Productivity/Programming/TASClient/TASClient/LoginScene/LoginViewController.xib"; sourceTree = "<group>"; };
+		6B71532A2107EFF200457AA6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		6B71532B2107EFF200457AA6 /* LoginDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDisplay.swift; sourceTree = "<group>"; };
 		6B71532C2107EFF200457AA6 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		6B7153332107F08200457AA6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				6B71533621080D3F00457AA6 /* BattleListInteractor.swift */,
+				6B0D658B21190BF7006203A4 /* BattlelistServerInterface.swift */,
 				6B71533821080E0400457AA6 /* BattlelistPresenter.swift */,
 				6BD146B5210D731C00912FD3 /* BattlelistViewController.swift */,
 				6B9C6CB12112929900A6E7DB /* BattleListCollectionViewControllerDataSource.swift */,
@@ -340,6 +345,7 @@
 			children = (
 				6B7E642F21153CD9008CEF49 /* BattleRoomDataRepository.swift */,
 				6B71533B21080EE500457AA6 /* BattleRepository.swift */,
+				6B0D658D2119182F006203A4 /* ForumRSSLoader.swift */,
 				6B7E6431211545BD008CEF49 /* SpringFilesDataLoader.swift */,
 				6BD146B9210D836400912FD3 /* GameRepository.swift */,
 			);
@@ -777,6 +783,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B0D658E2119182F006203A4 /* ForumRSSLoader.swift in Sources */,
 				6B1D39FB2024DB9D00807846 /* GameIndexer.swift in Sources */,
 				6BAA5F5920243E2100818A9F /* NSImage+RGB565.swift in Sources */,
 				D55B69EC1E1AF4AE0098BB09 /* CountryCode.swift in Sources */,
@@ -803,6 +810,7 @@
 				D5A280661E2042C000E46A0D /* Map.swift in Sources */,
 				D55D38771E1CCAA800618EB1 /* ServerInformationCommands.swift in Sources */,
 				6B9C6CAF21128D3000A6E7DB /* BattleListCollectionViewItem.swift in Sources */,
+				6B0D658C21190BF7006203A4 /* BattlelistServerInterface.swift in Sources */,
 				D5A2801F1E1F965300E46A0D /* BattleUDPInterface.swift in Sources */,
 				6B7E6432211545BD008CEF49 /* SpringFilesDataLoader.swift in Sources */,
 				6B7153342107F08200457AA6 /* LoginViewController.swift in Sources */,

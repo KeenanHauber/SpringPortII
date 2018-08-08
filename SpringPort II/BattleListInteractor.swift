@@ -15,6 +15,17 @@ protocol BattlelistInteracting {
     func setDisplayOptionsSource(_ repository: BattlelistOptionRepository)
 }
 
+protocol BattleNotificatee: class { // uh
+    func battlesUpdated()
+}
+
+struct BattleListDisplayOptions {
+    var showLocked: Bool
+    var showPrivate: Bool
+    var showEmpty: Bool
+    var games: [String]
+}
+
 class BattleListInteractor: BattlelistInteracting {
     
     var sorting: Sorting = .PlayersDescending
@@ -32,6 +43,18 @@ class BattleListInteractor: BattlelistInteracting {
     let repository: BattleRepository
     let gameRepository: GameRepository
     let server: TASServer
+    
+    var displayOptions: BattleListDisplayOptions {
+        guard let repository = displayOptionRepository else {
+            debugPrint("NoV")
+            return BattleListDisplayOptions(showLocked: true, showPrivate: true, showEmpty: true, games: [])
+        }
+        let showLocked = repository.showingLocked
+        let showPrivate = repository.showingPrivate
+        let showEmpty = !repository.hidingEmpty
+        let games = repository.games
+        return BattleListDisplayOptions(showLocked: showLocked, showPrivate: showPrivate, showEmpty: showEmpty, games: games)
+    }
     
     weak var displayOptionRepository: BattlelistOptionRepository?
     
@@ -71,5 +94,14 @@ class BattleListInteractor: BattlelistInteracting {
         self.displayOptionRepository = repository
     }
     
+}
+
+extension BattleListInteractor: BattleNotificatee {
+    func battlesUpdated() {
+        let displayOptions = self.displayOptions
+        
+        let battles = repository.battles(for: displayOptions)
+        presenter.present(displayOptions.games, battles: battles)
+    }
 }
 
