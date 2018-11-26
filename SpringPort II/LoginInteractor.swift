@@ -43,7 +43,7 @@ final class LoginInteractor: LoginInteracting {
         self.password = password
         presenter.freezeDisplay()
         server.loginListener = self
-        server.connect() // Don't want to send this here, but oh well
+        server.connect()
     }
     
     func requestNewAccount() {
