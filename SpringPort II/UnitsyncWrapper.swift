@@ -134,8 +134,7 @@ class UnitsyncWrapper: MapDataSource {
     
     func mapData(for map: Map) -> MapData {
         let cIndex = CInt(map.index)
-		
-		let mipLevel = 1
+		let mapName = map.name.cString(using: .utf8)!
 
 		let description = String(cString: GetMapDescription(cIndex))
         let mapWidth = Int(GetMapWidth(cIndex))
@@ -146,7 +145,11 @@ class UnitsyncWrapper: MapDataSource {
         let mapGravity = Int(GetMapGravity(cIndex))
         let resourceCount = Int(GetMapResourceCount(cIndex))
 		
-		let miniMapData: [UInt16] = []
+		let otherPointer = UnsafePointer(mapName)
+		
+		let mipLevel = 0
+		let minimapPointer = GetMinimap(otherPointer, CInt(mipLevel))
+		let miniMapData: [UInt16] = Array(UnsafeBufferPointer(start: minimapPointer, count: 1024 * 1024))
 		
         let mapData = MapData(
             description: description,
